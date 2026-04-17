@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YCM · Daily Harvest Log Sheet — Print Mock (Letter, 2-up carbon)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: letter; margin: 0.4in; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#999;padding:2rem;font-family:'Inter',sans-serif}
+.sheet{
+  width:8.5in;height:11in;
+  background:#fffef9;color:#1f2d20;
+  padding:0.4in;margin:1rem auto;
+  box-shadow:0 8px 30px rgba(0,0,0,0.35);
+  position:relative;
+}
+.sheet .top{border-bottom:2px solid #2f5233;padding-bottom:0.12in;margin-bottom:0.18in;display:flex;justify-content:space-between;align-items:flex-end}
+.sheet .brand{font-family:'Cormorant Garamond',serif;font-weight:700;color:#2f5233;font-size:0.32in;line-height:1;letter-spacing:-0.01in}
+.sheet .sub{font-size:0.09in;letter-spacing:0.03in;color:#5b4a3c;text-transform:uppercase;margin-top:0.04in;font-weight:600}
+.sheet .title-block{text-align:right}
+.sheet .title{font-family:'Cormorant Garamond',serif;font-weight:700;color:#1f2d20;font-size:0.22in;line-height:1}
+.sheet .copy{font-size:0.08in;color:#5b4a3c;letter-spacing:0.02in;text-transform:uppercase;font-weight:600;margin-top:0.04in}
+
+.meta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.1in;margin-bottom:0.2in;font-family:'JetBrains Mono',monospace;font-size:0.1in}
+.meta-cell{border:1px solid #2f5233;padding:0.05in 0.08in}
+.meta-cell .l{font-size:0.07in;color:#5b4a3c;letter-spacing:0.02in;text-transform:uppercase;font-family:'Inter';font-weight:600}
+.meta-cell .v{font-size:0.13in;margin-top:0.03in;color:#1f2d20;letter-spacing:0.01in;min-height:0.18in;border-bottom:1px dotted #888}
+
+table.harvest{width:100%;border-collapse:collapse;font-size:0.1in;font-family:'JetBrains Mono',monospace}
+table.harvest th{background:#2f5233;color:#fffef9;padding:0.07in 0.05in;font-family:'Inter';font-weight:600;font-size:0.085in;letter-spacing:0.02in;text-transform:uppercase;border:1px solid #1f2d20}
+table.harvest td{border:1px solid #5b4a3c;padding:0;height:0.24in;vertical-align:middle;padding-left:0.05in;color:#1f2d20}
+table.harvest tr:nth-child(even) td{background:#f7f3e8}
+
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.2in;margin-top:0.15in}
+.tot-card{border:1.5px solid #2f5233;padding:0.1in 0.12in}
+.tot-card h4{font-family:'Cormorant Garamond',serif;font-size:0.14in;color:#2f5233;margin-bottom:0.06in}
+.tot-card .row{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:0.1in;margin-bottom:0.04in;border-bottom:1px dotted #888;padding:0.02in 0}
+
+.sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.3in;margin-top:0.25in;padding-top:0.1in;border-top:1px solid #5b4a3c}
+.sig{padding-top:0.2in;border-top:1px solid #1f2d20;text-align:center;font-size:0.08in;letter-spacing:0.02in;text-transform:uppercase;font-weight:600;color:#5b4a3c}
+
+.footer{position:absolute;bottom:0.3in;left:0.4in;right:0.4in;display:flex;justify-content:space-between;font-size:0.07in;color:#5b4a3c;font-family:'Inter';letter-spacing:0.02in}
+
+.caption{max-width:8.5in;margin:1rem auto 2rem;color:#eee;font-size:0.8rem;text-align:center}
+</style>
+</head>
+<body>
+
+<div class="caption">SAMPLE — 8.5"×11" daily harvest log · one sheet per bed per day · 2-part carbon (white=office, yellow=grow room)</div>
+
+<div class="sheet">
+  <div class="top">
+    <div>
+      <div class="brand">YAMHILL COUNTY MUSHROOMS</div>
+      <div class="sub">Est. 1985 · Willamette Valley · Oregon Tilth OT-011161</div>
+    </div>
+    <div class="title-block">
+      <div class="title">Daily Harvest Log</div>
+      <div class="copy">Form HV-102 · Rev 2026.04</div>
+    </div>
+  </div>
+
+  <div class="meta-grid">
+    <div class="meta-cell"><div class="l">Date</div><div class="v"></div></div>
+    <div class="meta-cell"><div class="l">Variety</div><div class="v">☐ Crimini  ☐ Portabella</div></div>
+    <div class="meta-cell"><div class="l">Bed #</div><div class="v"></div></div>
+    <div class="meta-cell"><div class="l">Flush #</div><div class="v">☐ 1st  ☐ 2nd  ☐ 3rd</div></div>
+    <div class="meta-cell"><div class="l">Room / House</div><div class="v"></div></div>
+    <div class="meta-cell"><div class="l">Inoculation Date</div><div class="v"></div></div>
+    <div class="meta-cell"><div class="l">Shift</div><div class="v">☐ AM  ☐ PM</div></div>
+    <div class="meta-cell"><div class="l">Foreman</div><div class="v"></div></div>
+  </div>
+
+  <table class="harvest">
+    <thead>
+      <tr>
+        <th style="width:8%">Row</th>
+        <th style="width:20%">Picker ID / Name</th>
+        <th style="width:14%">Start Time</th>
+        <th style="width:14%">End Time</th>
+        <th style="width:16%">Crate Count</th>
+        <th style="width:16%">Net Weight (lb)</th>
+        <th style="width:12%">Grade A/B/C</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>9</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>10</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>13</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>15</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>16</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="bottom-grid">
+    <div class="tot-card">
+      <h4>Yield Totals</h4>
+      <div class="row"><span>Total crates</span><span>_______</span></div>
+      <div class="row"><span>Total net weight (lb)</span><span>_______</span></div>
+      <div class="row"><span>Grade A (%)</span><span>_______</span></div>
+      <div class="row"><span>Compost / culls (lb)</span><span>_______</span></div>
+    </div>
+    <div class="tot-card">
+      <h4>Notes / anomalies</h4>
+      <div style="height:1in;border-bottom:1px dotted #888;margin-bottom:0.04in"></div>
+      <div style="font-size:0.07in;color:#5b4a3c;letter-spacing:0.02in;text-transform:uppercase">Pest · disease · temp · humidity · moisture</div>
+    </div>
+  </div>
+
+  <div class="sig-grid">
+    <div class="sig">Picker Foreman signature / date</div>
+    <div class="sig">QA / Office received / date</div>
+  </div>
+
+  <div class="footer">
+    <span>WHITE copy: office / books · YELLOW copy: grow room</span>
+    <span>Form HV-102 · YCM internal · do not distribute</span>
+  </div>
+</div>
+
+<div class="caption">Headers include: date / variety / bed # / flush / room / inoculation date / shift / foreman.<br>Rows: picker ID, start/end time, crate count, net weight, grade A/B/C.<br>Footer: yield totals, anomaly notes, foreman + QA signatures.</div>
+
+</body>
+</html>

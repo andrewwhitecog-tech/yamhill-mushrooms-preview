@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers — Yamhill County Mushrooms · Pickers · Drivers · Seasonal Help</title>
+<meta name="description" content="Yamhill County Mushrooms is always hiring. Pickers (general farm labor), delivery drivers (CDL or farm-endorsement), and seasonal / part-time high-school help. Paid on time every time. Profit share. Health insurance after probation. Home every night.">
+<meta property="og:title" content="Careers at Yamhill County Mushrooms — Pickers · Drivers · Seasonal">
+<meta property="og:description" content="Always hiring. Honest work on a family farm. Pickers, drivers, and part-time seasonal help. Profit share. Health insurance after probation. Home every night.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* unified YCM purple palette — sampled from production boxes, matches index.html */
+  --cream:#f8f4ea;--cream-2:#ede6d3;
+  --forest:#4B2673;--forest-dark:#341650;       /* kept names for back-compat; values are purple */
+  --brown:#5b4a3c;--gold:#c7a574;               /* cardboard tan */
+  --ink:#1f1a28;--muted:#6b6458;
+  --line:rgba(75,38,115,0.14);
+  --warn:#a8522e;
+  --ycm-purple:#4B2673;--ycm-purple-dark:#341650;--cardboard:#c7a574;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+::selection{background:var(--forest);color:var(--cream)}
+a{color:var(--forest);text-decoration:none;transition:color .15s}
+a:hover{color:var(--forest-dark);text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+.serif{font-family:'Cormorant Garamond',serif;font-weight:500}
+
+/* topbar identical to index.html for consistency */
+header.topbar{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid var(--line);padding:0.7rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.brand{display:flex;align-items:center;gap:1rem;text-decoration:none}
+.brand:hover{text-decoration:none}
+.brand-mark{width:88px;height:88px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand-mark img{width:100%;height:100%;object-fit:contain;display:block}
+.brand-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.35rem;line-height:1.05;color:var(--ycm-purple)}
+.brand-sub{font-size:0.72rem;color:var(--muted);letter-spacing:2.5px;text-transform:uppercase;margin-top:0.2rem}
+@media(max-width:760px){.brand-mark{width:64px;height:64px}.brand-name{font-size:1.1rem}}
+nav.topnav{display:flex;gap:1.6rem;font-size:0.88rem;font-weight:500}
+nav.topnav a{color:var(--ink)}
+nav.topnav a:hover{color:var(--forest);text-decoration:none}
+nav.topnav a.active{color:var(--forest);border-bottom:2px solid var(--gold);padding-bottom:2px}
+.cta{background:var(--forest);color:var(--cream);padding:0.55rem 1.1rem;border-radius:4px;font-weight:600;font-size:0.85rem;letter-spacing:0.5px}
+.cta:hover{background:var(--forest-dark);color:var(--cream);text-decoration:none}
+@media(max-width:760px){nav.topnav{display:none}}
+
+/* hero */
+.hero{padding:3.5rem 1.5rem 2.5rem;text-align:center;max-width:900px;margin:0 auto}
+.hero .kicker{font-size:0.78rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2rem,5.5vw,3.6rem);line-height:1.08;color:var(--forest-dark);margin-bottom:1rem}
+.hero h1 em{font-style:italic;color:var(--forest)}
+.hero .lede{font-size:1.08rem;max-width:620px;margin:0 auto 0;color:var(--muted)}
+
+/* honest section */
+.honest{background:var(--forest);color:var(--cream);padding:2.8rem 1.5rem;margin:2rem 0}
+.honest .inner{max-width:800px;margin:0 auto}
+.honest h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.9rem;color:var(--gold);margin-bottom:1rem;font-style:italic}
+.honest p{margin-bottom:0.9rem;font-size:1.02rem}
+.honest ul{list-style:none;padding:0;margin-top:1rem}
+.honest li{padding:0.35rem 0 0.35rem 1.6rem;position:relative;font-size:1rem}
+.honest li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700;font-size:1.15rem}
+.honest li.neg::before{content:"—";color:var(--cream);opacity:0.7}
+
+/* role section */
+.role{padding:3.5rem 1.5rem;border-bottom:1px solid var(--line)}
+.role .inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:2.5rem;align-items:start}
+@media(max-width:760px){.role .inner{grid-template-columns:1fr}}
+.role .side{position:sticky;top:90px}
+.role .kicker{font-size:0.72rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:0.4rem}
+.role h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:500;color:var(--forest-dark);line-height:1.05;margin-bottom:0.6rem}
+.role .subtitle{font-size:0.95rem;color:var(--muted);line-height:1.5}
+.role .body h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--forest);margin:1.3rem 0 0.3rem;font-weight:600}
+.role .body h3:first-child{margin-top:0}
+.role .body p{margin-bottom:0.9rem}
+.role .body ul{list-style:none;padding:0;margin-bottom:0.9rem}
+.role .body li{padding:0.22rem 0 0.22rem 1.3rem;position:relative}
+.role .body li::before{content:"·";position:absolute;left:0.3rem;color:var(--forest);font-weight:700;font-size:1.3rem;line-height:1}
+.role .req-flag{background:var(--cream-2);border-left:3px solid var(--warn);padding:0.9rem 1.1rem;margin:1rem 0;font-size:0.96rem}
+.role .req-flag .rf-title{font-weight:700;color:var(--warn);font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.3rem}
+
+/* benefits strip */
+.benefits{background:var(--cream-2);padding:3rem 1.5rem}
+.benefits .inner{max-width:1000px;margin:0 auto}
+.benefits h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--forest-dark);margin-bottom:0.4rem;font-weight:500}
+.benefits .lede{color:var(--muted);margin-bottom:1.6rem}
+.ben-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.ben{background:var(--cream);padding:1.3rem 1.3rem;border:1px solid var(--line);border-radius:6px}
+.ben h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--forest);margin-bottom:0.35rem;font-weight:600}
+.ben p{font-size:0.92rem;color:var(--muted);line-height:1.5}
+.ben .pill{display:inline-block;font-size:0.68rem;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;font-weight:600;background:var(--forest);padding:3px 8px;border-radius:3px;margin-bottom:0.55rem}
+
+/* routes */
+.routes{padding:3rem 1.5rem}
+.routes .inner{max-width:1000px;margin:0 auto}
+.routes h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--forest-dark);margin-bottom:0.5rem;font-weight:500}
+.route-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.3rem}
+@media(max-width:760px){.route-grid{grid-template-columns:1fr}}
+.route-card{background:var(--cream-2);padding:1.4rem;border-radius:6px;border:1px solid var(--line)}
+.route-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--forest);margin-bottom:0.4rem;font-weight:600}
+.route-card p{font-size:0.94rem;color:var(--ink);line-height:1.5}
+
+/* apply form */
+.apply{background:var(--forest-dark);color:var(--cream);padding:4rem 1.5rem}
+.apply .inner{max-width:780px;margin:0 auto}
+.apply h2{font-family:'Cormorant Garamond',serif;font-size:2.1rem;margin-bottom:0.4rem;color:var(--gold);font-weight:500}
+.apply .lede{opacity:0.85;margin-bottom:2rem;font-size:1.05rem}
+form.apply-form label{display:block;font-size:0.75rem;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin:1rem 0 0.35rem;font-weight:600}
+form.apply-form input,form.apply-form textarea,form.apply-form select{width:100%;padding:0.7rem 0.9rem;border:1px solid rgba(212,165,116,0.3);border-radius:3px;background:rgba(247,243,232,0.06);color:var(--cream);font-family:inherit;font-size:0.98rem}
+form.apply-form input:focus,form.apply-form textarea:focus,form.apply-form select:focus{outline:none;border-color:var(--gold);background:rgba(247,243,232,0.1)}
+form.apply-form button{margin-top:1.5rem;width:100%;background:var(--gold);color:var(--forest-dark);border:none;padding:0.9rem;border-radius:3px;font-weight:700;letter-spacing:0.5px;font-size:0.95rem;cursor:pointer}
+form.apply-form button:hover{background:#dbc099}
+.apply .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.apply .row{grid-template-columns:1fr}}
+
+.orcall{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:0.95rem}
+.orcall a{color:var(--forest);font-weight:600;border-bottom:1px dotted var(--forest)}
+
+/* footer */
+footer{background:var(--forest-dark);color:var(--cream);padding:2.5rem 1.5rem 2rem;text-align:center}
+footer .ft-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;margin-bottom:0.4rem;color:var(--gold)}
+footer .ft-line{font-size:0.85rem;opacity:0.8;margin-bottom:0.3rem}
+footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1px;text-transform:uppercase;margin-top:1.4rem}
+
+.ribbon{background:var(--gold);color:var(--forest-dark);padding:0.55rem 1.5rem;text-align:center;font-size:0.82rem;font-weight:600}
+
+@media(max-width:500px){
+  .hero{padding:2.5rem 1rem 2rem}
+  .role{padding:2.5rem 1rem}
+  .benefits,.routes,.apply{padding:2.5rem 1rem}
+}
+</style>
+</head>
+<body>
+
+<div class="ribbon">
+  Always hiring · Paid on time, every time · Home every night
+</div>
+
+<header class="topbar">
+  <a href="index.html" class="brand">
+    <div class="brand-mark"><img src="images/logo/ycm_logo.svg" alt="Yamhill County Mushrooms logo"></div>
+    <div>
+      <div class="brand-name">Yamhill County Mushrooms</div>
+      <div class="brand-sub">Est. 1985 · Willamette Valley</div>
+    </div>
+  </a>
+  <nav class="topnav">
+    <a href="index.html#story">Our Farm</a>
+    <a href="index.html#products">Mushrooms</a>
+    <a href="index.html#buyers">Chefs &amp; Buyers</a>
+    <a href="careers.html" class="active">Careers</a>
+  </nav>
+  <a href="#apply" class="cta">Apply</a>
+</header>
+
+<section class="hero">
+  <div class="kicker">Careers at YCM</div>
+  <h1>Straight work. <em>Paid on time.</em><br>Home for dinner.</h1>
+  <p class="lede">We're a family-owned organic mushroom farm in Yamhill. We've been here for 40 years and we're hiring because we're always hiring. Here's what the job actually looks like.</p>
+</section>
+
+<div class="honest">
+  <div class="inner">
+    <h2>Let's be straight with you.</h2>
+    <p>Before you read the job descriptions, here's what's real about working here:</p>
+    <ul>
+      <li>Mornings start early. Picking shifts start before sunrise.</li>
+      <li class="neg">The farm is stinky. We make compost on-site — that's why the mushrooms taste like they do. You get used to it in about three days. Anyone who says otherwise is selling something.</li>
+      <li class="neg">Our delivery trucks are older. Manual transmission. If you can't drive stick, we'll either teach you or you're on a different crew.</li>
+      <li>Work is consistent year-round. Mushrooms grow when the farm tells them to — there's no slow season where we send people home.</li>
+      <li>We pay on time. Every time. Ask anyone who's worked here.</li>
+      <li>You're home every night. All routes out-and-back same day.</li>
+      <li>Profit-share for full-time employees who stay.</li>
+      <li>Health insurance after your probation period.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ROLE: PICKERS -->
+<section class="role" id="pickers">
+  <div class="inner">
+    <div class="side">
+      <div class="kicker">Open · full-time &amp; part-time</div>
+      <h2>Pickers</h2>
+      <p class="subtitle">General farm labor. The job that puts the mushrooms on the plate.</p>
+    </div>
+    <div class="body">
+      <h3>What you'd do</h3>
+      <ul>
+        <li>Harvest mushrooms from the growing beds by hand at the right stage — too early and they're small, too late and the flush moves on</li>
+        <li>Sort, grade, and crate as you pick — A-grade for the table, B-grade for processing, culls for compost</li>
+        <li>Keep accurate counts on the daily harvest log (we'll train you on the form)</li>
+        <li>Rotate between rooms as the crop cycle dictates — different beds flush on different days</li>
+        <li>Keep the picking rooms clean. Sanitation is how the certifications stay clean.</li>
+      </ul>
+
+      <h3>Who fits</h3>
+      <ul>
+        <li>Comfortable on your feet for a full shift, bending, reaching, climbing short ladders</li>
+        <li>Reliable — shows up on the schedule we give you</li>
+        <li>Careful hands — fresh crimini bruise if you grip them wrong, we'll show you</li>
+        <li>Good with a team. Pickers work in close quarters.</li>
+        <li>No experience required. We train. Many of our best pickers started with zero farm background.</li>
+      </ul>
+
+      <h3>Schedule</h3>
+      <ul>
+        <li>Full-time: starts around 5-6am, typical shift 8-10 hours. Extended hours during winter when all rooms are producing.</li>
+        <li>Part-time &amp; seasonal: flexible shifts. Good first job for high-schoolers (Yamhill-Carlton High School is within 5 miles), retirees looking for supplemental income, or anyone wanting consistent shorter weeks.</li>
+      </ul>
+
+      <h3>Pay</h3>
+      <p>Hourly starting wage depending on experience. Annual raises. Profit share for full-time employees once past probation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROLE: DRIVERS -->
+<section class="role" id="drivers">
+  <div class="inner">
+    <div class="side">
+      <div class="kicker">Open · full-time</div>
+      <h2>Delivery Drivers</h2>
+      <p class="subtitle">Refrigerated routes. Yamhill out to Portland and Vancouver. Home every night.</p>
+    </div>
+    <div class="body">
+      <h3>Required</h3>
+      <div class="req-flag">
+        <div class="rf-title">License requirement</div>
+        One of the following:
+        <ul style="margin-top:0.4rem">
+          <li>Valid Class A or Class B CDL (preferred)</li>
+          <li>Clean driving record + ability to obtain a farm endorsement (we help with this)</li>
+          <li>Regular Oregon license + insurable driving record + you can drive a manual transmission</li>
+        </ul>
+        If you're close on any of these, talk to us. We'd rather train the right person than hire the wrong one.
+      </div>
+
+      <h3>What you'd do</h3>
+      <ul>
+        <li>Start at the farm early-morning, load pallets of case-packed mushrooms onto your truck</li>
+        <li>Run your route: typically 4-8 stops between Yamhill and Portland/Vancouver</li>
+        <li>Hand-off paperwork at each stop — some restaurants want a paper invoice signed, some use electronic</li>
+        <li>Keep the reefer unit running within temp spec (we'll show you)</li>
+        <li>Back to the farm end of day. Home for dinner.</li>
+      </ul>
+
+      <h3>Trucks</h3>
+      <ul>
+        <li>Older fleet. Honest working vehicles. We maintain them, they run, they don't have lane-keep assist.</li>
+        <li><strong>Manual transmission.</strong> If you can't drive stick, we'll either teach you or put you on a different role.</li>
+        <li>Refrigerated box trucks with roll-up doors. Pallet jack in the truck.</li>
+      </ul>
+
+      <h3>Routes</h3>
+      <div class="route-grid">
+        <div class="route-card">
+          <h3>Yamhill → Portland proper</h3>
+          <p>Most days. Urban routes mostly concentrated near the I-205 corridor and the Highway 214 (OR-214) intersection area — a wholesale food complex where Aloha Produce and several other distributors are co-located. One warehouse run handles multiple customers.</p>
+        </div>
+        <div class="route-card">
+          <h3>Yamhill → Vancouver WA</h3>
+          <p>2-3 days/week across the Columbia to Clark County deliveries. Short bridge hop, not an overnight trip. Home same day.</p>
+        </div>
+      </div>
+
+      <h3>Schedule</h3>
+      <ul>
+        <li>Start 4-6am depending on the route</li>
+        <li>Home by late afternoon or early evening on almost every run</li>
+        <li>Consistent weekly schedule — you'll know your route days in advance</li>
+      </ul>
+
+      <h3>Pay</h3>
+      <p>Hourly or mileage-based depending on the route. Profit share for full-time drivers past probation. Safe-driving incentive bonus.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROLE: SEASONAL / STUDENTS -->
+<section class="role" id="seasonal">
+  <div class="inner">
+    <div class="side">
+      <div class="kicker">Open · seasonal &amp; part-time</div>
+      <h2>Seasonal &amp; Student Help</h2>
+      <p class="subtitle">Good first-job work. Close to home. Honest shifts.</p>
+    </div>
+    <div class="body">
+      <p>Every summer and during the busier holiday periods we bring on extra hands — usually pickers, sometimes packing-line help. If you're a Yamhill-Carlton High School student (or any local student), we're within walking distance if you've got a bike.</p>
+      <h3>Why this is a real first job</h3>
+      <ul>
+        <li>Consistent shifts you can plan around school/sports</li>
+        <li>You actually get paid on time — on a real W-2</li>
+        <li>You learn what a real workplace feels like — show up on time, do the job, go home</li>
+        <li>We know most of our seasonal picks will move on; we're not trying to trap you in farm work</li>
+        <li>References we write for you are honest and detailed — tells a future employer something real</li>
+      </ul>
+      <h3>Parents: what to expect</h3>
+      <ul>
+        <li>Safe environment. Indoor climate-controlled work (not pesticide/chemical exposure)</li>
+        <li>Foreman supervision at all times</li>
+        <li>Predictable schedule</li>
+        <li>Respect for school + sports schedules</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="inner">
+    <h2>Benefits</h2>
+    <p class="lede">Nothing fancy. Real.</p>
+    <div class="ben-grid">
+      <div class="ben">
+        <span class="pill">Pay</span>
+        <h3>Paid on time, every time</h3>
+        <p>Weekly or biweekly. Direct deposit or check, your choice. We haven't missed a payroll in forty years.</p>
+      </div>
+      <div class="ben">
+        <span class="pill">After Probation</span>
+        <h3>Profit-share program</h3>
+        <p>Full-time employees past probation participate in annual profit-share. Farm does well, you do well.</p>
+      </div>
+      <div class="ben">
+        <span class="pill">After Probation</span>
+        <h3>Health insurance</h3>
+        <p>Medical coverage for full-time employees after the probation period. Family coverage available.</p>
+      </div>
+      <div class="ben">
+        <span class="pill">Always</span>
+        <h3>Home every night</h3>
+        <p>No overnight routes. No long-haul. Local deliveries out and back same day.</p>
+      </div>
+      <div class="ben">
+        <span class="pill">Year-round</span>
+        <h3>Consistent work</h3>
+        <p>Indoor growing means no slow season. Your schedule doesn't disappear when the weather changes.</p>
+      </div>
+      <div class="ben">
+        <span class="pill">Growth</span>
+        <h3>Move up or across</h3>
+        <p>Pickers who want to learn the business side — we'll teach you the packing line, the compost process, or the delivery side. Family farm, real paths.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="apply" id="apply">
+  <div class="inner">
+    <h2>Want in?</h2>
+    <p class="lede">Fill this out or call the farm directly. If we're hiring for your role, we'll get back within a couple days.</p>
+    <form class="apply-form" onsubmit="event.preventDefault();alert('Form submission goes to orders@ycmushrooms.com / hiring line — wire to Formspree or SendGrid in production');">
+      <div class="row">
+        <div>
+          <label>First name *</label>
+          <input type="text" required>
+        </div>
+        <div>
+          <label>Last name *</label>
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Phone *</label>
+          <input type="tel" required placeholder="(503) ...">
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+      </div>
+      <label>Which role are you applying for? *</label>
+      <select required>
+        <option value="">Pick one...</option>
+        <option>Picker (full-time)</option>
+        <option>Picker (part-time)</option>
+        <option>Picker (seasonal / student)</option>
+        <option>Delivery Driver (full-time)</option>
+        <option>Packing-line / general labor</option>
+        <option>Something else</option>
+      </select>
+      <label>Are you 18+? (Students under 18 — we can still consider you, we just follow state labor rules on hours)</label>
+      <select>
+        <option>Yes, 18 or older</option>
+        <option>No, under 18 (please note parent/guardian contact in notes)</option>
+      </select>
+      <label>If applying for driver: license type?</label>
+      <select>
+        <option>Not applying as driver</option>
+        <option>Class A CDL</option>
+        <option>Class B CDL</option>
+        <option>Regular license + can drive manual + clean record</option>
+        <option>Regular license + would need farm endorsement help</option>
+      </select>
+      <label>Anything you want us to know?</label>
+      <textarea rows="4" placeholder="Previous experience (not required), availability, anything else..."></textarea>
+      <button type="submit">Send Application</button>
+    </form>
+    <div class="orcall">
+      Or call us: <a href="tel:+15036624131">(503) 662-4131</a> — ask for the hiring line.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-logo">Yamhill County Mushrooms, Inc.</div>
+  <div class="ft-line">7246 NW Lilac Hill Rd · Yamhill, OR 97148 · (503) 662-4131</div>
+  <div class="ft-line">Oregon Tilth Certified Organic · USDA NOP · Est. 1985</div>
+  <div class="ft-line" style="margin-top:0.8rem"><a href="index.html" style="color:var(--gold);opacity:0.9">← back to main site</a></div>
+  <div class="ft-small">© 2026 Yamhill County Mushrooms, Inc. · Grown in the Willamette Valley · Equal Opportunity Employer</div>
+</footer>
+
+</body>
+</html>

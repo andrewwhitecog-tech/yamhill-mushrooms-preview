@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YCM · Crimini 10lb Case Label — Print Mock</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+@page { size: 4in 6in; margin: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#888;padding:2rem;font-family:'Inter',sans-serif}
+.label{
+  width:4in;height:6in;
+  background:#f7f3e8;color:#1f2d20;
+  border:2px solid #2f5233;
+  padding:0.22in;
+  margin:1rem auto;
+  position:relative;
+  box-shadow:0 8px 28px rgba(0,0,0,0.35);
+  display:flex;flex-direction:column;
+}
+.label .top{border-bottom:1.5px solid #2f5233;padding-bottom:0.1in;margin-bottom:0.14in;text-align:center}
+.label .brand{font-family:'Cormorant Garamond',serif;font-weight:700;color:#2f5233;font-size:0.32in;line-height:1;letter-spacing:-0.5px}
+.label .sub{font-size:0.07in;letter-spacing:0.04in;color:#5b4a3c;text-transform:uppercase;margin-top:0.05in;font-weight:600}
+.label .mid{flex:1;display:flex;flex-direction:column;justify-content:center}
+.label .product{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:0.48in;color:#1f2d20;line-height:1;margin-bottom:0.08in;text-align:center}
+.label .variant{font-size:0.11in;letter-spacing:0.02in;text-transform:uppercase;color:#5b4a3c;text-align:center;margin-bottom:0.18in;font-weight:600}
+.label .weight{background:#2f5233;color:#f7f3e8;text-align:center;padding:0.12in 0;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:0.3in;letter-spacing:0.02in;margin-bottom:0.14in}
+.label .certs{display:flex;justify-content:space-around;align-items:center;margin-bottom:0.14in}
+.label .cert{text-align:center;flex:1}
+.label .cert .badge{
+  width:0.56in;height:0.56in;border-radius:50%;
+  background:#2f5233;color:#f7f3e8;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-weight:700;font-size:0.14in;line-height:1;
+  margin:0 auto 0.04in;
+  border:2px solid #d4a574;
+}
+.label .cert .cert-label{font-size:0.06in;letter-spacing:0.02in;text-transform:uppercase;color:#5b4a3c;font-weight:600}
+.label .bot{border-top:1.5px solid #2f5233;padding-top:0.1in;font-family:'JetBrains Mono',monospace;font-size:0.08in;line-height:1.35;color:#2a2a2a}
+.label .bot .row{display:flex;justify-content:space-between;margin-bottom:0.02in}
+.label .bot .addr{text-align:center;font-size:0.065in;margin-top:0.06in;color:#5b4a3c;letter-spacing:0.015in}
+.barcode{width:100%;height:0.28in;background:
+  repeating-linear-gradient(90deg,#1f2d20 0,#1f2d20 1.2px,transparent 1.2px,transparent 3px),
+  repeating-linear-gradient(90deg,#1f2d20 0,#1f2d20 2px,transparent 2px,transparent 4.5px);
+  margin:0.06in 0 0.02in;
+}
+.barcode-label{text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.07in;letter-spacing:0.04in}
+h2.caption{max-width:4in;margin:1rem auto 2rem;color:#eee;font-family:'Inter',sans-serif;font-size:0.78rem;text-align:center;font-weight:500}
+</style>
+</head>
+<body>
+
+<h2 class="caption">SAMPLE — 4"×6" case label · crimini 10lb wholesale · dummy lot code / run ID</h2>
+<div class="label">
+  <div class="top">
+    <div class="brand">YAMHILL COUNTY<br>MUSHROOMS</div>
+    <div class="sub">Est. 1985 · Willamette Valley · Oregon</div>
+  </div>
+
+  <div class="mid">
+    <div class="product">Crimini</div>
+    <div class="variant">Whole · Fresh</div>
+    <div class="weight">10 LB · 4.54 KG</div>
+
+    <div class="certs">
+      <div class="cert">
+        <div class="badge">USDA<br>ORGANIC</div>
+        <div class="cert-label">NOP Certified</div>
+      </div>
+      <div class="cert">
+        <div class="badge" style="background:#d4a574;color:#1f2d20">OR<br>TILTH</div>
+        <div class="cert-label">OT-011161</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bot">
+    <div class="row"><span>LOT:</span><span>YCM-20260416-C-42</span></div>
+    <div class="row"><span>PACKED:</span><span>2026-04-16</span></div>
+    <div class="row"><span>USE BY:</span><span>2026-04-30</span></div>
+    <div class="row"><span>STORE:</span><span>34-38°F · do not freeze</span></div>
+    <div class="barcode"></div>
+    <div class="barcode-label">8 59472 00010 4</div>
+    <div class="addr">7246 NW Lilac Hill Rd · Yamhill OR 97148 · (503) 662-4131 · ycmushrooms.com</div>
+  </div>
+</div>
+
+<h2 class="caption">Sample shows: brand mark · product + variant · net weight · USDA Organic + Oregon Tilth cert badges · machine-generated lot code · pack/use-by dates · GS1 barcode · origin address</h2>
+
+</body>
+</html>
