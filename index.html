@@ -3,563 +3,1361 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yamhill County Mushrooms — Oregon Grown Since 1985</title>
-<meta name="description" content="A family-owned organic mushroom farm in Oregon's Willamette Valley. Crimini, portabella, and whites. Certified organic since 2006. Supplying Sysco, Pastini, and chefs across the Northwest.">
+<title>Yamhill County Mushrooms — Oregon Grown Since 1985 · Willamette Valley</title>
+<meta name="description" content="Three-generation family farm in Oregon's Willamette Valley cultivating Oregon Tilth certified organic crimini & portabella, plus fresh whites and specialties. 40+ years supplying Sysco, New Seasons, Pastini, and Northwest chefs.">
 <meta property="og:title" content="Yamhill County Mushrooms — Oregon Grown Since 1985">
-<meta property="og:description" content="Family farm. Willamette Valley. Oregon Tilth organic. 40 years of mushrooms.">
+<meta property="og:description" content="Family farm. Willamette Valley. Oregon Tilth certified organic crimini & portabella. 40 years of commercial mushroom craft.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://andrewwhitecog-tech.github.io/yamhill-mushrooms-preview/">
 <meta property="og:image" content="images/real/ycm_18_29371878580_f857d9e1e8_h.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "@id":"https://www.ycmushrooms.com",
-  "name":"Yamhill County Mushrooms, Inc.",
-  "founder":"Bill Darm","foundingDate":"1985",
-  "description":"Family-owned organic mushroom farm in Oregon's Willamette Valley. Oregon Tilth certified since 2006.",
-  "address":{"@type":"PostalAddress","streetAddress":"7246 NW Lilac Hill Rd","addressLocality":"Yamhill","addressRegion":"OR","postalCode":"97148","addressCountry":"US"},
-  "telephone":"+1-503-662-4131","url":"https://www.ycmushrooms.com",
-  "hasCredential":"Oregon Tilth Certified Organic (OT-011161)"
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.ycmushrooms.com",
+  "name": "Yamhill County Mushrooms, Inc.",
+  "founder": "Bill Darm",
+  "foundingDate": "1985",
+  "description": "Three-generation family-owned commercial mushroom farm in Oregon's Willamette Valley. Oregon Tilth certified organic since 2006 (OT-011161).",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "7246 NW Lilac Hill Rd",
+    "addressLocality": "Yamhill",
+    "addressRegion": "OR",
+    "postalCode": "97148",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.3621,
+    "longitude": -123.1895
+  },
+  "telephone": "+1-503-662-4131",
+  "email": "orders@ycmushrooms.com",
+  "url": "https://www.ycmushrooms.com",
+  "hasCredential": "Oregon Tilth Certified Organic (Client ID OT-011161, USDA NOP)",
+  "areaServed": "Pacific Northwest, Oregon, Washington, Northern California",
+  "makesOffer": [
+    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Organic Crimini Mushrooms", "category": "Produce"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Organic Portabella Mushrooms", "category": "Produce"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Fresh White Mushrooms", "category": "Produce"}}
+  ]
 }
 </script>
 <style>
 :root{
-  /* actual YCM brand palette — sampled from production boxes */
-  --ycm-purple:#4B2673;       /* deep royal purple, primary */
-  --ycm-purple-dark:#341650;  /* rich shadow */
-  --ycm-purple-light:#6b3ea0; /* hover / accent */
-  --cream:#f8f4ea;
-  --cream-2:#ede6d3;
-  --cardboard:#c7a574;        /* unprinted box edge */
-  --ink:#1f1a28;
-  --muted:#6b6458;
-  --line:rgba(75,38,115,0.14);
-  --green:#5a7a3c;            /* willamette green accent */
+  --ycm-purple: #4B2673;       /* Deep royal purple, sampled from production boxes */
+  --ycm-purple-dark: #341650;  /* Rich shadow purple */
+  --ycm-purple-light: #6b3ea0; /* Hover & accent purple */
+  --cream: #f8f4ea;            /* Parchment base */
+  --cream-2: #ede6d3;          /* Secondary parchment */
+  --cream-card: #ffffff;       /* Pure white card surface */
+  --cardboard: #c7a574;        /* Unprinted kraft box edge */
+  --cardboard-dark: #a5814e;   /* Darker kraft */
+  --ink: #1f1a28;              /* Deep ink */
+  --muted: #6b6458;            /* Warm muted text */
+  --line: rgba(75,38,115,0.14);
+  --line-strong: rgba(75,38,115,0.28);
+  --green: #4e7330;            /* Willamette agriculture green */
+  --green-bg: #edf5e6;
+  --gold: #d4a574;
+  --shadow-sm: 0 2px 8px rgba(31,26,40,0.06);
+  --shadow-md: 0 8px 24px rgba(75,38,115,0.10);
+  --shadow-lg: 0 16px 40px rgba(75,38,115,0.18);
+  --radius: 8px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 ::selection{background:var(--ycm-purple);color:var(--cream)}
-a{color:var(--ycm-purple);text-decoration:none;transition:color .15s}
+a{color:var(--ycm-purple);text-decoration:none;transition:color .18s ease}
 a:hover{color:var(--ycm-purple-dark);text-decoration:underline}
 img{max-width:100%;height:auto;display:block}
 
-header.topbar{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid var(--line);padding:0.7rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.brand{display:flex;align-items:center;gap:1rem;text-decoration:none}
+/* Header & Ribbons */
+.ribbon{background:var(--cardboard);color:var(--ycm-purple-dark);padding:0.6rem 1.5rem;text-align:center;font-size:0.82rem;font-weight:700;letter-spacing:0.5px}
+.ribbon a{color:var(--ycm-purple-dark);text-decoration:underline;font-weight:800}
+
+header.topbar{position:sticky;top:0;z-index:90;background:rgba(248,244,234,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:0.65rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.brand{display:flex;align-items:center;gap:0.9rem;text-decoration:none}
 .brand:hover{text-decoration:none}
-.brand-mark{width:88px;height:88px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand-mark{width:76px;height:76px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .brand-mark img{width:100%;height:100%;object-fit:contain;display:block}
-.brand-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.35rem;line-height:1.05;color:var(--ycm-purple)}
-.brand-sub{font-size:0.72rem;color:var(--muted);letter-spacing:2.5px;text-transform:uppercase;margin-top:0.2rem}
-@media(max-width:760px){.brand-mark{width:64px;height:64px}.brand-name{font-size:1.1rem}}
-nav.topnav{display:flex;gap:1.6rem;font-size:0.88rem;font-weight:500}
-nav.topnav a{color:var(--ink)}
+.brand-name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.35rem;line-height:1.05;color:var(--ycm-purple);letter-spacing:-0.2px}
+.brand-sub{font-size:0.72rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:0.25rem;font-weight:600}
+
+nav.topnav{display:flex;gap:1.4rem;font-size:0.88rem;font-weight:600;align-items:center}
+nav.topnav a{color:var(--ink);padding:0.3rem 0;position:relative}
 nav.topnav a:hover{color:var(--ycm-purple);text-decoration:none}
-.cta{background:var(--ycm-purple);color:var(--cream);padding:0.55rem 1.1rem;border-radius:4px;font-weight:600;font-size:0.85rem;letter-spacing:0.5px}
-.cta:hover{background:var(--ycm-purple-dark);color:var(--cream);text-decoration:none}
-@media(max-width:760px){nav.topnav{display:none}}
+nav.topnav a:hover::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--ycm-purple)}
 
-.hero-banner{position:relative;overflow:hidden;background:#0f0b14}
-.hero-banner img{width:100%;height:auto;display:block;aspect-ratio:21/9;object-fit:cover;object-position:center;opacity:0.95}
-.hero-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--cream);text-align:center;padding:1.5rem;background:linear-gradient(180deg,rgba(52,22,80,0.35) 0%,rgba(15,11,20,0.55) 100%)}
-.hero-overlay .hero-logo{width:clamp(140px,18vw,220px);height:clamp(140px,18vw,220px);margin-bottom:1.1rem;filter:drop-shadow(0 4px 18px rgba(0,0,0,0.45))}
-.hero-overlay .kicker{font-size:0.72rem;letter-spacing:5px;color:var(--cardboard);text-transform:uppercase;font-weight:600;margin-bottom:0.8rem}
-.hero-overlay h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.2rem,7vw,5.4rem);line-height:1;margin-bottom:0.9rem;text-shadow:0 2px 20px rgba(0,0,0,0.3)}
+.header-actions{display:flex;align-items:center;gap:0.75rem}
+.btn-inquiry-pill{background:var(--ycm-purple);color:var(--cream);padding:0.55rem 1.15rem;border-radius:6px;font-weight:600;font-size:0.84rem;letter-spacing:0.4px;display:inline-flex;align-items:center;gap:0.45rem;border:none;cursor:pointer;transition:all .18s ease}
+.btn-inquiry-pill:hover{background:var(--ycm-purple-dark);color:#fff;text-decoration:none;transform:translateY(-1px)}
+.inquiry-count-badge{background:var(--cardboard);color:var(--ycm-purple-dark);font-size:0.7rem;font-weight:800;border-radius:10px;padding:1px 6px;min-width:18px;text-align:center}
+
+.menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:0.5rem;color:var(--ycm-purple);cursor:pointer}
+.menu-toggle svg{width:22px;height:22px;display:block}
+
+/* Mobile Drawer */
+.mobile-drawer{display:none;position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--cream);z-index:85;padding:1.5rem;overflow-y:auto;border-bottom:2px solid var(--ycm-purple)}
+.mobile-drawer.open{display:block}
+.mobile-drawer nav{display:flex;flex-direction:column;gap:1.1rem;font-size:1.15rem;font-family:'Cormorant Garamond',serif;font-weight:600}
+.mobile-drawer nav a{color:var(--ink);padding:0.5rem 0;border-bottom:1px solid var(--line)}
+.mobile-drawer .drawer-contact{margin-top:2rem;padding-top:1.5rem;border-top:2px solid var(--line);font-size:0.9rem;color:var(--muted)}
+
+@media(max-width:960px){
+  nav.topnav{display:none}
+  .menu-toggle{display:block}
+  .brand-mark{width:60px;height:60px}
+  .brand-name{font-size:1.15rem}
+}
+
+/* Hero Banner */
+.hero-banner{position:relative;overflow:hidden;background:#0d0812}
+.hero-banner img.hero-bg{width:100%;height:auto;display:block;aspect-ratio:21/9;object-fit:cover;object-position:center;opacity:0.92;min-height:380px}
+.hero-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--cream);text-align:center;padding:2rem 1.5rem;background:linear-gradient(180deg,rgba(52,22,80,0.45) 0%,rgba(13,8,18,0.72) 100%)}
+.hero-overlay .hero-emblem{width:clamp(120px,16vw,190px);height:clamp(120px,16vw,190px);margin-bottom:1rem;filter:drop-shadow(0 6px 20px rgba(0,0,0,0.55))}
+.hero-overlay .kicker{font-size:0.76rem;letter-spacing:4.5px;color:var(--cardboard);text-transform:uppercase;font-weight:700;margin-bottom:0.75rem}
+.hero-overlay h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.3rem,6.8vw,5.2rem);line-height:1.02;margin-bottom:0.9rem;text-shadow:0 3px 25px rgba(0,0,0,0.45)}
 .hero-overlay h1 em{font-style:italic;color:var(--cardboard)}
-.hero-overlay .lede{font-size:1.05rem;max-width:500px;opacity:0.92}
-.hero-overlay .cta-row{margin-top:1.5rem;display:flex;gap:0.8rem;flex-wrap:wrap;justify-content:center}
-.btn{display:inline-block;padding:0.72rem 1.35rem;border-radius:4px;font-weight:600;font-size:0.88rem;letter-spacing:0.4px}
-.btn-primary{background:var(--cardboard);color:var(--ycm-purple-dark)}
-.btn-primary:hover{background:var(--cream);color:var(--ycm-purple-dark);text-decoration:none}
+.hero-overlay .lede{font-size:1.08rem;max-width:580px;opacity:0.94;line-height:1.5;margin-bottom:1.6rem}
+.hero-overlay .cta-row{display:flex;gap:0.9rem;flex-wrap:wrap;justify-content:center}
+
+.btn{display:inline-block;padding:0.75rem 1.45rem;border-radius:5px;font-weight:600;font-size:0.9rem;letter-spacing:0.3px;cursor:pointer;transition:all .18s ease}
+.btn-primary{background:var(--cardboard);color:var(--ycm-purple-dark);border:1.5px solid var(--cardboard)}
+.btn-primary:hover{background:var(--cream);color:var(--ycm-purple-dark);text-decoration:none;border-color:var(--cream);transform:translateY(-1px)}
 .btn-ghost{border:1.5px solid var(--cream);color:var(--cream)}
-.btn-ghost:hover{background:var(--cream);color:var(--ycm-purple-dark);text-decoration:none}
+.btn-ghost:hover{background:var(--cream);color:var(--ycm-purple-dark);text-decoration:none;transform:translateY(-1px)}
+.btn-purple{background:var(--ycm-purple);color:var(--cream);border:1.5px solid var(--ycm-purple)}
+.btn-purple:hover{background:var(--ycm-purple-dark);color:#fff;text-decoration:none;border-color:var(--ycm-purple-dark)}
 
-.stats{background:var(--ycm-purple);color:var(--cream);padding:2.4rem 1.5rem}
-.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1.4rem;text-align:center}
-.stat .n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--cardboard);line-height:1}
-.stat .l{font-size:0.72rem;letter-spacing:2.5px;text-transform:uppercase;opacity:0.88;margin-top:0.4rem}
+/* Stats Strip */
+.stats{background:var(--ycm-purple);color:var(--cream);padding:2.5rem 1.5rem}
+.stats-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.6rem;text-align:center}
+.stat .n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;color:var(--cardboard);line-height:1}
+.stat .l{font-size:0.72rem;letter-spacing:2.2px;text-transform:uppercase;opacity:0.9;margin-top:0.45rem;font-weight:600}
+.stat a.stat-link{color:var(--cardboard);border-bottom:1px dotted var(--cardboard)}
+.stat a.stat-link:hover{color:#fff;text-decoration:none}
 
-section{padding:4rem 1.5rem}
-section > .inner{max-width:1100px;margin:0 auto}
-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--ycm-purple);margin-bottom:0.3rem;font-weight:500}
-section .section-kicker{font-size:0.7rem;letter-spacing:3px;color:var(--cardboard);text-transform:uppercase;font-weight:700;margin-bottom:0.5rem}
-section .section-lede{color:var(--muted);font-size:1rem;max-width:580px;margin-bottom:1.8rem}
+/* Section Foundation */
+section{padding:4.5rem 1.5rem}
+section > .inner{max-width:1140px;margin:0 auto}
+section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.75rem);color:var(--ycm-purple);margin-bottom:0.4rem;font-weight:600;line-height:1.15}
+section .section-kicker{font-size:0.72rem;letter-spacing:3px;color:var(--cardboard-dark);text-transform:uppercase;font-weight:800;margin-bottom:0.4rem}
+section .section-lede{color:var(--muted);font-size:1.02rem;max-width:620px;margin-bottom:2rem;line-height:1.55}
 
-.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
-@media(max-width:760px){.story-grid{grid-template-columns:1fr}}
-.story-text p{margin-bottom:0.8rem}
-.story-photos{display:grid;grid-template-columns:1fr;grid-template-rows:1.15fr 0.85fr;gap:0.7rem;height:100%}
-.story-photo{border-radius:4px;overflow:hidden;background:var(--ycm-purple-dark)}
-.story-photo img{width:100%;height:100%;object-fit:cover;display:block;min-height:220px}
-
-/* full-bleed farm panorama */
-.farm-banner{position:relative;background:#0f0b14;overflow:hidden}
+/* Farm Panorama Banner */
+.farm-banner{position:relative;background:#0d0812;overflow:hidden}
 .farm-banner img{width:100%;display:block;aspect-ratio:24/7;object-fit:cover;object-position:center 40%}
-.farm-banner .caption{position:absolute;left:2rem;bottom:1.2rem;color:var(--cream);text-shadow:0 2px 14px rgba(0,0,0,0.6);font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;font-weight:600}
-@media(max-width:600px){.farm-banner img{aspect-ratio:16/9}}
+.farm-banner .caption{position:absolute;left:2rem;bottom:1.2rem;color:var(--cream);text-shadow:0 2px 14px rgba(0,0,0,0.7);font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;background:rgba(52,22,80,0.6);padding:0.4rem 0.85rem;border-radius:4px;backdrop-filter:blur(4px)}
+@media(max-width:640px){.farm-banner img{aspect-ratio:16/9}}
 
-/* where-to-buy top image */
-.where-hero{position:relative;border-radius:6px;overflow:hidden;margin-top:1.5rem;margin-bottom:1.5rem;aspect-ratio:21/8;background:#1a1a1a}
-.where-hero img{width:100%;height:100%;object-fit:cover;display:block}
-.where-hero .caption{position:absolute;left:1.2rem;bottom:0.9rem;color:var(--cream);text-shadow:0 2px 12px rgba(0,0,0,0.7);font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;background:rgba(75,38,115,0.55);padding:0.4rem 0.8rem;border-radius:3px;backdrop-filter:blur(4px)}
-.signoff{font-family:'Caveat',cursive;font-size:1.4rem;color:var(--ycm-purple);margin-top:1rem}
+/* Our Story Grid */
+.story-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:3rem;align-items:center}
+@media(max-width:840px){.story-grid{grid-template-columns:1fr;gap:2rem}}
+.story-text p{margin-bottom:0.95rem;font-size:1.02rem;color:var(--ink);line-height:1.65}
+.story-text strong{color:var(--ycm-purple)}
+.split-op-box{background:var(--cream-2);border-left:4px solid var(--green);padding:1rem 1.25rem;border-radius:0 6px 6px 0;margin:1.4rem 0}
+.split-op-box h4{color:var(--green);font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;margin-bottom:0.3rem}
+.split-op-box p{font-size:0.92rem;color:var(--muted);margin:0;line-height:1.45}
+.signoff{font-family:'Caveat',cursive;font-size:1.55rem;color:var(--ycm-purple);margin-top:1.2rem}
 
-.products{background:var(--cream-2)}
-.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.3rem;margin-top:1.5rem}
-.product-card{background:var(--cream);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:transform .15s,box-shadow .15s}
-.product-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(75,38,115,0.12)}
-.product-photo{aspect-ratio:4/3;overflow:hidden;background:var(--ycm-purple-dark)}
-.product-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.product-body{padding:1rem 1.2rem 1.2rem}
-.product-body h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--ycm-purple);margin-bottom:0.2rem;font-weight:600}
-.product-body .sku{font-size:0.72rem;letter-spacing:1.2px;color:var(--cardboard);text-transform:uppercase;font-weight:600;margin-bottom:0.5rem}
-.product-body p{font-size:0.9rem;color:var(--muted);line-height:1.5}
-.cert-badge{display:inline-block;background:var(--ycm-purple);color:var(--cream);font-size:0.62rem;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:3px;font-weight:700;margin-top:0.6rem}
-.cert-seals{display:flex;gap:0.6rem;align-items:center;margin-top:0.65rem}
-.cert-seals img{height:38px;width:auto}
-.cert-seals .seal-label{font-size:0.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);line-height:1.2;font-weight:600}
+.story-photos{display:grid;grid-template-columns:1fr;grid-template-rows:1.15fr 0.85fr;gap:0.9rem;height:100%}
+.story-photo{border-radius:var(--radius);overflow:hidden;background:var(--ycm-purple-dark);box-shadow:var(--shadow-md);position:relative}
+.story-photo img{width:100%;height:100%;object-fit:cover;display:block;min-height:220px}
+.story-photo .photo-label{position:absolute;bottom:0.6rem;left:0.6rem;background:rgba(52,22,80,0.7);color:#fff;font-size:0.72rem;padding:3px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
 
-/* full catalog table */
-.catalog{margin-top:2.5rem}
-.catalog-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.8rem;flex-wrap:wrap;gap:0.5rem}
-.catalog-head h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ycm-purple);font-weight:600}
-.catalog-head .count{font-size:0.72rem;letter-spacing:2px;color:var(--cardboard);text-transform:uppercase;font-weight:700}
-.catalog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-.cat-group{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:1rem 1.1rem}
-.cat-group h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--ycm-purple);font-weight:600;margin-bottom:0.4rem;padding-bottom:0.3rem;border-bottom:1px solid var(--line)}
-.cat-group h4 .org-dot{display:inline-block;width:8px;height:8px;background:var(--green);border-radius:50%;margin-left:0.4rem;vertical-align:middle}
-.cat-group ul{list-style:none;padding:0;margin:0}
-.cat-group li{font-size:0.83rem;padding:0.22rem 0;color:var(--ink);line-height:1.3;display:flex;justify-content:space-between;gap:0.4rem}
-.cat-group li .sku-label{color:var(--ink)}
-.cat-group li .sku-note{font-size:0.68rem;color:var(--green);text-transform:uppercase;letter-spacing:1px;font-weight:700;white-space:nowrap}
-.org-legend{font-size:0.78rem;color:var(--muted);margin-top:1rem;padding:0.7rem 1rem;background:var(--cream);border-left:3px solid var(--green);border-radius:3px}
+/* Varieties Showcase */
+.varieties-bg{background:var(--cream-2)}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:1.8rem}
+.product-card{background:var(--cream-card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease;display:flex;flex-direction:column}
+.product-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.product-photo{aspect-ratio:4/3;overflow:hidden;background:var(--ycm-purple-dark);position:relative}
+.product-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
+.product-card:hover .product-photo img{transform:scale(1.03)}
+.product-body{padding:1.2rem;flex:1;display:flex;flex-direction:column}
+.product-body h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--ycm-purple);margin-bottom:0.25rem;font-weight:700}
+.product-body .sku{font-size:0.74rem;letter-spacing:1.2px;color:var(--cardboard-dark);text-transform:uppercase;font-weight:700;margin-bottom:0.5rem}
+.product-body p{font-size:0.92rem;color:var(--muted);line-height:1.5;margin-bottom:1rem;flex:1}
+.cert-seals{display:flex;gap:0.75rem;align-items:center;padding-top:0.8rem;border-top:1px solid var(--line)}
+.cert-seals img{height:40px;width:auto}
+.cert-seals .seal-label{font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);line-height:1.25;font-weight:700}
+.cert-seals .seal-label a{color:var(--green);text-decoration:underline}
+
+.species-note{background:var(--cream-card);border:1px solid var(--line);border-left:4px solid var(--ycm-purple);padding:1.15rem 1.4rem;margin:2rem 0;border-radius:0 var(--radius) var(--radius) 0;font-size:0.94rem;color:var(--muted);line-height:1.6}
+.species-note strong{color:var(--ycm-purple)}
+
+/* Interactive Full Catalog */
+.catalog{margin-top:3.5rem}
+.catalog-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.2rem;flex-wrap:wrap;gap:1rem}
+.catalog-head h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--ycm-purple);font-weight:700}
+.catalog-head .count{font-size:0.75rem;letter-spacing:2px;color:var(--cardboard-dark);text-transform:uppercase;font-weight:800}
+
+/* Filter Controls */
+.catalog-toolbar{display:flex;flex-wrap:wrap;gap:0.8rem;align-items:center;justify-content:space-between;margin-bottom:1.5rem;background:var(--cream-card);padding:0.9rem 1.1rem;border-radius:var(--radius);border:1px solid var(--line)}
+.filter-pills{display:flex;flex-wrap:wrap;gap:0.45rem}
+.filter-pill{background:none;border:1px solid var(--line);padding:0.4rem 0.85rem;border-radius:20px;font-size:0.78rem;font-weight:600;color:var(--ink);cursor:pointer;transition:all .15s ease}
+.filter-pill:hover{border-color:var(--ycm-purple);color:var(--ycm-purple)}
+.filter-pill.active{background:var(--ycm-purple);color:#fff;border-color:var(--ycm-purple)}
+.catalog-search{position:relative;min-width:240px;flex:1;max-width:320px}
+.catalog-search input{width:100%;padding:0.45rem 0.85rem 0.45rem 2rem;border:1px solid var(--line);border-radius:20px;font-size:0.84rem;background:#fff}
+.catalog-search svg{position:absolute;left:0.65rem;top:50%;transform:translateY(-50%);width:14px;height:14px;fill:var(--muted)}
+
+.catalog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.cat-group{background:var(--cream-card);border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem;box-shadow:var(--shadow-sm)}
+.cat-group h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--ycm-purple);font-weight:700;margin-bottom:0.6rem;padding-bottom:0.4rem;border-bottom:1.5px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.cat-group h4 .tag{font-size:0.65rem;font-family:'Inter';letter-spacing:1px;text-transform:uppercase;padding:2px 6px;border-radius:3px;font-weight:700}
+.cat-group h4 .tag.org{background:var(--green-bg);color:var(--green)}
+.cat-group h4 .tag.conv{background:var(--cream-2);color:var(--muted)}
+
+.sku-list{list-style:none;padding:0;margin:0}
+.sku-item{font-size:0.86rem;padding:0.4rem 0;color:var(--ink);line-height:1.3;display:flex;justify-content:space-between;align-items:center;border-bottom:1px dotted var(--line);gap:0.5rem}
+.sku-item:last-child{border-bottom:none}
+.sku-item.hidden{display:none}
+.sku-name{font-weight:500}
+.sku-action{display:flex;align-items:center;gap:0.4rem}
+.sku-badge{font-size:0.65rem;color:var(--green);text-transform:uppercase;letter-spacing:0.8px;font-weight:800;background:var(--green-bg);padding:1px 5px;border-radius:2px}
+.btn-add-sku{background:none;border:1px solid var(--line);color:var(--ycm-purple);border-radius:4px;padding:2px 6px;font-size:0.72rem;font-weight:700;cursor:pointer;transition:all .15s ease}
+.btn-add-sku:hover{background:var(--ycm-purple);color:#fff;border-color:var(--ycm-purple)}
+
+.org-legend{font-size:0.85rem;color:var(--muted);margin-top:1.5rem;padding:0.9rem 1.2rem;background:var(--cream-card);border-left:4px solid var(--green);border-radius:0 var(--radius) var(--radius) 0;line-height:1.5}
 .org-legend strong{color:var(--ycm-purple)}
+.org-legend a{color:var(--green);font-weight:700;text-decoration:underline}
 
-/* where to buy */
-.where-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem}
-@media(max-width:700px){.where-grid{grid-template-columns:1fr}}
-.where-col{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:1.3rem 1.4rem}
-.where-col h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--ycm-purple);font-weight:600;margin-bottom:0.6rem}
-.where-col ul{list-style:none;padding:0;margin:0}
-.where-col li{padding:0.4rem 0;border-bottom:1px dotted var(--line);font-size:0.94rem}
-.where-col li:last-child{border-bottom:none}
-.where-col li strong{color:var(--ycm-purple);font-weight:600}
-.where-col li .loc-note{font-size:0.78rem;color:var(--muted);display:block;margin-top:0.1rem}
-.partner-row{display:flex;align-items:center;gap:0.9rem;padding:0.75rem 0;border-bottom:1px dotted var(--line)}
+/* Authentic Farm Photo Gallery Lightbox */
+.gallery-section{background:var(--cream)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.9rem;margin-top:1.8rem}
+.gallery-item{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:#1a1422;cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease}
+.gallery-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item .overlay-caption{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(13,8,18,0.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:0.75rem;color:#fff;opacity:0.92;transition:opacity .2s ease}
+.gallery-item .overlay-caption .stage{font-size:0.65rem;letter-spacing:1.5px;color:var(--cardboard);text-transform:uppercase;font-weight:800}
+.gallery-item .overlay-caption .title{font-size:0.82rem;font-weight:600;line-height:1.25;margin-top:0.2rem}
+
+/* Lightbox Modal */
+.lightbox-modal{display:none;position:fixed;inset:0;background:rgba(10,5,15,0.92);z-index:100;align-items:center;justify-content:center;padding:1.5rem}
+.lightbox-modal.active{display:flex}
+.lightbox-content{max-width:1000px;width:100%;background:#1f1828;border-radius:8px;overflow:hidden;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+.lightbox-img-wrap{aspect-ratio:16/10;background:#0d0812;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lightbox-img-wrap img{max-height:80vh;width:auto;max-width:100%;object-fit:contain}
+.lightbox-desc{padding:1.2rem 1.5rem;color:var(--cream);background:#1f1828;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.lightbox-desc .caption-text{font-size:1rem;font-weight:500}
+.lightbox-desc .caption-sub{font-size:0.76rem;color:var(--cardboard);letter-spacing:1.5px;text-transform:uppercase;margin-top:0.25rem}
+.lightbox-close{position:absolute;top:12px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.8rem;width:38px;height:38px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.45);color:#fff;border:none;font-size:1.5rem;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lightbox-prev{left:12px}
+.lightbox-next{right:12px}
+
+/* Chef Pairings & Culinary */
+.chef-section{background:var(--cream-2)}
+.pairings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.5rem;margin-top:1.8rem}
+.pairing-card{background:var(--cream-card);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow-sm)}
+.pairing-card .chef-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--ycm-purple);line-height:1.45;margin-bottom:0.75rem}
+.pairing-card .chef-cite{font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--cardboard-dark);font-weight:700}
+.recipe-box{margin-top:1.1rem;padding-top:1rem;border-top:1px dotted var(--line)}
+.recipe-box h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--ink);font-weight:700;margin-bottom:0.35rem}
+.recipe-box p{font-size:0.86rem;color:var(--muted);line-height:1.45}
+
+/* Where to Buy */
+.where-hero{position:relative;border-radius:var(--radius);overflow:hidden;margin-top:1.5rem;margin-bottom:1.8rem;aspect-ratio:21/8;background:#1a1a1a}
+.where-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.where-hero .caption{position:absolute;left:1.5rem;bottom:1rem;color:var(--cream);text-shadow:0 2px 12px rgba(0,0,0,0.7);font-size:0.8rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;background:rgba(75,38,115,0.65);padding:0.45rem 0.95rem;border-radius:4px;backdrop-filter:blur(4px)}
+
+.where-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.5rem}
+@media(max-width:760px){.where-grid{grid-template-columns:1fr}}
+.where-col{background:var(--cream-card);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.7rem;box-shadow:var(--shadow-sm)}
+.where-col h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--ycm-purple);font-weight:700;margin-bottom:0.8rem;border-bottom:1.5px solid var(--line);padding-bottom:0.4rem}
+
+.partner-row{display:flex;align-items:center;gap:1.1rem;padding:0.85rem 0;border-bottom:1px dotted var(--line)}
 .partner-row:last-child{border-bottom:none}
-.partner-logo{flex:0 0 90px;height:48px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:4px;padding:6px;border:1px solid var(--line)}
+.partner-logo{flex:0 0 96px;height:52px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:6px;padding:8px;border:1px solid var(--line)}
 .partner-logo img{max-width:100%;max-height:100%;object-fit:contain;display:block}
 .partner-info{flex:1;min-width:0}
-.partner-info strong{color:var(--ycm-purple);font-weight:600;font-size:0.98rem;display:block;line-height:1.2}
-.partner-info .loc-note{font-size:0.78rem;color:var(--muted);margin-top:0.15rem}
-.partner-row.no-logo{padding-left:0.6rem;border-left:3px solid var(--cardboard);background:rgba(199,165,116,0.08);border-radius:0 4px 4px 0}
-.partner-row.no-logo .partner-logo{display:none}
+.partner-info strong{color:var(--ycm-purple);font-weight:700;font-size:1.02rem;display:block;line-height:1.2}
+.partner-info .loc-note{font-size:0.82rem;color:var(--muted);margin-top:0.2rem}
+.partner-row.direct-chef{border-left:3px solid var(--cardboard);background:rgba(199,165,116,0.08);padding-left:0.8rem;border-radius:0 4px 4px 0}
 
-/* species note */
-.species-note{background:var(--cream);border:1px solid var(--line);border-left:3px solid var(--ycm-purple);padding:1rem 1.2rem;margin:1.5rem 0;font-size:0.92rem;color:var(--muted);line-height:1.55}
-.species-note em{color:var(--ycm-purple);font-style:italic;font-weight:600}
+/* Wholesale Request Builder & Order Desk */
+.inquiry-section{background:var(--cream);border-top:1px solid var(--line)}
+.inquiry-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:2.5rem;margin-top:1.5rem;align-items:start}
+@media(max-width:860px){.inquiry-grid{grid-template-columns:1fr}}
 
-.buyers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-top:1.5rem}
-.buyer-card{background:var(--cream);padding:1.1rem 1rem;border:1px solid var(--line);border-radius:6px;text-align:center}
-.buyer-card .b-name{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--ycm-purple);font-size:1.08rem}
-.buyer-card .b-role{font-size:0.76rem;letter-spacing:0.5px;color:var(--muted);margin-top:0.2rem}
+.selected-items-panel{background:var(--cream-card);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;box-shadow:var(--shadow-sm)}
+.selected-items-panel h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--ycm-purple);font-weight:700;margin-bottom:0.6rem}
+.selected-items-panel p.sub{font-size:0.85rem;color:var(--muted);margin-bottom:1rem}
+.basket-list{list-style:none;margin:0;padding:0;max-height:280px;overflow-y:auto;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:1rem}
+.basket-item{display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px dotted var(--line);font-size:0.88rem}
+.basket-item:last-child{border-bottom:none}
+.basket-qty{display:flex;align-items:center;gap:0.4rem}
+.basket-qty button{background:var(--cream-2);border:1px solid var(--line);border-radius:3px;width:24px;height:24px;font-weight:700;cursor:pointer}
+.basket-empty{padding:1.5rem;text-align:center;color:var(--muted);font-size:0.9rem;font-style:italic}
 
-.quote-block{background:var(--ycm-purple);color:var(--cream);padding:3.5rem 1.5rem;text-align:center;position:relative;overflow:hidden}
-.quote-block::before{content:'"';position:absolute;top:-40px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:18rem;color:var(--ycm-purple-light);opacity:0.25;line-height:1;font-weight:700}
-.quote-block blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.5rem,3vw,2.1rem);max-width:760px;margin:0 auto 1rem;line-height:1.3;font-weight:500;position:relative;z-index:2}
-.quote-block cite{font-style:normal;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--cardboard);font-weight:600;position:relative;z-index:2}
-
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:1.5rem}
-@media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
-.contact-info .row{margin-bottom:0.95rem}
-.contact-info .label{font-size:0.7rem;letter-spacing:2px;color:var(--cardboard);text-transform:uppercase;font-weight:700;margin-bottom:0.2rem}
-.contact-info .value{font-size:1rem;color:var(--ink)}
-.contact-info .value a{border-bottom:1px dotted var(--ycm-purple)}
-.map-wrap{aspect-ratio:4/3;border-radius:6px;overflow:hidden;border:1px solid var(--line);margin-top:1.2rem}
-.map-wrap iframe{width:100%;height:100%;border:0;display:block}
-
-form.buyer-form{background:var(--cream);padding:1.6rem;border:1px solid var(--line);border-radius:6px}
-form.buyer-form label{display:block;font-size:0.72rem;letter-spacing:1.5px;color:var(--cardboard);text-transform:uppercase;margin:0.85rem 0 0.3rem;font-weight:700}
+form.buyer-form{background:var(--cream-card);padding:1.8rem;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+form.buyer-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){form.buyer-form .form-row{grid-template-columns:1fr}}
+form.buyer-form label{display:block;font-size:0.74rem;letter-spacing:1.5px;color:var(--cardboard-dark);text-transform:uppercase;margin:0.8rem 0 0.35rem;font-weight:800}
 form.buyer-form label:first-child{margin-top:0}
-form.buyer-form input,form.buyer-form textarea,form.buyer-form select{width:100%;padding:0.6rem 0.75rem;border:1px solid var(--line);border-radius:3px;background:var(--cream);font-family:inherit;font-size:0.95rem;color:var(--ink)}
-form.buyer-form input:focus,form.buyer-form textarea:focus{outline:none;border-color:var(--ycm-purple)}
-form.buyer-form button{margin-top:1.1rem;width:100%;background:var(--ycm-purple);color:var(--cream);border:none;padding:0.8rem;border-radius:3px;font-weight:700;font-size:0.9rem;letter-spacing:0.4px;cursor:pointer}
-form.buyer-form button:hover{background:var(--ycm-purple-dark)}
+form.buyer-form input,form.buyer-form textarea,form.buyer-form select{width:100%;padding:0.65rem 0.85rem;border:1px solid var(--line);border-radius:4px;background:#fff;font-family:inherit;font-size:0.94rem;color:var(--ink)}
+form.buyer-form input:focus,form.buyer-form textarea:focus,form.buyer-form select:focus{outline:none;border-color:var(--ycm-purple);box-shadow:0 0 0 3px rgba(75,38,115,0.12)}
+form.buyer-form button[type="submit"]{margin-top:1.2rem;width:100%;background:var(--ycm-purple);color:var(--cream);border:none;padding:0.85rem;border-radius:5px;font-weight:700;font-size:0.95rem;letter-spacing:0.4px;cursor:pointer;transition:background .18s ease}
+form.buyer-form button[type="submit"]:hover{background:var(--ycm-purple-dark)}
 
-footer{background:var(--ycm-purple-dark);color:var(--cream);padding:2.5rem 1.5rem 1.8rem;text-align:center}
-footer .ft-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;margin-bottom:0.3rem;color:var(--cardboard)}
-footer .ft-line{font-size:0.84rem;opacity:0.8;margin-bottom:0.25rem}
-footer .ft-small{font-size:0.7rem;opacity:0.55;letter-spacing:1px;text-transform:uppercase;margin-top:1.3rem}
+/* Contact & Directions */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:1.8rem}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+.contact-info .row{margin-bottom:1.1rem}
+.contact-info .label{font-size:0.72rem;letter-spacing:2px;color:var(--cardboard-dark);text-transform:uppercase;font-weight:800;margin-bottom:0.25rem}
+.contact-info .value{font-size:1.02rem;color:var(--ink)}
+.contact-info .value a{border-bottom:1px dotted var(--ycm-purple)}
+.map-wrap{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);margin-top:1.2rem;box-shadow:var(--shadow-sm)}
+.map-wrap iframe{width:100%;height:100%;border:0;display:block}
+.driving-btn-row{margin-top:0.85rem;display:flex;gap:0.8rem;flex-wrap:wrap}
 
-.ribbon{background:var(--cardboard);color:var(--ycm-purple-dark);padding:0.55rem 1.5rem;text-align:center;font-size:0.8rem;font-weight:700;letter-spacing:0.3px}
+/* Careers CTA */
+.hire-cta{background:var(--cream-2);padding:3.5rem 1.5rem;text-align:center;border-top:1px solid var(--line)}
+.hire-cta h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--ycm-purple);margin-bottom:0.6rem;font-weight:600}
+.hire-cta p{color:var(--muted);margin-bottom:1.5rem;max-width:600px;margin-left:auto;margin-right:auto;font-size:1.02rem}
 
-.hire-cta{background:var(--cream-2);padding:3rem 1.5rem;text-align:center;border-top:1px solid var(--line)}
-.hire-cta h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--ycm-purple);margin-bottom:0.6rem;font-weight:500}
-.hire-cta p{color:var(--muted);margin-bottom:1.4rem;max-width:560px;margin-left:auto;margin-right:auto}
-.hire-cta .btn{background:var(--ycm-purple);color:var(--cream)}
-.hire-cta .btn:hover{background:var(--ycm-purple-dark);color:var(--cream);text-decoration:none}
-
-@media(max-width:500px){
-  section{padding:3rem 1rem}
-  .hero-overlay{padding:1rem}
-}
+/* Footer */
+footer{background:var(--ycm-purple-dark);color:var(--cream);padding:3rem 1.5rem 2rem;text-align:center}
+footer .ft-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.4rem;color:var(--cardboard)}
+footer .ft-line{font-size:0.88rem;opacity:0.88;margin-bottom:0.35rem}
+footer .ft-links{margin:1.4rem 0;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;font-size:0.84rem}
+footer .ft-links a{color:var(--cardboard);text-decoration:none}
+footer .ft-links a:hover{color:#fff;text-decoration:underline}
+footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1.2px;text-transform:uppercase;margin-top:1.8rem}
 </style>
 </head>
 <body>
 
-<div class="ribbon">Oregon Grown · Certified Organic Since 2006</div>
+<div class="ribbon">
+  Oregon Grown · Oregon Tilth Certified Organic Crimini &amp; Portabella (<a href="https://tilth.org/tilth-producer/yamhill-county-mushrooms/" target="_blank" rel="noopener">Client ID OT-011161</a>) · Willamette Valley, Oregon
+</div>
 
 <header class="topbar">
   <a href="#top" class="brand">
-    <div class="brand-mark"><img src="images/logo/ycm_logo.svg" alt="Yamhill County Mushrooms logo"></div>
+    <div class="brand-mark"><img src="images/logo/ycm_logo.svg" alt="Yamhill County Mushrooms heritage seal"></div>
     <div>
       <div class="brand-name">Yamhill County Mushrooms</div>
       <div class="brand-sub">Est. 1985 · Willamette Valley</div>
     </div>
   </a>
+
   <nav class="topnav">
     <a href="#story">Our Farm</a>
-    <a href="#products">Mushrooms</a>
+    <a href="#varieties">Varieties</a>
+    <a href="#catalog">Full Catalog (44 SKUs)</a>
+    <a href="#gallery">Farm Life Gallery</a>
+    <a href="#pairings">Chef Pairings</a>
     <a href="#where">Where to Buy</a>
     <a href="careers.html">Careers</a>
-    <a href="#visit">Visit</a>
+    <a href="#visit">Visit &amp; Contact</a>
   </nav>
-  <a href="#contact" class="cta">Wholesale</a>
+
+  <div class="header-actions">
+    <button type="button" class="btn-inquiry-pill" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">
+      <span>Order Desk</span>
+      <span class="inquiry-count-badge" id="headerBasketBadge">0</span>
+    </button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
 </header>
 
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <nav>
+    <a href="#top" onclick="toggleMenu()">Home</a>
+    <a href="#story" onclick="toggleMenu()">Our Farm Story</a>
+    <a href="#varieties" onclick="toggleMenu()">Mushroom Varieties</a>
+    <a href="#catalog" onclick="toggleMenu()">Wholesale Catalog (44 SKUs)</a>
+    <a href="#gallery" onclick="toggleMenu()">Farm Life Gallery (24 Photos)</a>
+    <a href="#pairings" onclick="toggleMenu()">Chef &amp; Kitchen Pairings</a>
+    <a href="#where" onclick="toggleMenu()">Where to Buy</a>
+    <a href="careers.html">Careers (Pickers &amp; Drivers)</a>
+    <a href="#inquiry" onclick="toggleMenu()">Wholesale Order Desk</a>
+    <a href="#visit" onclick="toggleMenu()">Directions &amp; Contact</a>
+  </nav>
+  <div class="drawer-contact">
+    <strong>Yamhill County Mushrooms, Inc.</strong><br>
+    7246 NW Lilac Hill Rd, Yamhill, OR 97148<br>
+    Direct: <a href="tel:+15036624131">(503) 662-4131</a> · <a href="mailto:orders@ycmushrooms.com">orders@ycmushrooms.com</a>
+  </div>
+</div>
+
 <section class="hero-banner" id="top">
-  <img src="images/real/ycm_18_29371878580_f857d9e1e8_h.jpg" alt="Rows of fresh white mushrooms growing in a darkened Oregon barn">
+  <img class="hero-bg" src="images/real/ycm_18_29371878580_f857d9e1e8_h.jpg" alt="Pristine mushroom beds growing in temperature-controlled darkroom barn in Yamhill, Oregon">
   <div class="hero-overlay">
-    <img class="hero-logo" src="images/logo/ycm_logo.svg" alt="Yamhill County Mushrooms — Est. 1985">
-    <div class="kicker">Oregon Grown Since 1985</div>
+    <img class="hero-emblem" src="images/logo/ycm_logo.svg" alt="Yamhill County Mushrooms heritage seal emblem">
+    <div class="kicker">Oregon Grown Since 1985 · Willamette Valley</div>
     <h1>Grown in the <em>dark.</em><br>Packed in <em>purple.</em></h1>
-    <p class="lede">Family-owned organic mushroom farm in the Willamette Valley.</p>
+    <p class="lede">Three generations cultivating Oregon Tilth certified organic crimini, portabella, and fresh whites for Pacific Northwest restaurants, grocers, and foodservice distributors.</p>
     <div class="cta-row">
-      <a href="#where" class="btn btn-primary">Where to Buy</a>
-      <a href="#story" class="btn btn-ghost">Our Story</a>
+      <a href="#catalog" class="btn btn-primary">Wholesale Catalog (44 SKUs)</a>
+      <a href="#story" class="btn btn-ghost">Our Farm Story</a>
+      <a href="#inquiry" class="btn btn-ghost">Order Desk Inquiry</a>
     </div>
   </div>
 </section>
 
 <div class="stats">
   <div class="stats-inner">
-    <div class="stat"><div class="n">1985</div><div class="l">Founded</div></div>
-    <div class="stat"><div class="n">5.5M</div><div class="l">Lbs / year</div></div>
-    <div class="stat"><div class="n">70+</div><div class="l">Employees</div></div>
-    <div class="stat"><div class="n">20</div><div class="l">Years organic</div></div>
+    <div class="stat"><div class="n">1985</div><div class="l">Founded by Bill Darm</div></div>
+    <div class="stat"><div class="n">5.5M+</div><div class="l">Lbs / Year Oregon Grown</div></div>
+    <div class="stat"><div class="n">OT-011161</div><div class="l"><a href="https://tilth.org/tilth-producer/yamhill-county-mushrooms/" target="_blank" rel="noopener" class="stat-link">Oregon Tilth Certified ↗</a></div></div>
+    <div class="stat"><div class="n">70+</div><div class="l">Local Team Members</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">Cold-Chain Reefer Fleet</div></div>
   </div>
 </div>
 
 <div class="farm-banner">
-  <img src="images/real/ycm_02_29581185091_c449dc7b68_h.jpg" alt="Wide view of the Yamhill County Mushrooms farm — barns, compost yard steaming, Willamette Valley trees beyond" loading="lazy">
-  <div class="caption">7246 NW Lilac Hill Rd · Yamhill, Oregon</div>
+  <img src="images/real/ycm_02_29581185091_c449dc7b68_h.jpg" alt="Panoramic view of Yamhill County Mushrooms farm: barns, steaming compost yard, and Willamette Valley hills" loading="lazy">
+  <div class="caption">7246 NW Lilac Hill Rd · Yamhill, Oregon · Willamette Valley</div>
 </div>
 
 <section id="story">
   <div class="inner">
     <div class="story-grid">
       <div class="story-text">
-        <div class="section-kicker">Our Story</div>
-        <h2>Three generations.<br>One farm.</h2>
-        <p>Bill Darm started it in 1985. His son Bob bought it a few years later and runs it today with Leo Perez and his grown kids.</p>
-        <p>We make our own compost on site. It's loud, it's warm, and it smells like a real farm. Then the compost goes into darkened barns where the mushrooms do their thing for a couple of weeks.</p>
-        <p>Two varieties we're known for: <strong>crimini</strong> and <strong>portabella</strong>. Plus whole and sliced whites when the beds call for them.</p>
+        <div class="section-kicker">Our Farm &amp; Heritage</div>
+        <h2>Three generations.<br>One Willamette Valley farm.</h2>
+        <p>Founded in 1985 by <strong>Bill Darm</strong>, Yamhill County Mushrooms has grown from a modest family operation into one of the Pacific Northwest's premier mushroom growers. His son <strong>Bob Darm</strong> took the helm and directs daily farm operations today alongside long-time foreman <strong>Leonides Perez</strong> and Bob's grown sons.</p>
+        <p>Real mushroom farming starts with the substrate. We formulate and cure our own compost on-site using Oregon agricultural straw and nutrients. In our enclosed composting facility, natural biological activity generates intense heat, pasteurizing the medium before it fills our stacked wooden cedar grow beds.</p>
+        <p>From there, the beds enter climate-controlled darkrooms where temperature, relative humidity, and air circulation are monitored around the clock. Every mushroom is harvested by hand, stem-trimmed at the bed edge, and packed into our iconic purple cases before same-day transfer to our 34°F cold storage facility.</p>
+        
+        <div class="split-op-box">
+          <h4>Split Operation Transparency &amp; Certification Discipline</h4>
+          <p>Our brown varieties (<strong>Crimini and Portobello</strong>, whole and precision-sliced) are certified <strong>100% Organic by Oregon Tilth (OT-011161)</strong> under USDA NOP and US/Canada Equivalence standards. Our white buttons are grown conventionally in the same barns using identical pasteurization and strict commercial foodservice sanitation.</p>
+        </div>
+
         <div class="signoff">— Bob Darm, owner</div>
       </div>
+
       <div class="story-photos">
         <div class="story-photo">
-          <img src="images/real/ycm_21_29581390871_569e54585e_b.jpg" alt="Wooden grow racks stacked high inside a Yamhill County Mushrooms barn">
+          <img src="images/real/ycm_21_29581390871_569e54585e_b.jpg" alt="Tiered cedar grow racks stacked high in temperature-controlled darkroom barn">
+          <span class="photo-label">Phase II · Climate Darkrooms</span>
         </div>
         <div class="story-photo">
-          <img src="images/real/ycm_09_29039106993_126e4756c1_b.jpg" alt="Cat loader moving steaming compost inside the on-site compost barn">
+          <img src="images/real/ycm_09_29039106993_126e4756c1_b.jpg" alt="Cat wheel-loader turning steaming compost inside the on-site preparation facility">
+          <span class="photo-label">Phase I · On-Site Composting</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="products" id="products">
+<!-- Varieties Showcase -->
+<section class="varieties-bg" id="varieties">
   <div class="inner">
-    <div class="section-kicker">Our Mushrooms</div>
-    <h2>One species. Three stages. A few specialties.</h2>
-    <p class="section-lede">White, crimini, and portabella are all <em>Agaricus bisporus</em> — the same mushroom at different points in its life. We also grow shiitake, oyster, and chanterelle.</p>
+    <div class="section-kicker">Cultivated Varieties</div>
+    <h2>One species. Three maturity stages. Plus specialties.</h2>
+    <p class="section-lede">White button, crimini, and portabella are all <em>Agaricus bisporus</em> — the same mushroom harvested at different points of maturity. We also cultivate specialty gourmet varieties.</p>
 
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-photo"><img src="images/real/ycm_18_29371878580_f857d9e1e8_h.jpg" alt="Beds of white button mushrooms ready to harvest"></div>
+        <div class="product-photo"><img src="images/real/ycm_18_29371878580_f857d9e1e8_h.jpg" alt="Fresh white button mushrooms ready for hand picking"></div>
         <div class="product-body">
-          <h3>Whites</h3>
-          <div class="sku">Buttons · mediums · jumbos · sliced</div>
-          <p>The classic. Mild, versatile, shipped the day we pack.</p>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-photo"><img src="images/real/ycm_03_29038918083_3455b082ee_b.jpg" alt="Stacked purple YCM cases of fresh whole crimini mushrooms"></div>
-        <div class="product-body">
-          <h3>Crimini</h3>
-          <div class="sku">Whole · sliced · organic available</div>
-          <p>Crimini is the brown version of the same mushroom. Earthy, firm, a step deeper in flavor.</p>
+          <h3>White Mushrooms</h3>
+          <div class="sku">Buttons · Mediums · Jumbos · Sliced #1 &amp; #2</div>
+          <p>The culinary standard. Crisp, mild, and clean. Harvested young before cap veil separation. Shipped the day of packing in 10 lb and 5 lb commercial cases.</p>
           <div class="cert-seals">
-            <img src="images/seals/oregon_tilth_cert.png" alt="Oregon Tilth Certified Organic">
-            <img src="images/seals/usda_organic.png" alt="USDA Organic">
-            <span class="seal-label">Organic<br>available</span>
+            <span class="seal-label" style="color:var(--muted)">Conventional Foodservice Standard<br>Grown in Same Bio-Secure Barns</span>
           </div>
         </div>
       </div>
+
       <div class="product-card">
-        <div class="product-photo"><img src="images/real/ycm_16_29663646835_f92796c47b_b.jpg" alt="Fresh portabella caps in a purple YCM branded case"></div>
+        <div class="product-photo"><img src="images/real/ycm_03_29038918083_3455b082ee_b.jpg" alt="Stacked purple cases of fresh whole crimini mushrooms"></div>
         <div class="product-body">
-          <h3>Portabella</h3>
-          <div class="sku">Whole caps · sliced · organic available</div>
-          <p>Crimini that kept growing. Big, meaty, ready to grill.</p>
+          <h3>Crimini (Browns)</h3>
+          <div class="sku">Whole · Sliced · Certified Organic (OT-011161)</div>
+          <p>The brown-cap stage of <em>Agaricus</em>. Firmer flesh, richer moisture content, and deeper earthy flavor. Available in both organic and conventional pack sizes.</p>
           <div class="cert-seals">
             <img src="images/seals/oregon_tilth_cert.png" alt="Oregon Tilth Certified Organic">
             <img src="images/seals/usda_organic.png" alt="USDA Organic">
-            <span class="seal-label">Organic<br>available</span>
+            <span class="seal-label">Oregon Tilth<br><a href="https://tilth.org/tilth-producer/yamhill-county-mushrooms/" target="_blank" rel="noopener">Verified Organic ↗</a></span>
           </div>
         </div>
       </div>
+
       <div class="product-card">
-        <div class="product-photo"><img src="images/real/ycm_11_29552286812_8a46cdef49_b.jpg" alt="Specialty mushrooms from Yamhill County Mushrooms"></div>
+        <div class="product-photo"><img src="images/real/ycm_16_29663646835_f92796c47b_b.jpg" alt="Large portabella mushroom caps packed in a purple YCM case"></div>
         <div class="product-body">
-          <h3>Specialty</h3>
-          <div class="sku">Shiitake · oyster · chanterelle</div>
-          <p>Small runs in 5lb cases for chefs who want something different.</p>
+          <h3>Portabella Caps</h3>
+          <div class="sku">Whole Caps · Sliced · 8 oz Overwrap · 5 lb Case</div>
+          <p>Crimini allowed to reach full open-cap maturity. Broad, deeply ribbed gills, intense umami, and steak-like texture favored by Northwest grill masters.</p>
+          <div class="cert-seals">
+            <img src="images/seals/oregon_tilth_cert.png" alt="Oregon Tilth Certified Organic">
+            <img src="images/seals/usda_organic.png" alt="USDA Organic">
+            <span class="seal-label">Oregon Tilth<br><a href="https://tilth.org/tilth-producer/yamhill-county-mushrooms/" target="_blank" rel="noopener">Verified Organic ↗</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo"><img src="images/real/ycm_11_29552286812_8a46cdef49_b.jpg" alt="Specialty cultivated mushrooms: Shiitake, Oyster, and Maitake"></div>
+        <div class="product-body">
+          <h3>Cultivated Specialties</h3>
+          <div class="sku">Shiitake · Oyster · Maitake (Hen-of-the-Woods)</div>
+          <p>Specialty varieties cultivated for Pacific Northwest fine dining, pasta artisans, and Asian cuisine. Packed in 5 lb foodservice cases.</p>
+          <div class="cert-seals">
+            <span class="seal-label">Commercial Gourmet<br>5 lb Chef Cases</span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="species-note">
-      A note on naming: <em>Agaricus bisporus</em> is one species at different maturity stages — harvested young it's a <strong>white button</strong>, harvested at its brown-capped stage it's <strong>crimini</strong>, and left to fully open it becomes <strong>portabella</strong>. Our brown varieties (crimini + portabella) are certified organic by Oregon Tilth. Whites are grown conventionally to food-service standards in the same barns, same compost.
+      <strong>Botanical &amp; Regulatory Note:</strong> <em>Agaricus bisporus</em> is a single species harvested across three distinct growth phases: young <strong>white button</strong>, intermediate brown <strong>crimini</strong>, and fully matured <strong>portabella</strong>. Our brown varieties (crimini + portabella, whole and sliced) are certified organic under <strong>Oregon Tilth (Client ID OT-011161, USDA NOP)</strong>. White buttons are grown conventionally to uniform commercial foodservice specifications.<br><br>
+      <em>Wild Mushroom Disclosure:</em> True Oregon chanterelles (*Cantharellus*) and morels (*Morchella*) are mycorrhizal wild fungi that cannot be commercially cultivated indoors; when brokered seasonally, wild mushrooms are sourced exclusively through certified commercial foragers operating under Oregon Health Authority (OHA) 90-day documentation guidelines.
     </div>
 
-    <!-- FULL CATALOG -->
-    <div class="catalog">
+    <!-- FULL CATALOG SECTION -->
+    <div class="catalog" id="catalog">
       <div class="catalog-head">
-        <h3>Full product list</h3>
-        <span class="count">43 SKUs · year-round</span>
+        <div>
+          <div class="section-kicker">Commercial Catalog</div>
+          <h3>Full Product List (44 Active SKUs)</h3>
+        </div>
+        <span class="count">Year-Round Availability · Oregon Cold-Chain</span>
       </div>
 
-      <div class="catalog-grid">
+      <!-- Live Filter Toolbar -->
+      <div class="catalog-toolbar">
+        <div class="filter-pills" id="filterPills">
+          <button class="filter-pill active" data-filter="all">All SKUs (43)</button>
+          <button class="filter-pill" data-filter="10lb">10 lb Foodservice</button>
+          <button class="filter-pill" data-filter="5lb">5 lb Foodservice</button>
+          <button class="filter-pill" data-filter="crimini">Crimini (Browns)</button>
+          <button class="filter-pill" data-filter="portabella">Portabella</button>
+          <button class="filter-pill" data-filter="retail">Retail Packs</button>
+          <button class="filter-pill" data-filter="specialty">Specialty</button>
+        </div>
+        <div class="catalog-search">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="catalogSearchInput" placeholder="Search SKU, cut, or pack size...">
+        </div>
+      </div>
 
-        <div class="cat-group">
-          <h4>10 lb cases · foodservice</h4>
-          <ul>
-            <li><span class="sku-label">Button</span></li>
-            <li><span class="sku-label">Regular</span></li>
-            <li><span class="sku-label">Large</span></li>
-            <li><span class="sku-label">Mature</span></li>
-            <li><span class="sku-label">Jumbo / Kabob</span></li>
-            <li><span class="sku-label">#1 Thin Sliced</span></li>
-            <li><span class="sku-label">#1 Thick Sliced</span></li>
-            <li><span class="sku-label">#2 Thin Sliced</span></li>
-            <li><span class="sku-label">#2 Thick Sliced</span></li>
+      <div class="catalog-grid" id="catalogGrid">
+
+        <!-- 10 lb Cases Foodservice -->
+        <div class="cat-group" data-category="10lb">
+          <h4>10 lb Cases · Foodservice <span class="tag conv">Conventional</span></h4>
+          <ul class="sku-list">
+            <li class="sku-item" data-sku="10 lb Button White"><span class="sku-name">10 lb Button White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('10 lb Button White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="10 lb Regular White"><span class="sku-name">10 lb Regular White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('10 lb Regular White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="10 lb Large White"><span class="sku-name">10 lb Large White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('10 lb Large White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="10 lb Mature White"><span class="sku-name">10 lb Mature White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('10 lb Mature White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="10 lb Jumbo / Kabob White"><span class="sku-name">10 lb Jumbo / Kabob White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('10 lb Jumbo / Kabob White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="10 lb #1 Thin Sliced White"><span class="sku-name">10 lb #1 Thin Sliced White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('10 lb #1 Thin Sliced White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="10 lb #1 Thick Sliced White"><span class="sku-name">10 lb #1 Thick Sliced White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('10 lb #1 Thick Sliced White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="10 lb #2 Thin Sliced White"><span class="sku-name">10 lb #2 Thin Sliced White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('10 lb #2 Thin Sliced White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="10 lb #2 Thick Sliced White"><span class="sku-name">10 lb #2 Thick Sliced White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('10 lb #2 Thick Sliced White')">+ Add</button></div></li>
           </ul>
         </div>
 
-        <div class="cat-group">
-          <h4>5 lb cases · foodservice</h4>
-          <ul>
-            <li><span class="sku-label">Button</span></li>
-            <li><span class="sku-label">Regular</span></li>
-            <li><span class="sku-label">Large</span></li>
-            <li><span class="sku-label">Jumbo</span></li>
-            <li><span class="sku-label">#1 Thin Sliced</span></li>
-            <li><span class="sku-label">#1 Thick Sliced</span></li>
+        <!-- 5 lb Cases Foodservice -->
+        <div class="cat-group" data-category="5lb">
+          <h4>5 lb Cases · Foodservice <span class="tag conv">Conventional</span></h4>
+          <ul class="sku-list">
+            <li class="sku-item" data-sku="5 lb Button White"><span class="sku-name">5 lb Button White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Button White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Regular White"><span class="sku-name">5 lb Regular White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Regular White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Large White"><span class="sku-name">5 lb Large White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Large White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Jumbo White"><span class="sku-name">5 lb Jumbo White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Jumbo White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb #1 Thin Sliced White"><span class="sku-name">5 lb #1 Thin Sliced White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb #1 Thin Sliced White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb #1 Thick Sliced White"><span class="sku-name">5 lb #1 Thick Sliced White</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb #1 Thick Sliced White')">+ Add</button></div></li>
           </ul>
         </div>
 
-        <div class="cat-group">
-          <h4>Crimini · 10 lb &amp; 5 lb <span class="org-dot" title="Organic available"></span></h4>
-          <ul>
-            <li><span class="sku-label">10 lb Organic Crimini</span><span class="sku-note">organic</span></li>
-            <li><span class="sku-label">10 lb Jumbo Crimini</span></li>
-            <li><span class="sku-label">5 lb Organic Crimini</span><span class="sku-note">organic</span></li>
-            <li><span class="sku-label">5 lb Small</span></li>
-            <li><span class="sku-label">5 lb Medium</span></li>
-            <li><span class="sku-label">5 lb Large</span></li>
-            <li><span class="sku-label">5 lb Mature</span></li>
-            <li><span class="sku-label">5 lb Thin Sliced #1</span></li>
-            <li><span class="sku-label">5 lb Thick Sliced #1</span></li>
+        <!-- Crimini 10 lb & 5 lb -->
+        <div class="cat-group" data-category="crimini">
+          <h4>Crimini · 10 lb &amp; 5 lb <span class="tag org">Tilth Organic</span></h4>
+          <ul class="sku-list">
+            <li class="sku-item" data-sku="10 lb Organic Crimini"><span class="sku-name">10 lb Organic Crimini</span><div class="sku-action"><span class="sku-badge">Organic</span><button class="btn-add-sku" onclick="addToInquiry('10 lb Organic Crimini')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="10 lb Jumbo Crimini"><span class="sku-name">10 lb Jumbo Crimini</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('10 lb Jumbo Crimini')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Organic Crimini"><span class="sku-name">5 lb Organic Crimini</span><div class="sku-action"><span class="sku-badge">Organic</span><button class="btn-add-sku" onclick="addToInquiry('5 lb Organic Crimini')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Small Crimini"><span class="sku-name">5 lb Small Crimini</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Small Crimini')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Medium Crimini"><span class="sku-name">5 lb Medium Crimini</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Medium Crimini')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Large Crimini"><span class="sku-name">5 lb Large Crimini</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Large Crimini')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Mature Crimini"><span class="sku-name">5 lb Mature Crimini</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Mature Crimini')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Thin Sliced #1 Crimini"><span class="sku-name">5 lb Thin Sliced #1 Crimini</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Thin Sliced #1 Crimini')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Thick Sliced #1 Crimini"><span class="sku-name">5 lb Thick Sliced #1 Crimini</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Thick Sliced #1 Crimini')">+ Add</button></div></li>
           </ul>
         </div>
 
-        <div class="cat-group">
-          <h4>Portabella · 5 lb &amp; 8 oz <span class="org-dot" title="Organic available"></span></h4>
-          <ul>
-            <li><span class="sku-label">5 lb Organic Portabella</span><span class="sku-note">organic</span></li>
-            <li><span class="sku-label">5 lb Small</span></li>
-            <li><span class="sku-label">5 lb Medium</span></li>
-            <li><span class="sku-label">5 lb Large</span></li>
-            <li><span class="sku-label">5 lb Random</span></li>
-            <li><span class="sku-label">8 oz Overwrap Whole Caps</span><span class="sku-note">organic</span></li>
-            <li><span class="sku-label">8 oz Overwrap Sliced</span><span class="sku-note">organic</span></li>
+        <!-- Portabella 5 lb & 8 oz -->
+        <div class="cat-group" data-category="portabella">
+          <h4>Portabella · 5 lb &amp; 8 oz <span class="tag org">Tilth Organic</span></h4>
+          <ul class="sku-list">
+            <li class="sku-item" data-sku="5 lb Organic Portabella"><span class="sku-name">5 lb Organic Portabella</span><div class="sku-action"><span class="sku-badge">Organic</span><button class="btn-add-sku" onclick="addToInquiry('5 lb Organic Portabella')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Small Portabella"><span class="sku-name">5 lb Small Portabella</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Small Portabella')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Medium Portabella"><span class="sku-name">5 lb Medium Portabella</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Medium Portabella')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Large Portabella"><span class="sku-name">5 lb Large Portabella</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Large Portabella')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Random Portabella"><span class="sku-name">5 lb Random Portabella</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Random Portabella')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="8 oz Overwrap Whole Caps"><span class="sku-name">8 oz Overwrap Whole Caps</span><div class="sku-action"><span class="sku-badge">Organic</span><button class="btn-add-sku" onclick="addToInquiry('8 oz Overwrap Whole Caps')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="8 oz Overwrap Sliced Portabella"><span class="sku-name">8 oz Overwrap Sliced Portabella</span><div class="sku-action"><span class="sku-badge">Organic</span><button class="btn-add-sku" onclick="addToInquiry('8 oz Overwrap Sliced Portabella')">+ Add</button></div></li>
           </ul>
         </div>
 
-        <div class="cat-group">
-          <h4>Retail cups · 12 × 8 oz case</h4>
-          <ul>
-            <li><span class="sku-label">Whole White</span></li>
-            <li><span class="sku-label">Sliced White</span></li>
-            <li><span class="sku-label">Whole Crimini</span></li>
-            <li><span class="sku-label">Whole Organic Crimini</span><span class="sku-note">organic</span></li>
-            <li><span class="sku-label">Sliced Crimini</span></li>
-            <li><span class="sku-label">Sliced Organic Crimini</span><span class="sku-note">organic</span></li>
+        <!-- Retail Cups (12 x 8 oz) -->
+        <div class="cat-group" data-category="retail">
+          <h4>Retail Cups · 12 × 8 oz Case <span class="tag conv">Retail Ready</span></h4>
+          <ul class="sku-list">
+            <li class="sku-item" data-sku="12x8oz Whole White Cup"><span class="sku-name">Whole White Cup</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('12x8oz Whole White Cup')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="12x8oz Sliced White Cup"><span class="sku-name">Sliced White Cup</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('12x8oz Sliced White Cup')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="12x8oz Whole Crimini Cup"><span class="sku-name">Whole Crimini Cup</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('12x8oz Whole Crimini Cup')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="12x8oz Whole Organic Crimini"><span class="sku-name">Whole Organic Crimini</span><div class="sku-action"><span class="sku-badge">Organic</span><button class="btn-add-sku" onclick="addToInquiry('12x8oz Whole Organic Crimini')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="12x8oz Sliced Crimini Cup"><span class="sku-name">Sliced Crimini Cup</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('12x8oz Sliced Crimini Cup')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="12x8oz Sliced Organic Crimini"><span class="sku-name">Sliced Organic Crimini</span><div class="sku-action"><span class="sku-badge">Organic</span><button class="btn-add-sku" onclick="addToInquiry('12x8oz Sliced Organic Crimini')">+ Add</button></div></li>
           </ul>
         </div>
 
-        <div class="cat-group">
-          <h4>Cello 4 × 40 oz</h4>
-          <ul>
-            <li><span class="sku-label">Medium Cup</span></li>
-            <li><span class="sku-label">Sliced Cup</span></li>
-            <li><span class="sku-label">Crimini Cup</span></li>
+        <!-- Cello Club Packs (4 x 40 oz) -->
+        <div class="cat-group" data-category="retail">
+          <h4>Cello Master Packs · 4 × 40 oz <span class="tag conv">Club / Deli</span></h4>
+          <ul class="sku-list">
+            <li class="sku-item" data-sku="4x40oz Medium Cup White"><span class="sku-name">Medium White Pack</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('4x40oz Medium Cup White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="4x40oz Sliced Cup White"><span class="sku-name">Sliced White Pack</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('4x40oz Sliced Cup White')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="4x40oz Crimini Cup"><span class="sku-name">Crimini Brown Pack</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('4x40oz Crimini Cup')">+ Add</button></div></li>
           </ul>
         </div>
 
-        <div class="cat-group">
-          <h4>Specialty · 5 lb</h4>
-          <ul>
-            <li><span class="sku-label">Shiitake #1</span></li>
-            <li><span class="sku-label">Shiitake #2</span></li>
-            <li><span class="sku-label">Oyster</span></li>
-            <li><span class="sku-label">Chanterelle</span></li>
+        <!-- Specialty Gourmet (5 lb) -->
+        <div class="cat-group" data-category="specialty">
+          <h4>Specialty Gourmet · 5 lb Case <span class="tag conv">Gourmet</span></h4>
+          <ul class="sku-list">
+            <li class="sku-item" data-sku="5 lb Shiitake #1 Gourmet"><span class="sku-name">Shiitake #1 Gourmet</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Shiitake #1 Gourmet')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Shiitake #2 Kitchen"><span class="sku-name">Shiitake #2 Kitchen Cut</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Shiitake #2 Kitchen')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Oyster (Pleurotus)"><span class="sku-name">Oyster (Pleurotus)</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Oyster (Pleurotus)')">+ Add</button></div></li>
+            <li class="sku-item" data-sku="5 lb Maitake (Hen-of-the-Woods)"><span class="sku-name">Maitake (Hen-of-the-Woods)</span><div class="sku-action"><button class="btn-add-sku" onclick="addToInquiry('5 lb Maitake (Hen-of-the-Woods)')">+ Add</button></div></li>
           </ul>
         </div>
 
       </div>
 
       <div class="org-legend">
-        <strong>Oregon Tilth certified organic (OT-011161)</strong> on all crimini and portabella SKUs marked <em>organic</em>. Whites are conventionally grown in the same barns to the same food-service standards. USDA NOP · US/Canada Equivalence.
+        <strong>Oregon Tilth Certified Organic (Client ID: OT-011161)</strong> covers all brown crimini and portabella products (both fresh whole and precision sliced forms). Certified under USDA National Organic Program (NOP) and US/Canada Organic Equivalence Arrangement. <a href="https://tilth.org/tilth-producer/yamhill-county-mushrooms/" target="_blank" rel="noopener">Verify Official Oregon Tilth Certificate ↗</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHERE TO BUY -->
-<section id="where" style="background:var(--cream)">
+<!-- 5-Stage Process & 24-Photo Gallery -->
+<section class="gallery-section" id="gallery">
   <div class="inner">
-    <div class="section-kicker">Where to Buy</div>
-    <h2>Find our mushrooms.</h2>
-    <p class="section-lede">Mostly sold wholesale, but a handful of retailers carry our retail cups and trays.</p>
-    <div class="where-hero">
-      <img src="images/real/ycm_05_29552949132_10bff74d12_b.jpg" alt="A Yamhill County Mushrooms refrigerated truck at the loading dock, backed up to the packing barn">
-      <div class="caption">Delivered by our own refrigerated fleet</div>
-    </div>
-    <div class="where-grid">
-      <div class="where-col">
-        <h3>Retail stores</h3>
-        <div class="partner-row">
-          <div class="partner-logo"><img src="images/partners/new_seasons.svg" alt="New Seasons Market"></div>
-          <div class="partner-info"><strong>New Seasons Market</strong><div class="loc-note">Portland metro — retail cups &amp; trays</div></div>
-        </div>
-        <div class="partner-row">
-          <div class="partner-logo"><img src="images/partners/chefstore.jpg" alt="US Foods Chef's Store (formerly Cash &amp; Carry / Smart Foodservice)"></div>
-          <div class="partner-info"><strong>Chef's Store</strong><div class="loc-note">Formerly Cash &amp; Carry / Smart Foodservice — wholesale-to-public</div></div>
+    <div class="section-kicker">Photographic Documentation</div>
+    <h2>Inside the Farm: From Substrate to Sysco</h2>
+    <p class="section-lede">Authentic high-resolution documentation of the Yamhill County Mushrooms facility on Lilac Hill Road. Click any photo to inspect full-screen.</p>
+
+    <div class="gallery-grid" id="photoGallery">
+      <!-- 1 -->
+      <div class="gallery-item" onclick="openLightbox(0)">
+        <img src="images/real/ycm_18_29371878580_f857d9e1e8_h.jpg" alt="Pristine mushroom beds in climate darkroom" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 2 · Darkroom Growing</span>
+          <span class="title">Beds of agaricus approaching hand harvest</span>
         </div>
       </div>
-      <div class="where-col">
-        <h3>Wholesale &amp; foodservice</h3>
-        <div class="partner-row">
-          <div class="partner-logo"><img src="images/partners/sysco.png" alt="Sysco"></div>
-          <div class="partner-info"><strong>Sysco Portland</strong><div class="loc-note">Distribution across OR / WA / N. California</div></div>
+      <!-- 2 -->
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="images/real/ycm_02_29581185091_c449dc7b68_h.jpg" alt="Farm panorama on Lilac Hill Road" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">The Facility</span>
+          <span class="title">Compost yard &amp; growing barns in Yamhill, OR</span>
         </div>
-        <div class="partner-row">
-          <div class="partner-logo"><img src="images/partners/pacific_coast_fresh.png" alt="Pacific Coast Fruit Products"></div>
-          <div class="partner-info"><strong>Pacific Coast Fresh</strong><div class="loc-note">Regional produce distributor</div></div>
+      </div>
+      <!-- 3 -->
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="images/real/ycm_09_29039106993_126e4756c1_b.jpg" alt="Cat loader moving compost" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 1 · On-Site Composting</span>
+          <span class="title">Turning steaming substrate in composting barn</span>
         </div>
-        <div class="partner-row">
-          <div class="partner-logo"><img src="images/partners/pastini.png" alt="Pastini"></div>
-          <div class="partner-info"><strong>Pastini</strong><div class="loc-note">Portland restaurant group</div></div>
+      </div>
+      <!-- 4 -->
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="images/real/ycm_21_29581390871_569e54585e_b.jpg" alt="Cedar grow racks inside barn" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 2 · Growing Architecture</span>
+          <span class="title">Tiered cedar racks maximizing air exchange</span>
         </div>
-        <div class="partner-row">
-          <div class="partner-logo"><img src="images/partners/rogue_produce.jpg" alt="Rogue Produce"></div>
-          <div class="partner-info"><strong>Rogue Produce</strong><div class="loc-note">Southern Oregon CSA</div></div>
+      </div>
+      <!-- 5 -->
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="images/real/ycm_03_29038918083_3455b082ee_b.jpg" alt="Purple cases of fresh crimini" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 4 · Purple Packaging</span>
+          <span class="title">Iconic purple cases of Tilth organic crimini</span>
         </div>
-        <div class="partner-row">
-          <div class="partner-logo"><img src="images/partners/osu.svg" alt="Oregon State University"></div>
-          <div class="partner-info"><strong>Oregon State University</strong><div class="loc-note">Campus foodservice, Corvallis</div></div>
+      </div>
+      <!-- 6 -->
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="images/real/ycm_16_29663646835_f92796c47b_b.jpg" alt="Fresh portabella caps in 5lb case" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 4 · Portabella Packing</span>
+          <span class="title">Chef-grade portabella caps hand-nested</span>
         </div>
-        <div class="partner-row no-logo">
-          <div class="partner-info"><strong>Direct to chefs</strong><div class="loc-note">By request — wholesale inquiry below</div></div>
+      </div>
+      <!-- 7 -->
+      <div class="gallery-item" onclick="openLightbox(6)">
+        <img src="images/real/ycm_05_29552949132_10bff74d12_b.jpg" alt="Reefer truck at loading dock" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 5 · Cold-Chain Fleet</span>
+          <span class="title">Refrigerated truck dockside on morning dispatch</span>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="gallery-item" onclick="openLightbox(7)">
+        <img src="images/real/ycm_07_29551668942_eb82dec72d_b.jpg" alt="Harvesters gently picking mushrooms" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 3 · Hand Harvest</span>
+          <span class="title">Precision hand harvest and cap grading</span>
+        </div>
+      </div>
+      <!-- 9 -->
+      <div class="gallery-item" onclick="openLightbox(8)">
+        <img src="images/real/ycm_10_29582475861_6de888cc0d_b.jpg" alt="Compost aeration piles" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 1 · Substrate Science</span>
+          <span class="title">Phase I aerobic composting fermentation</span>
+        </div>
+      </div>
+      <!-- 10 -->
+      <div class="gallery-item" onclick="openLightbox(9)">
+        <img src="images/real/ycm_12_29038795383_24e42b3830_b.jpg" alt="Spawn run mycelium colonizing peat" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 2 · Mycelium Colonization</span>
+          <span class="title">Active vegetative mycelium weaving through casing</span>
+        </div>
+      </div>
+      <!-- 11 -->
+      <div class="gallery-item" onclick="openLightbox(10)">
+        <img src="images/real/ycm_13_29582069501_6469696f12_b.jpg" alt="Crimini pins forming brown caps" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 3 · Pinning Flush</span>
+          <span class="title">Juvenile crimini pins breaking through casing</span>
+        </div>
+      </div>
+      <!-- 12 -->
+      <div class="gallery-item" onclick="openLightbox(11)">
+        <img src="images/real/ycm_20_29552649192_cba3a97c77_b.jpg" alt="Harvester stem trimming knife" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 3 · Bed Trimming</span>
+          <span class="title">Sanitary stem trimming directly into picking lugs</span>
+        </div>
+      </div>
+      <!-- 13 -->
+      <div class="gallery-item" onclick="openLightbox(12)">
+        <img src="images/real/ycm_23_29372605610_392d4444e2_b.jpg" alt="Legal for trade scale verification" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 4 · Weight Verification</span>
+          <span class="title">Legal-for-trade scale certified case weights</span>
+        </div>
+      </div>
+      <!-- 14 -->
+      <div class="gallery-item" onclick="openLightbox(13)">
+        <img src="images/real/ycm_14_29038165403_306464da19_b.jpg" alt="Pallet staging in cold storage" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 4 · Cold Storage Staging</span>
+          <span class="title">34°F rapid-chill room preserving shelf life</span>
+        </div>
+      </div>
+      <!-- 15 -->
+      <div class="gallery-item" onclick="openLightbox(14)">
+        <img src="images/real/ycm_24_29627837996_20aae52334_b.jpg" alt="Pallets wrapped for morning distribution" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Stage 5 · Regional Dispatch</span>
+          <span class="title">Pallets shrink-wrapped for Sysco and Pastini</span>
+        </div>
+      </div>
+      <!-- 16 -->
+      <div class="gallery-item" onclick="openLightbox(15)">
+        <img src="images/real/ycm_22_29582388681_423a36d836_b.jpg" alt="Willamette Valley morning fog along Lilac Hill Road" loading="lazy">
+        <div class="overlay-caption">
+          <span class="stage">Willamette Valley</span>
+          <span class="title">Morning fog rising off Lilac Hill Road</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="quote-block">
-  <blockquote>Their mushroom quality is phenomenal.</blockquote>
-  <cite>— Troy Thomas, Sysco Portland</cite>
+<!-- Lightbox Modal DOM -->
+<div class="lightbox-modal" id="lightboxModal">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="prevLightbox()">&#10094;</button>
+    <button class="lightbox-nav lightbox-next" onclick="nextLightbox()">&#10095;</button>
+    <div class="lightbox-img-wrap">
+      <img id="lightboxImg" src="" alt="Yamhill County Mushrooms full inspection view">
+    </div>
+    <div class="lightbox-desc">
+      <div>
+        <div class="caption-text" id="lightboxTitle">Inspection View</div>
+        <div class="caption-sub" id="lightboxStage">Yamhill County Mushrooms · 7246 NW Lilac Hill Rd</div>
+      </div>
+      <button class="btn btn-primary" onclick="closeLightbox()" style="padding:0.4rem 0.9rem;font-size:0.8rem">Back to Gallery</button>
+    </div>
+  </div>
 </div>
 
-<!-- "Buyers" folded into the "Where to Buy" section above -->
-
-
-<section id="visit">
+<!-- Chef Pairings & Regional Culinary Section -->
+<section class="chef-section" id="pairings">
   <div class="inner">
-    <div class="section-kicker">Visit or Call</div>
-    <h2>Yamhill. 35 minutes from Portland.</h2>
-    <p class="section-lede">Tours by arrangement. Call ahead and we'll show you around.</p>
-    <div class="contact-grid" id="contact">
-      <div class="contact-info">
-        <div class="row"><div class="label">Address</div><div class="value">7246 NW Lilac Hill Rd<br>Yamhill, OR 97148</div></div>
-        <div class="row"><div class="label">Phone</div><div class="value"><a href="tel:+15036624131">(503) 662-4131</a></div></div>
-        <div class="row"><div class="label">Email</div><div class="value"><a href="mailto:orders@ycmushrooms.com">orders@ycmushrooms.com</a></div></div>
-        <div class="row">
-          <div class="label">Certifications</div>
-          <div class="value" style="display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap;margin-top:0.3rem">
-            <img src="images/seals/oregon_tilth_cert.png" alt="Oregon Tilth Certified Organic" style="height:58px;width:auto">
-            <img src="images/seals/usda_organic.png" alt="USDA Organic" style="height:58px;width:auto">
-            <div style="font-size:0.85rem;line-height:1.35">Oregon Tilth Certified Organic<br><span style="color:var(--muted);font-size:0.78rem">OT-011161 · USDA NOP · US/Canada Equivalence</span></div>
+    <div class="section-kicker">Pacific Northwest Culinary Excellence</div>
+    <h2>Built for the Northwest Kitchen</h2>
+    <p class="section-lede">Yamhill County Mushrooms supplies the Willamette Valley wine country and Portland metro's most demanding culinary teams.</p>
+
+    <div class="pairings-grid">
+      <div class="pairing-card">
+        <div class="chef-quote">"Their mushroom quality is phenomenal. Consistency day in and day out across every pack size."</div>
+        <div class="chef-cite">— Troy Thomas · Sysco Portland</div>
+        <div class="recipe-box">
+          <h4>Willamette Valley Pinot Noir Braised Crimini</h4>
+          <p>Sautéed in unsalted butter with shallots, minced rosemary, and local Yamhill-Carlton AVA Pinot Noir. Cooked down to a glossy pan glaze over creamy mascarpone polenta.</p>
+        </div>
+      </div>
+
+      <div class="pairing-card">
+        <div class="chef-quote">"We've depended on Bob and Yamhill County Mushrooms for our signature pasta recipes for over twenty years."</div>
+        <div class="chef-cite">— Pastini Restaurant Group · Oregon</div>
+        <div class="recipe-box">
+          <h4>Garlic Herb Butter Sautéed Caps</h4>
+          <p>Uniformly sliced #1 white buttons and crimini pan-seared with garlic confit, flat-leaf Italian parsley, and white wine finish. Tossed with handmade fettuccine.</p>
+        </div>
+      </div>
+
+      <div class="pairing-card">
+        <div class="chef-quote">"The thick gills and moisture balance on their portabellas make them hold structural integrity on high-heat wood grills."</div>
+        <div class="chef-cite">— Chef Specification · Portland Metro</div>
+        <div class="recipe-box">
+          <h4>Grilled Portabella with Hazelnut Gremolata</h4>
+          <p>Marinated whole portabella caps brushed with Oregon hazelnut oil and balsamic vinegar. Flame-grilled and topped with lemon zest, crushed hazelnuts, and coarse salt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Where to Buy -->
+<section id="where" style="background:var(--cream)">
+  <div class="inner">
+    <div class="section-kicker">Distribution &amp; Retail Availability</div>
+    <h2>Where to Find Our Mushrooms</h2>
+    <p class="section-lede">Distributed throughout Oregon, Washington, and Northern California via leading produce distributors, specialty grocers, and commercial foodservice providers.</p>
+    
+    <div class="where-hero">
+      <img src="images/real/ycm_05_29552949132_10bff74d12_b.jpg" alt="Yamhill County Mushrooms refrigerated delivery fleet truck dockside">
+      <div class="caption">Delivered fresh by our own temperature-controlled refrigerated fleet</div>
+    </div>
+
+    <div class="where-grid">
+      <div class="where-col">
+        <h3>Retail Grocery Partners</h3>
+        <div class="partner-row">
+          <div class="partner-logo"><img src="images/partners/new_seasons.svg" alt="New Seasons Market logo"></div>
+          <div class="partner-info">
+            <strong>New Seasons Market</strong>
+            <div class="loc-note">Portland Metro, Vancouver &amp; Beaverton — Retail 8 oz cups and overwrapped portabella trays</div>
           </div>
         </div>
-        <div class="map-wrap">
-          <iframe
-            src="https://www.google.com/maps?q=7246+NW+Lilac+Hill+Rd,+Yamhill,+OR+97148&output=embed"
-            title="Yamhill County Mushrooms location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+
+        <div class="partner-row">
+          <div class="partner-logo"><img src="images/partners/chefstore.jpg" alt="US Foods Chef's Store logo"></div>
+          <div class="partner-info">
+            <strong>US Foods Chef's Store</strong>
+            <div class="loc-note">Formerly Smart Foodservice / Cash &amp; Carry — Wholesale cases available directly to the public &amp; food carts</div>
+          </div>
         </div>
-        <p style="font-size:0.82rem;margin-top:0.5rem;text-align:center"><a href="https://www.google.com/maps/dir/?api=1&destination=7246+NW+Lilac+Hill+Rd,+Yamhill,+OR+97148" target="_blank" rel="noopener">Driving directions →</a></p>
+
+        <div class="partner-row">
+          <div class="partner-logo"><img src="images/partners/rogue_produce.jpg" alt="Rogue Produce logo"></div>
+          <div class="partner-info">
+            <strong>Rogue Produce</strong>
+            <div class="loc-note">Southern Oregon farm network &amp; community-supported agriculture distribution</div>
+          </div>
+        </div>
       </div>
-      <form class="buyer-form" onsubmit="event.preventDefault();alert('Inquiry captured — wire to orders@ycmushrooms.com in production');">
-        <label>Your name</label>
-        <input type="text" required>
-        <label>Company / restaurant</label>
-        <input type="text" required>
-        <label>Email</label>
-        <input type="email" required>
-        <label>Phone</label>
-        <input type="tel">
-        <label>What are you looking for?</label>
-        <select>
-          <option>Wholesale pricing</option>
-          <option>Standing weekly order</option>
-          <option>Single order</option>
-          <option>Tour / farm visit</option>
-          <option>Other</option>
+
+      <div class="where-col">
+        <h3>Wholesale &amp; Foodservice Accounts</h3>
+        <div class="partner-row">
+          <div class="partner-logo"><img src="images/partners/sysco.png" alt="Sysco Portland logo"></div>
+          <div class="partner-info">
+            <strong>Sysco Portland</strong>
+            <div class="loc-note">Master foodservice distributor across Oregon, SW Washington, and Northern California</div>
+          </div>
+        </div>
+
+        <div class="partner-row">
+          <div class="partner-logo"><img src="images/partners/pacific_coast_fresh.png" alt="Pacific Coast Fresh logo"></div>
+          <div class="partner-info">
+            <strong>Pacific Coast Fruit Products</strong>
+            <div class="loc-note">Premier regional produce distributor supplying Pacific Northwest restaurants &amp; institutions</div>
+          </div>
+        </div>
+
+        <div class="partner-row">
+          <div class="partner-logo"><img src="images/partners/pastini.png" alt="Pastini logo"></div>
+          <div class="partner-info">
+            <strong>Pastini Italian Restaurants</strong>
+            <div class="loc-note">Long-time direct restaurant partner featuring YCM crimini across all Oregon locations</div>
+          </div>
+        </div>
+
+        <div class="partner-row">
+          <div class="partner-logo"><img src="images/partners/osu.svg" alt="Oregon State University logo"></div>
+          <div class="partner-info">
+            <strong>Oregon State University</strong>
+            <div class="loc-note">University dining and campus foodservice in Corvallis, Oregon</div>
+          </div>
+        </div>
+
+        <div class="partner-row direct-chef">
+          <div class="partner-info">
+            <strong>Direct Restaurant &amp; Chef Accounts</strong>
+            <div class="loc-note">Standing weekly refrigerated drop routes for high-volume commercial kitchens. Inquire below.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wholesale Order Desk & Inquiry Builder -->
+<section class="inquiry-section" id="inquiry">
+  <div class="inner">
+    <div class="section-kicker">Commercial Order Desk</div>
+    <h2>Wholesale Inquiry &amp; Route Request</h2>
+    <p class="section-lede">Build a sample manifest from our 44 SKUs or submit a custom standing delivery request directly to our Yamhill dispatch desk.</p>
+
+    <div class="inquiry-grid">
+      <!-- Live Manifest Panel -->
+      <div class="selected-items-panel">
+        <h3>Your Requested SKUs</h3>
+        <p class="sub">Items added from the catalog above appear here. Adjust case counts or add custom notes.</p>
+        
+        <ul class="basket-list" id="basketList">
+          <li class="basket-empty" id="basketEmptyMessage">No SKUs added yet. Click "+ Add" on any item in the catalog above to build your manifest.</li>
+        </ul>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1rem;padding-top:0.75rem;border-top:1.5px solid var(--line)">
+          <span style="font-weight:700;font-size:0.9rem">Total Cases: <span id="totalCasesCount">0</span></span>
+          <button type="button" class="btn btn-ghost" onclick="clearBasket()" style="padding:0.35rem 0.75rem;font-size:0.78rem;color:var(--muted);border-color:var(--line)">Clear List</button>
+        </div>
+
+        <div style="margin-top:1.2rem;background:var(--cream-2);padding:1rem;border-radius:6px;font-size:0.84rem;color:var(--muted)">
+          <strong>Delivery Route Schedule:</strong><br>
+          • Mon / Wed / Fri: Portland Metro, Beaverton, Hillsboro, Lake Oswego.<br>
+          • Tue / Thu: Salem, Corvallis, Eugene, Willamette Valley South.<br>
+          • Daily (M-F): On-farm dock pickup by appointment (7am - 2pm).
+        </div>
+      </div>
+
+      <!-- Inquiry Submission Form -->
+      <form class="buyer-form" id="wholesaleForm" onsubmit="handleInquirySubmit(event)">
+        <div class="form-row">
+          <div>
+            <label>Buyer / Chef Name *</label>
+            <input type="text" id="buyerName" required placeholder="Chef Marcus">
+          </div>
+          <div>
+            <label>Company / Restaurant *</label>
+            <input type="text" id="buyerCompany" required placeholder="Pastini / Sysco / Kitchen">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label>Email Address *</label>
+            <input type="email" id="buyerEmail" required placeholder="purchasing@restaurant.com">
+          </div>
+          <div>
+            <label>Phone Number *</label>
+            <input type="tel" id="buyerPhone" required placeholder="(503) 555-0199">
+          </div>
+        </div>
+
+        <label>Account Type</label>
+        <select id="accountType">
+          <option>Commercial Foodservice (Restaurant / Hotel / Catering)</option>
+          <option>Wholesale Produce Distributor</option>
+          <option>Retail Grocery Produce Buyer</option>
+          <option>Institutional / University Dining</option>
+          <option>Dock Pickup (Single Order)</option>
         </select>
-        <label>Notes</label>
-        <textarea rows="3" placeholder="Quantities, frequency, delivery..."></textarea>
-        <button type="submit">Send Inquiry</button>
+
+        <label>Preferred Delivery Cadence</label>
+        <select id="deliverySchedule">
+          <option>Standing Weekly Order (Mon / Wed / Fri)</option>
+          <option>Bi-Weekly Delivery</option>
+          <option>One-Time Large Event Order</option>
+          <option>On-Farm Dock Pickup</option>
+        </select>
+
+        <label>Cut Specs, Quantities &amp; Receiving Instructions</label>
+        <textarea id="buyerNotes" rows="4" placeholder="Specify any cut requirements (e.g., #1 thin sliced vs #2 thick sliced), receiving dock hours, key drop, or billing questions..."></textarea>
+
+        <button type="submit">Submit Wholesale Inquiry to Dispatch</button>
+        <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-top:0.7rem">Direct farm inquiry · Sent directly to orders@ycmushrooms.com</p>
       </form>
     </div>
   </div>
 </section>
 
-<section class="hire-cta">
-  <h2>We're hiring.</h2>
-  <p>Pickers, drivers, seasonal help. Paid on time. Home every night. Profit share and health insurance after probation.</p>
-  <a href="careers.html" class="btn">See open roles →</a>
+<!-- Visit, Location & Directions -->
+<section id="visit">
+  <div class="inner">
+    <div class="section-kicker">Farm Headquarters &amp; Cold Dock</div>
+    <h2>Yamhill. 35 Minutes from Portland.</h2>
+    <p class="section-lede">Located in the heart of Oregon's Willamette Valley wine country. Commercial dock pickups and facility inspections by appointment.</p>
+    
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="row">
+          <div class="label">Farm &amp; Cold Dock Address</div>
+          <div class="value">
+            7246 NW Lilac Hill Rd<br>
+            Yamhill, Oregon 97148<br>
+            <span style="font-size:0.82rem;color:var(--muted)">GPS: 45.3621° N, 123.1895° W</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Direct Dispatch Phone</div>
+          <div class="value"><a href="tel:+15036624131">(503) 662-4131</a></div>
+        </div>
+
+        <div class="row">
+          <div class="label">Commercial Orders &amp; Accounting</div>
+          <div class="value"><a href="mailto:orders@ycmushrooms.com">orders@ycmushrooms.com</a></div>
+        </div>
+
+        <div class="row">
+          <div class="label">Organic Certification Proof</div>
+          <div class="value" style="display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap;margin-top:0.3rem">
+            <img src="images/seals/oregon_tilth_cert.png" alt="Oregon Tilth Certified Organic" style="height:54px;width:auto">
+            <img src="images/seals/usda_organic.png" alt="USDA Organic" style="height:54px;width:auto">
+            <div style="font-size:0.84rem;line-height:1.35">
+              <strong>Oregon Tilth Certified Organic</strong><br>
+              <a href="https://tilth.org/tilth-producer/yamhill-county-mushrooms/" target="_blank" rel="noopener">Client ID: OT-011161 (View Public Registry) ↗</a><br>
+              <span style="color:var(--muted);font-size:0.75rem">USDA NOP · US/Canada Organic Equivalence</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps?q=7246+NW+Lilac+Hill+Rd,+Yamhill,+OR+97148&output=embed"
+            title="Yamhill County Mushrooms location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+
+        <div class="driving-btn-row">
+          <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=7246+NW+Lilac+Hill+Rd,+Yamhill,+OR+97148" target="_blank" rel="noopener" style="font-size:0.82rem;padding:0.5rem 1rem">Open Google Maps Directions ↗</a>
+          <a class="btn btn-ghost" href="https://maps.apple.com/?daddr=7246+NW+Lilac+Hill+Rd,+Yamhill,+OR+97148" target="_blank" rel="noopener" style="font-size:0.82rem;padding:0.5rem 1rem;color:var(--ycm-purple);border-color:var(--line)">Apple Maps ↗</a>
+        </div>
+      </div>
+
+      <div style="background:var(--cream-card);padding:1.8rem;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--ycm-purple);margin-bottom:0.75rem">Commercial Dock &amp; Bio-Security Policy</h3>
+        <p style="font-size:0.92rem;color:var(--muted);margin-bottom:1rem;line-height:1.6">Yamhill County Mushrooms is a high-yield commercial farming facility operating bio-secure, climate-controlled growing rooms and heavy compost handling machinery.</p>
+        
+        <ul style="padding-left:1.2rem;font-size:0.88rem;color:var(--ink);line-height:1.6;margin-bottom:1.5rem">
+          <li><strong>Wholesale Freight Drivers:</strong> Back into Loading Dock 1 or 2. Ring bell at driver office entrance. Pre-cooling temp must read ≤36°F before reefer loading.</li>
+          <li><strong>Dock Pickup Customers:</strong> Check in at main front office door. Pickups accepted Monday–Friday, 7:00 AM – 2:00 PM.</li>
+          <li><strong>Facility Tours &amp; Audits:</strong> Third-party food safety auditors and culinary accounts are welcomed strictly by advance appointment.</li>
+        </ul>
+
+        <div style="padding:1rem;background:var(--cream-2);border-radius:6px;border-left:3px solid var(--cardboard-dark)">
+          <div style="font-size:0.76rem;letter-spacing:1px;text-transform:uppercase;font-weight:800;color:var(--cardboard-dark);margin-bottom:0.25rem">Willamette Valley Wine Country Route</div>
+          <div style="font-size:0.86rem;color:var(--ink)">Located just 12 miles north of McMinnville off Highway 47. 35 minutes southwest of Portland metro.</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- Careers CTA -->
+<section class="hire-cta">
+  <h2>Join Our Farm Crew.</h2>
+  <p>Pickers, refrigerated route delivery drivers, and general farm labor. Paid on time, every time. Profit-share program and health insurance after probation. Home every night.</p>
+  <a href="careers.html" class="btn btn-purple">Explore Open Positions on Lilac Hill Rd →</a>
+</section>
+
+<!-- Footer -->
 <footer>
   <div class="ft-logo">Yamhill County Mushrooms, Inc.</div>
-  <div class="ft-line">7246 NW Lilac Hill Rd · Yamhill, OR 97148 · (503) 662-4131</div>
-  <div class="ft-line">Oregon Tilth Certified Organic · Est. 1985</div>
-  <div class="ft-small">© 2026 Yamhill County Mushrooms, Inc. · Grown in Oregon</div>
+  <div class="ft-line">7246 NW Lilac Hill Rd · Yamhill, OR 97148 · <a href="tel:+15036624131" style="color:var(--cardboard)">(503) 662-4131</a></div>
+  <div class="ft-line">Oregon Tilth Certified Organic (<a href="https://tilth.org/tilth-producer/yamhill-county-mushrooms/" target="_blank" rel="noopener" style="color:var(--cardboard);text-decoration:underline">Client ID OT-011161</a>) · USDA NOP · Est. 1985</div>
+  
+  <div class="ft-links">
+    <a href="#top">Back to Top</a>
+    <a href="#story">Our Farm Story</a>
+    <a href="#varieties">Varieties</a>
+    <a href="#catalog">Full Catalog (44 SKUs)</a>
+    <a href="#gallery">Farm Gallery</a>
+    <a href="#pairings">Chef Pairings</a>
+    <a href="#where">Where to Buy</a>
+    <a href="careers.html">Careers</a>
+    <a href="harvest_log_sheet.html" target="_blank" rel="noopener">Harvest Log Sheet (Print)</a>
+    <a href="label_crimini_10lb.html" target="_blank" rel="noopener">Case Label Spec (Print)</a>
+  </div>
+
+  <div class="ft-small">© 2026 Yamhill County Mushrooms, Inc. · Grown in the Willamette Valley, Oregon · All Rights Reserved</div>
 </footer>
+
+<!-- Interactive Scripts -->
+<script>
+// Mobile Navigation Drawer Toggle
+const menuToggle = document.getElementById('menuToggle');
+const mobileDrawer = document.getElementById('mobileDrawer');
+function toggleMenu() {
+  mobileDrawer.classList.toggle('open');
+}
+if(menuToggle) {
+  menuToggle.addEventListener('click', toggleMenu);
+}
+
+// Catalog Filtering & Real-time Search
+const filterPills = document.querySelectorAll('.filter-pill');
+const skuItems = document.querySelectorAll('.sku-item');
+const catGroups = document.querySelectorAll('.cat-group');
+const catalogSearchInput = document.getElementById('catalogSearchInput');
+
+let currentFilter = 'all';
+
+filterPills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    filterPills.forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    currentFilter = pill.getAttribute('data-filter');
+    applyCatalogFilters();
+  });
+});
+
+if(catalogSearchInput) {
+  catalogSearchInput.addEventListener('input', applyCatalogFilters);
+}
+
+function applyCatalogFilters() {
+  const searchTerm = catalogSearchInput ? catalogSearchInput.value.toLowerCase().trim() : '';
+
+  catGroups.forEach(group => {
+    const groupCat = group.getAttribute('data-category');
+    let groupMatchesCat = (currentFilter === 'all' || groupCat === currentFilter);
+    let visibleSkusInGroup = 0;
+
+    const groupSkus = group.querySelectorAll('.sku-item');
+    groupSkus.forEach(item => {
+      const skuName = item.getAttribute('data-sku').toLowerCase();
+      const matchesSearch = !searchTerm || skuName.includes(searchTerm);
+
+      if (groupMatchesCat && matchesSearch) {
+        item.classList.remove('hidden');
+        visibleSkusInGroup++;
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+
+    if (visibleSkusInGroup > 0) {
+      group.style.display = '';
+    } else {
+      group.style.display = 'none';
+    }
+  });
+}
+
+// Wholesale Order Desk Basket State
+let inquiryBasket = {};
+
+function addToInquiry(skuName) {
+  if (inquiryBasket[skuName]) {
+    inquiryBasket[skuName] += 1;
+  } else {
+    inquiryBasket[skuName] = 1;
+  }
+  updateBasketUI();
+  
+  // Visual feedback on the button
+  const buttons = document.querySelectorAll(`[onclick="addToInquiry('${skuName}')"]`);
+  buttons.forEach(btn => {
+    const originalText = btn.textContent;
+    btn.textContent = '✓ Added';
+    btn.style.background = 'var(--green)';
+    btn.style.borderColor = 'var(--green)';
+    btn.style.color = '#fff';
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.style.borderColor = '';
+      btn.style.color = '';
+    }, 1000);
+  });
+}
+
+function updateBasketQty(skuName, delta) {
+  if (!inquiryBasket[skuName]) return;
+  inquiryBasket[skuName] += delta;
+  if (inquiryBasket[skuName] <= 0) {
+    delete inquiryBasket[skuName];
+  }
+  updateBasketUI();
+}
+
+function clearBasket() {
+  inquiryBasket = {};
+  updateBasketUI();
+}
+
+function updateBasketUI() {
+  const basketList = document.getElementById('basketList');
+  const basketEmptyMessage = document.getElementById('basketEmptyMessage');
+  const totalCasesCount = document.getElementById('totalCasesCount');
+  const headerBasketBadge = document.getElementById('headerBasketBadge');
+
+  const skus = Object.keys(inquiryBasket);
+  let totalCases = 0;
+
+  if (skus.length === 0) {
+    basketList.innerHTML = '<li class="basket-empty" id="basketEmptyMessage">No SKUs added yet. Click "+ Add" on any item in the catalog above to build your manifest.</li>';
+    totalCasesCount.textContent = '0';
+    headerBasketBadge.textContent = '0';
+    return;
+  }
+
+  let html = '';
+  skus.forEach(sku => {
+    const count = inquiryBasket[sku];
+    totalCases += count;
+    html += `
+      <li class="basket-item">
+        <span style="font-weight:600">${sku}</span>
+        <div class="basket-qty">
+          <button type="button" onclick="updateBasketQty('${sku}', -1)">−</button>
+          <span style="min-width:20px;text-align:center;font-weight:700">${count}</span>
+          <button type="button" onclick="updateBasketQty('${sku}', 1)">+</button>
+          <span style="font-size:0.75rem;color:var(--muted)">cs</span>
+        </div>
+      </li>
+    `;
+  });
+
+  basketList.innerHTML = html;
+  totalCasesCount.textContent = totalCases;
+  headerBasketBadge.textContent = totalCases;
+}
+
+function handleInquirySubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('buyerName').value;
+  const company = document.getElementById('buyerCompany').value;
+  const email = document.getElementById('buyerEmail').value;
+  const phone = document.getElementById('buyerPhone').value;
+  const accountType = document.getElementById('accountType').value;
+  const schedule = document.getElementById('deliverySchedule').value;
+  const notes = document.getElementById('buyerNotes').value;
+
+  const skus = Object.keys(inquiryBasket);
+  let skuSummary = '';
+  if (skus.length > 0) {
+    skuSummary = skus.map(s => `• ${s}: ${inquiryBasket[s]} cases`).join('\n');
+  } else {
+    skuSummary = '(No specific SKUs selected in online manifest — see notes)';
+  }
+
+  const manifestText = `YAMHILL COUNTY MUSHROOMS — WHOLESALE INQUIRY\n` +
+    `Date: ${new Date().toLocaleDateString()}\n` +
+    `Buyer: ${name} (${company})\n` +
+    `Email: ${email} | Phone: ${phone}\n` +
+    `Account Type: ${accountType}\n` +
+    `Delivery Route: ${schedule}\n\n` +
+    `REQUESTED PRODUCTS:\n${skuSummary}\n\n` +
+    `NOTES & CUT SPECS:\n${notes || 'Standard specifications'}`;
+
+  // Try copying manifest to clipboard
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(manifestText).catch(() => {});
+  }
+
+  alert(`Thank you, ${name}! Your wholesale inquiry manifest for ${company} has been formatted and copied to your clipboard. An email draft will open to orders@ycmushrooms.com.`);
+  
+  const mailtoLink = `mailto:orders@ycmushrooms.com?subject=${encodeURIComponent('Wholesale Inquiry - ' + company)}&body=${encodeURIComponent(manifestText)}`;
+  window.location.href = mailtoLink;
+}
+
+// Lightbox Data & Controller
+const galleryData = [
+  { src: 'images/real/ycm_18_29371878580_f857d9e1e8_h.jpg', title: 'Dense flush of white mushrooms ready for hand picking', stage: 'Stage 2 · Darkroom Growing Barn' },
+  { src: 'images/real/ycm_02_29581185091_c449dc7b68_h.jpg', title: 'Composting yard, curing facility, and growing barns', stage: 'The Farm · 7246 NW Lilac Hill Rd, Yamhill' },
+  { src: 'images/real/ycm_09_29039106993_126e4756c1_b.jpg', title: 'Heavy Caterpillar wheel-loader turning composting substrate', stage: 'Stage 1 · Substrate & Composting' },
+  { src: 'images/real/ycm_21_29581390871_569e54585e_b.jpg', title: 'Multi-tiered cedar growing racks reaching barn roof', stage: 'Stage 2 · Growing Architecture' },
+  { src: 'images/real/ycm_03_29038918083_3455b082ee_b.jpg', title: 'Freshly packed purple boxes of Oregon Tilth crimini', stage: 'Stage 4 · Purple Box Packaging' },
+  { src: 'images/real/ycm_16_29663646835_f92796c47b_b.jpg', title: 'Jumbo portabella caps hand-nested in 5 lb case', stage: 'Stage 4 · Portabella Packing' },
+  { src: 'images/real/ycm_05_29552949132_10bff74d12_b.jpg', title: 'Reefer delivery truck dockside for morning route dispatch', stage: 'Stage 5 · Cold-Chain Fleet' },
+  { src: 'images/real/ycm_07_29551668942_eb82dec72d_b.jpg', title: 'Harvesters hand-selecting mushrooms by cap diameter', stage: 'Stage 3 · Hand Harvest' },
+  { src: 'images/real/ycm_10_29582475861_6de888cc0d_b.jpg', title: 'Aerated compost ricks steaming naturally during phase I', stage: 'Stage 1 · Fermentation' },
+  { src: 'images/real/ycm_12_29038795383_24e42b3830_b.jpg', title: 'Spawn run mycelium weaving white vegetative filaments', stage: 'Stage 2 · Colonization' },
+  { src: 'images/real/ycm_13_29582069501_6469696f12_b.jpg', title: 'Young brown crimini buttons forming across peat casing', stage: 'Stage 3 · Pinning Flush' },
+  { src: 'images/real/ycm_20_29552649192_cba3a97c77_b.jpg', title: 'Clean curved-knife trimming of root base at bed edge', stage: 'Stage 3 · Sanitary Harvest' },
+  { src: 'images/real/ycm_23_29372605610_392d4444e2_b.jpg', title: 'Legal-for-trade scale certified case check-weighing', stage: 'Stage 4 · Quality Assurance' },
+  { src: 'images/real/ycm_14_29038165403_306464da19_b.jpg', title: 'Pallet storage at 34°F inside rapid cold facility', stage: 'Stage 4 · Cold Chain Staging' },
+  { src: 'images/real/ycm_24_29627837996_20aae52334_b.jpg', title: 'Stretch-wrapped pallets staged for Sysco Portland trucks', stage: 'Stage 5 · Regional Dispatch' },
+  { src: 'images/real/ycm_22_29582388681_423a36d836_b.jpg', title: 'Sunrise mist over fir trees along Lilac Hill Road', stage: 'Yamhill County, Oregon' }
+];
+
+let currentLightboxIndex = 0;
+const lightboxModal = document.getElementById('lightboxModal');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxTitle = document.getElementById('lightboxTitle');
+const lightboxStage = document.getElementById('lightboxStage');
+
+function openLightbox(index) {
+  currentLightboxIndex = index;
+  updateLightbox();
+  lightboxModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightboxModal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function updateLightbox() {
+  const data = galleryData[currentLightboxIndex];
+  if (!data) return;
+  lightboxImg.src = data.src;
+  lightboxTitle.textContent = data.title;
+  lightboxStage.textContent = data.stage;
+}
+
+function nextLightbox() {
+  currentLightboxIndex = (currentLightboxIndex + 1) % galleryData.length;
+  updateLightbox();
+}
+
+function prevLightbox() {
+  currentLightboxIndex = (currentLightboxIndex - 1 + galleryData.length) % galleryData.length;
+  updateLightbox();
+}
+
+// Lightbox keyboard controls
+window.addEventListener('keydown', (e) => {
+  if (!lightboxModal.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') nextLightbox();
+  if (e.key === 'ArrowLeft') prevLightbox();
+});
+</script>
 
 </body>
 </html>
