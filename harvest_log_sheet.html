@@ -2,135 +2,435 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>YCM · Daily Harvest Log Sheet — Print Mock (Letter, 2-up carbon)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yamhill County Mushrooms — Daily Harvest Log Sheet (Print Form HV-102)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-@page { size: letter; margin: 0.4in; }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:#999;padding:2rem;font-family:'Inter',sans-serif}
-.sheet{
-  width:8.5in;height:11in;
-  background:#fffef9;color:#1f2d20;
-  padding:0.4in;margin:1rem auto;
-  box-shadow:0 8px 30px rgba(0,0,0,0.35);
-  position:relative;
+:root{
+  --ycm-purple: #4B2673;       /* Royal purple */
+  --ycm-purple-dark: #341650;
+  --cardboard: #c7a574;
+  --cardboard-dark: #a5814e;
+  --cream: #fffef9;            /* High-grade paper */
+  --ink: #1f1a28;
+  --muted: #5b4a3c;
+  --line: rgba(75,38,115,0.22);
 }
-.sheet .top{border-bottom:2px solid #2f5233;padding-bottom:0.12in;margin-bottom:0.18in;display:flex;justify-content:space-between;align-items:flex-end}
-.sheet .brand{font-family:'Cormorant Garamond',serif;font-weight:700;color:#2f5233;font-size:0.32in;line-height:1;letter-spacing:-0.01in}
-.sheet .sub{font-size:0.09in;letter-spacing:0.03in;color:#5b4a3c;text-transform:uppercase;margin-top:0.04in;font-weight:600}
-.sheet .title-block{text-align:right}
-.sheet .title{font-family:'Cormorant Garamond',serif;font-weight:700;color:#1f2d20;font-size:0.22in;line-height:1}
-.sheet .copy{font-size:0.08in;color:#5b4a3c;letter-spacing:0.02in;text-transform:uppercase;font-weight:600;margin-top:0.04in}
 
-.meta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.1in;margin-bottom:0.2in;font-family:'JetBrains Mono',monospace;font-size:0.1in}
-.meta-cell{border:1px solid #2f5233;padding:0.05in 0.08in}
-.meta-cell .l{font-size:0.07in;color:#5b4a3c;letter-spacing:0.02in;text-transform:uppercase;font-family:'Inter';font-weight:600}
-.meta-cell .v{font-size:0.13in;margin-top:0.03in;color:#1f2d20;letter-spacing:0.01in;min-height:0.18in;border-bottom:1px dotted #888}
+@page {
+  size: letter portrait;
+  margin: 0.35in;
+}
 
-table.harvest{width:100%;border-collapse:collapse;font-size:0.1in;font-family:'JetBrains Mono',monospace}
-table.harvest th{background:#2f5233;color:#fffef9;padding:0.07in 0.05in;font-family:'Inter';font-weight:600;font-size:0.085in;letter-spacing:0.02in;text-transform:uppercase;border:1px solid #1f2d20}
-table.harvest td{border:1px solid #5b4a3c;padding:0;height:0.24in;vertical-align:middle;padding-left:0.05in;color:#1f2d20}
-table.harvest tr:nth-child(even) td{background:#f7f3e8}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#282330;
+  color:#f8f4ea;
+  font-family:'Inter',sans-serif;
+  padding:2rem 1rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh;
+}
 
-.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.2in;margin-top:0.15in}
-.tot-card{border:1.5px solid #2f5233;padding:0.1in 0.12in}
-.tot-card h4{font-family:'Cormorant Garamond',serif;font-size:0.14in;color:#2f5233;margin-bottom:0.06in}
-.tot-card .row{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:0.1in;margin-bottom:0.04in;border-bottom:1px dotted #888;padding:0.02in 0}
+/* Control Bar */
+.control-bar{
+  width:100%;
+  max-width:8.5in;
+  background:#1a1520;
+  border:1px solid rgba(199,165,116,0.3);
+  border-radius:8px;
+  padding:1rem 1.4rem;
+  margin-bottom:1.5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+.control-bar h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;
+  color:var(--cardboard);
+  font-weight:700;
+}
+.control-actions{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+}
+.control-actions a{
+  color:#dbc099;
+  font-size:0.85rem;
+  text-decoration:none;
+}
+.control-actions a:hover{text-decoration:underline}
+.btn-print{
+  background:var(--cardboard);
+  color:var(--ycm-purple-dark);
+  border:none;
+  padding:0.6rem 1.2rem;
+  border-radius:4px;
+  font-weight:700;
+  font-size:0.88rem;
+  cursor:pointer;
+  transition:all .15s ease;
+}
+.btn-print:hover{
+  background:#fff;
+  transform:translateY(-1px);
+}
 
-.sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.3in;margin-top:0.25in;padding-top:0.1in;border-top:1px solid #5b4a3c}
-.sig{padding-top:0.2in;border-top:1px solid #1f2d20;text-align:center;font-size:0.08in;letter-spacing:0.02in;text-transform:uppercase;font-weight:600;color:#5b4a3c}
+/* 8.5x11 Sheet Container */
+.sheet{
+  width:8.5in;
+  min-height:11in;
+  background:var(--cream);
+  color:var(--ink);
+  padding:0.4in;
+  box-shadow:0 12px 38px rgba(0,0,0,0.45);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
 
-.footer{position:absolute;bottom:0.3in;left:0.4in;right:0.4in;display:flex;justify-content:space-between;font-size:0.07in;color:#5b4a3c;font-family:'Inter';letter-spacing:0.02in}
+/* Sheet Top */
+.sheet-top{
+  border-bottom:2.5px solid var(--ycm-purple);
+  padding-bottom:0.12in;
+  margin-bottom:0.15in;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+}
+.sheet-brand{
+  display:flex;
+  align-items:center;
+  gap:0.12in;
+}
+.sheet-logo{
+  width:0.56in;
+  height:0.56in;
+}
+.sheet-logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.brand-hgroup .b-title{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  color:var(--ycm-purple);
+  font-size:0.28in;
+  line-height:0.95;
+  letter-spacing:-0.01in;
+}
+.brand-hgroup .b-sub{
+  font-size:0.08in;
+  letter-spacing:0.025in;
+  color:var(--muted);
+  text-transform:uppercase;
+  font-weight:600;
+  margin-top:0.03in;
+}
 
-.caption{max-width:8.5in;margin:1rem auto 2rem;color:#eee;font-size:0.8rem;text-align:center}
+.title-block{
+  text-align:right;
+}
+.title-block .t-main{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  color:var(--ycm-purple-dark);
+  font-size:0.22in;
+  line-height:1;
+}
+.title-block .t-formid{
+  font-size:0.075in;
+  color:var(--cardboard-dark);
+  letter-spacing:0.02in;
+  text-transform:uppercase;
+  font-weight:700;
+  margin-top:0.03in;
+  font-family:'JetBrains Mono',monospace;
+}
+
+/* Metadata Grid */
+.meta-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0.08in;
+  margin-bottom:0.15in;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.095in;
+}
+.meta-cell{
+  border:1px solid var(--ycm-purple);
+  padding:0.04in 0.08in;
+  border-radius:2px;
+}
+.meta-cell .l{
+  font-size:0.068in;
+  color:var(--muted);
+  letter-spacing:0.018in;
+  text-transform:uppercase;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+}
+.meta-cell .v{
+  font-size:0.11in;
+  margin-top:0.02in;
+  color:var(--ink);
+  min-height:0.18in;
+  border-bottom:1px dotted #aaa;
+  display:flex;
+  align-items:center;
+}
+
+/* Table */
+table.harvest{
+  width:100%;
+  border-collapse:collapse;
+  font-size:0.095in;
+  font-family:'JetBrains Mono',monospace;
+}
+table.harvest th{
+  background:var(--ycm-purple);
+  color:#ffffff;
+  padding:0.06in 0.05in;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:0.08in;
+  letter-spacing:0.015in;
+  text-transform:uppercase;
+  border:1px solid var(--ycm-purple-dark);
+}
+table.harvest td{
+  border:1px solid #777;
+  height:0.24in;
+  vertical-align:middle;
+  padding-left:0.06in;
+  color:var(--ink);
+}
+table.harvest tr:nth-child(even) td{
+  background:#f6f1e5;
+}
+
+/* Bottom Yield & Anomalies Grid */
+.bottom-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:0.15in;
+  margin-top:0.12in;
+}
+.tot-card{
+  border:1.5px solid var(--ycm-purple);
+  padding:0.08in 0.12in;
+  border-radius:3px;
+}
+.tot-card h4{
+  font-family:'Cormorant Garamond',serif;
+  font-size:0.13in;
+  color:var(--ycm-purple);
+  margin-bottom:0.05in;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.01in;
+}
+.tot-card .row{
+  display:flex;
+  justify-content:space-between;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.09in;
+  margin-bottom:0.03in;
+  border-bottom:1px dotted #aaa;
+  padding:0.015in 0;
+}
+.notes-lines{
+  height:0.8in;
+  border-bottom:1px dotted #888;
+  margin-bottom:0.03in;
+  background:repeating-linear-gradient(180deg,transparent 0,transparent 0.22in,#ddd 0.22in,#ddd 0.23in);
+}
+
+/* Signatures */
+.sig-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0.3in;
+  margin-top:0.15in;
+  padding-top:0.08in;
+}
+.sig{
+  padding-top:0.15in;
+  border-top:1.5px solid var(--ycm-purple);
+  text-align:center;
+  font-size:0.075in;
+  letter-spacing:0.02in;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--muted);
+}
+
+/* Sheet Footer */
+.sheet-footer{
+  margin-top:0.12in;
+  padding-top:0.08in;
+  border-top:1px dashed var(--line);
+  display:flex;
+  justify-content:space-between;
+  font-size:0.068in;
+  color:var(--muted);
+  font-family:'Inter',sans-serif;
+  letter-spacing:0.015in;
+  font-weight:600;
+}
+
+/* Print Rules */
+@media print {
+  body{
+    background:#ffffff !important;
+    padding:0 !important;
+    margin:0 !important;
+    display:block !important;
+  }
+  .control-bar, .caption{
+    display:none !important;
+  }
+  .sheet{
+    box-shadow:none !important;
+    padding:0.25in !important;
+    margin:0 !important;
+    page-break-after:always;
+  }
+}
+
+.caption{
+  max-width:8.5in;
+  margin-top:1.5rem;
+  color:#a59dae;
+  font-size:0.78rem;
+  text-align:center;
+  line-height:1.45;
+}
 </style>
 </head>
 <body>
 
-<div class="caption">SAMPLE — 8.5"×11" daily harvest log · one sheet per bed per day · 2-part carbon (white=office, yellow=grow room)</div>
-
-<div class="sheet">
-  <div class="top">
-    <div>
-      <div class="brand">YAMHILL COUNTY MUSHROOMS</div>
-      <div class="sub">Est. 1985 · Willamette Valley · Oregon Tilth OT-011161</div>
-    </div>
-    <div class="title-block">
-      <div class="title">Daily Harvest Log</div>
-      <div class="copy">Form HV-102 · Rev 2026.04</div>
-    </div>
+<div class="control-bar">
+  <div>
+    <h1>Daily Harvest &amp; Bed Yield Log (Form HV-102)</h1>
+    <span style="font-size:0.8rem;color:#dbc099">Oregon Tilth OT-011161 Organic Compliance &amp; Lot Traceability</span>
   </div>
-
-  <div class="meta-grid">
-    <div class="meta-cell"><div class="l">Date</div><div class="v"></div></div>
-    <div class="meta-cell"><div class="l">Variety</div><div class="v">☐ Crimini  ☐ Portabella</div></div>
-    <div class="meta-cell"><div class="l">Bed #</div><div class="v"></div></div>
-    <div class="meta-cell"><div class="l">Flush #</div><div class="v">☐ 1st  ☐ 2nd  ☐ 3rd</div></div>
-    <div class="meta-cell"><div class="l">Room / House</div><div class="v"></div></div>
-    <div class="meta-cell"><div class="l">Inoculation Date</div><div class="v"></div></div>
-    <div class="meta-cell"><div class="l">Shift</div><div class="v">☐ AM  ☐ PM</div></div>
-    <div class="meta-cell"><div class="l">Foreman</div><div class="v"></div></div>
-  </div>
-
-  <table class="harvest">
-    <thead>
-      <tr>
-        <th style="width:8%">Row</th>
-        <th style="width:20%">Picker ID / Name</th>
-        <th style="width:14%">Start Time</th>
-        <th style="width:14%">End Time</th>
-        <th style="width:16%">Crate Count</th>
-        <th style="width:16%">Net Weight (lb)</th>
-        <th style="width:12%">Grade A/B/C</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>9</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>10</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>13</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>15</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td>16</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    </tbody>
-  </table>
-
-  <div class="bottom-grid">
-    <div class="tot-card">
-      <h4>Yield Totals</h4>
-      <div class="row"><span>Total crates</span><span>_______</span></div>
-      <div class="row"><span>Total net weight (lb)</span><span>_______</span></div>
-      <div class="row"><span>Grade A (%)</span><span>_______</span></div>
-      <div class="row"><span>Compost / culls (lb)</span><span>_______</span></div>
-    </div>
-    <div class="tot-card">
-      <h4>Notes / anomalies</h4>
-      <div style="height:1in;border-bottom:1px dotted #888;margin-bottom:0.04in"></div>
-      <div style="font-size:0.07in;color:#5b4a3c;letter-spacing:0.02in;text-transform:uppercase">Pest · disease · temp · humidity · moisture</div>
-    </div>
-  </div>
-
-  <div class="sig-grid">
-    <div class="sig">Picker Foreman signature / date</div>
-    <div class="sig">QA / Office received / date</div>
-  </div>
-
-  <div class="footer">
-    <span>WHITE copy: office / books · YELLOW copy: grow room</span>
-    <span>Form HV-102 · YCM internal · do not distribute</span>
+  <div class="control-actions">
+    <a href="index.html">← Back to Main Website</a>
+    <button type="button" class="btn-print" onclick="window.print()">🖨️ Print Log Sheet (Letter)</button>
   </div>
 </div>
 
-<div class="caption">Headers include: date / variety / bed # / flush / room / inoculation date / shift / foreman.<br>Rows: picker ID, start/end time, crate count, net weight, grade A/B/C.<br>Footer: yield totals, anomaly notes, foreman + QA signatures.</div>
+<div class="sheet">
+  <div>
+    <!-- Top Header -->
+    <div class="sheet-top">
+      <div class="sheet-brand">
+        <div class="sheet-logo">
+          <img src="images/logo/ycm_logo.svg" alt="Yamhill County Mushrooms Heritage Mark">
+        </div>
+        <div class="brand-hgroup">
+          <div class="b-title">YAMHILL COUNTY MUSHROOMS</div>
+          <div class="b-sub">Est. 1985 · Willamette Valley, OR · Oregon Tilth Certified Organic OT-011161</div>
+        </div>
+      </div>
+      <div class="title-block">
+        <div class="t-main">Daily Harvest Log</div>
+        <div class="t-formid">FORM HV-102 · REV 2026.10 · NOP COMPLIANT</div>
+      </div>
+    </div>
+
+    <!-- Metadata Grid -->
+    <div class="meta-grid">
+      <div class="meta-cell"><div class="l">Date:</div><div class="v"></div></div>
+      <div class="meta-cell"><div class="l">Variety:</div><div class="v">☐ Crimini  ☐ Portabella  ☐ White</div></div>
+      <div class="meta-cell"><div class="l">Bed / Bench #:</div><div class="v"></div></div>
+      <div class="meta-cell"><div class="l">Flush #:</div><div class="v">☐ 1st  ☐ 2nd  ☐ 3rd</div></div>
+      <div class="meta-cell"><div class="l">Room / Darkroom:</div><div class="v"></div></div>
+      <div class="meta-cell"><div class="l">Inoculation Date:</div><div class="v"></div></div>
+      <div class="meta-cell"><div class="l">Shift:</div><div class="v">☐ AM (Early)  ☐ PM (Late)</div></div>
+      <div class="meta-cell"><div class="l">Harvest Foreman:</div><div class="v"></div></div>
+    </div>
+
+    <!-- Table of 16 Picker Rows -->
+    <table class="harvest">
+      <thead>
+        <tr>
+          <th style="width:6%">Row</th>
+          <th style="width:24%">Picker ID / Full Name</th>
+          <th style="width:12%">Start Time</th>
+          <th style="width:12%">End Time</th>
+          <th style="width:14%">Crate Count</th>
+          <th style="width:16%">Net Weight (lb)</th>
+          <th style="width:16%">Grade (A / B / Cull)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>01</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>02</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>03</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>04</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>05</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>06</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>07</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>08</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>09</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>10</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>13</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>15</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>16</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <!-- Bottom Yield & Environmental Notes -->
+    <div class="bottom-grid">
+      <div class="tot-card">
+        <h4>Yield Totals (Bed Summary)</h4>
+        <div class="row"><span>Total Crates Harvested:</span><span>______________</span></div>
+        <div class="row"><span>Total Net Scale Weight:</span><span>___________ lbs</span></div>
+        <div class="row"><span>Grade A Wholesale Table %:</span><span>_____________ %</span></div>
+        <div class="row"><span>Compost / Cull Weight:</span><span>___________ lbs</span></div>
+      </div>
+      <div class="tot-card">
+        <h4>Environmental &amp; Flush Notes</h4>
+        <div class="notes-lines"></div>
+        <div style="font-size:0.065in;color:var(--muted);letter-spacing:0.015in;text-transform:uppercase;font-weight:600">
+          Darkroom Temp (°F) · Relative Humidity (%) · Substrate Moisture · Sanitation Verification
+        </div>
+      </div>
+    </div>
+
+    <!-- Signatures -->
+    <div class="sig-grid">
+      <div class="sig">Harvest Foreman Signature / Time Stamp</div>
+      <div class="sig">Cold-Chain QA / Dispatch Office Received</div>
+    </div>
+  </div>
+
+  <!-- Sheet Footer -->
+  <div class="sheet-footer">
+    <span>WHITE COPY: Accounting &amp; Organic Certification Records · YELLOW COPY: Grow Room Clip</span>
+    <span>7246 NW Lilac Hill Rd, Yamhill, OR 97148 · (503) 662-4131</span>
+    <span>Form HV-102 · YCM Internal Document</span>
+  </div>
+</div>
+
+<div class="caption">
+  Standard operating record for commercial mushroom harvesting. Satisfies USDA NOP 7 CFR § 205.103 recordkeeping and Oregon Tilth audit trail standards for lot traceability from grow bed to wholesale dispatch.
+</div>
 
 </body>
 </html>

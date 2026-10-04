@@ -137,6 +137,23 @@ form.apply-form button:hover{background:#dbc099}
 .apply .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media(max-width:600px){.apply .row{grid-template-columns:1fr}}
 
+/* Role Photo Cards */
+.role-photo{margin-top:1.4rem;border-radius:6px;overflow:hidden;box-shadow:0 4px 16px rgba(75,38,115,0.12);border:1px solid var(--line);background:var(--forest-dark)}
+.role-photo img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block}
+.role-photo .caption{padding:0.5rem 0.75rem;font-size:0.75rem;color:var(--muted);background:var(--cream-2);border-top:1px solid var(--line);line-height:1.35;font-weight:500}
+
+/* Application Feedback Card */
+.apply-success-card{display:none;background:var(--cream);color:var(--ink);padding:1.8rem;border-radius:6px;border:2px solid var(--gold);margin-top:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.3)}
+.apply-success-card.active{display:block}
+.apply-success-card h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--forest-dark);margin-bottom:0.4rem;font-weight:700}
+.apply-success-card p{font-size:0.95rem;color:var(--muted);line-height:1.5;margin-bottom:1.1rem}
+.apply-actions{display:flex;gap:0.75rem;flex-wrap:wrap}
+.apply-btn{display:inline-flex;align-items:center;padding:0.65rem 1.15rem;border-radius:4px;font-weight:700;font-size:0.86rem;text-decoration:none;cursor:pointer;transition:all .15s ease}
+.apply-btn-primary{background:var(--forest);color:#fff;border:none}
+.apply-btn-primary:hover{background:var(--forest-dark);color:#fff;text-decoration:none}
+.apply-btn-secondary{background:#fff;border:1.5px solid var(--forest);color:var(--forest)}
+.apply-btn-secondary:hover{background:var(--cream-2);text-decoration:none}
+
 .orcall{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:0.95rem}
 .orcall a{color:var(--forest);font-weight:600;border-bottom:1px dotted var(--forest)}
 
@@ -231,6 +248,10 @@ footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1px;text-transform
       <div class="kicker">Open · full-time &amp; part-time</div>
       <h2>Pickers</h2>
       <p class="subtitle">General farm labor. The job that puts the mushrooms on the plate.</p>
+      <div class="role-photo">
+        <img src="images/real/ycm_07_29551668942_eb82dec72d_b.jpg" alt="Hand harvesting fresh organic mushrooms inside temperature-controlled darkroom" loading="lazy">
+        <div class="caption">Hand-harvesting fresh flushes inside our climate darkrooms.</div>
+      </div>
     </div>
     <div class="body">
       <h3>What you'd do</h3>
@@ -270,6 +291,10 @@ footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1px;text-transform
       <div class="kicker">Open · full-time</div>
       <h2>Delivery Drivers</h2>
       <p class="subtitle">Refrigerated routes. Yamhill out to Portland and Vancouver. Home every night.</p>
+      <div class="role-photo">
+        <img src="images/real/ycm_05_29552949132_10bff74d12_b.jpg" alt="Yamhill County Mushrooms refrigerated delivery truck at loading dock" loading="lazy">
+        <div class="caption">Refrigerated box truck at the Lilac Hill loading dock ready for morning route dispatch.</div>
+      </div>
     </div>
     <div class="body">
       <h3>Required</h3>
@@ -332,6 +357,10 @@ footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1px;text-transform
       <div class="kicker">Open · seasonal &amp; part-time</div>
       <h2>Seasonal &amp; Student Help</h2>
       <p class="subtitle">Good first-job work. Close to home. Honest shifts.</p>
+      <div class="role-photo">
+        <img src="images/real/ycm_03_29038918083_3455b082ee_b.jpg" alt="Iconic purple boxes of fresh Yamhill County Mushrooms ready for delivery" loading="lazy">
+        <div class="caption">Packing fresh mushrooms into our signature purple wholesale cases.</div>
+      </div>
     </div>
     <div class="body">
       <p>Every summer and during the busier holiday periods we bring on extra hands — usually pickers, sometimes packing-line help. If you're a Yamhill-Carlton High School student (or any local student), we're within walking distance if you've got a bike.</p>
@@ -399,54 +428,65 @@ footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1px;text-transform
   <div class="inner">
     <h2>Want in?</h2>
     <p class="lede">Fill this out or call the farm directly. If we're hiring for your role, we'll get back within a couple days.</p>
-    <form class="apply-form" onsubmit="event.preventDefault();alert('Form submission goes to orders@ycmushrooms.com / hiring line — wired to direct dispatch');">
+    <form class="apply-form" id="careerApplyForm" onsubmit="handleCareerSubmit(event)">
       <div class="row">
         <div>
-          <label>First name *</label>
-          <input type="text" required>
+          <label for="appFirstName">First name *</label>
+          <input type="text" id="appFirstName" required>
         </div>
         <div>
-          <label>Last name *</label>
-          <input type="text" required>
+          <label for="appLastName">Last name *</label>
+          <input type="text" id="appLastName" required>
         </div>
       </div>
       <div class="row">
         <div>
-          <label>Phone *</label>
-          <input type="tel" required placeholder="(503) ...">
+          <label for="appPhone">Phone *</label>
+          <input type="tel" id="appPhone" required placeholder="(503) ...">
         </div>
         <div>
-          <label>Email</label>
-          <input type="email" placeholder="you@example.com">
+          <label for="appEmail">Email</label>
+          <input type="email" id="appEmail" placeholder="you@example.com">
         </div>
       </div>
-      <label>Which role are you applying for? *</label>
-      <select required>
+      <label for="appRole">Which role are you applying for? *</label>
+      <select id="appRole" required>
         <option value="">Pick one...</option>
-        <option>Picker (full-time)</option>
-        <option>Picker (part-time)</option>
-        <option>Picker (seasonal / student)</option>
-        <option>Delivery Driver (full-time)</option>
-        <option>Packing-line / general labor</option>
-        <option>Something else</option>
+        <option value="Picker (full-time)">Picker (full-time)</option>
+        <option value="Picker (part-time)">Picker (part-time)</option>
+        <option value="Picker (seasonal / student)">Picker (seasonal / student)</option>
+        <option value="Delivery Driver (full-time)">Delivery Driver (full-time)</option>
+        <option value="Packing-line / general labor">Packing-line / general labor</option>
+        <option value="General Farm Operations">Something else</option>
       </select>
-      <label>Are you 18+? (Students under 18 — we can still consider you, we just follow state labor rules on hours)</label>
-      <select>
-        <option>Yes, 18 or older</option>
-        <option>No, under 18 (please note parent/guardian contact in notes)</option>
+      <label for="appAge">Are you 18+? (Students under 18 — we can still consider you, we just follow state labor rules on hours)</label>
+      <select id="appAge">
+        <option value="18 or older">Yes, 18 or older</option>
+        <option value="Under 18">No, under 18 (please note parent/guardian contact in notes)</option>
       </select>
-      <label>If applying for driver: license type?</label>
-      <select>
-        <option>Not applying as driver</option>
-        <option>Class A CDL</option>
-        <option>Class B CDL</option>
-        <option>Regular license + can drive manual + clean record</option>
-        <option>Regular license + would need farm endorsement help</option>
+      <label for="appLicense">If applying for driver: license type?</label>
+      <select id="appLicense">
+        <option value="Not applying as driver">Not applying as driver</option>
+        <option value="Class A CDL">Class A CDL</option>
+        <option value="Class B CDL">Class B CDL</option>
+        <option value="Regular license + Manual transmission capable">Regular license + can drive manual + clean record</option>
+        <option value="Regular license + Needs farm endorsement help">Regular license + would need farm endorsement help</option>
       </select>
-      <label>Anything you want us to know?</label>
-      <textarea rows="4" placeholder="Previous experience (not required), availability, anything else..."></textarea>
-      <button type="submit">Send Application to Hiring Line</button>
+      <label for="appNotes">Anything you want us to know?</label>
+      <textarea id="appNotes" rows="4" placeholder="Previous experience (not required), availability, anything else..."></textarea>
+      <button type="submit" id="btnSubmitApp">Send Application to Hiring Line</button>
     </form>
+
+    <div class="apply-success-card" id="applySuccessCard">
+      <h3>Application Drafted &amp; Ready</h3>
+      <p id="successSummaryText">Thank you! Your information has been formatted for our farm dispatch desk at 7246 NW Lilac Hill Rd.</p>
+      <div class="apply-actions">
+        <a id="btnSendEmailApp" href="#" class="apply-btn apply-btn-primary">Open Pre-Filled Email (orders@ycmushrooms.com)</a>
+        <button type="button" class="apply-btn apply-btn-secondary" id="btnCopyApp" onclick="copyApplicationManifest()">Copy Application Text</button>
+        <a href="tel:+15036624131" class="apply-btn apply-btn-secondary">Call Dispatch: (503) 662-4131</a>
+      </div>
+    </div>
+
     <div class="orcall">
       Or call us: <a href="tel:+15036624131">(503) 662-4131</a> — ask for the hiring line.
     </div>
@@ -469,6 +509,65 @@ function toggleMenu() {
 }
 if(menuToggle) {
   menuToggle.addEventListener('click', toggleMenu);
+}
+
+let lastApplicationText = '';
+
+function handleCareerSubmit(e) {
+  e.preventDefault();
+  const firstName = document.getElementById('appFirstName').value.trim();
+  const lastName = document.getElementById('appLastName').value.trim();
+  const phone = document.getElementById('appPhone').value.trim();
+  const email = document.getElementById('appEmail').value.trim() || 'Not provided';
+  const role = document.getElementById('appRole').value;
+  const age = document.getElementById('appAge').value;
+  const license = document.getElementById('appLicense').value;
+  const notes = document.getElementById('appNotes').value.trim() || 'None provided';
+
+  const manifest = [
+    `YAMHILL COUNTY MUSHROOMS — JOB APPLICATION`,
+    `------------------------------------------`,
+    `Applicant: ${firstName} ${lastName}`,
+    `Phone: ${phone}`,
+    `Email: ${email}`,
+    `Target Role: ${role}`,
+    `Age Status: ${age}`,
+    `Driver License: ${license}`,
+    `Notes / Availability:`,
+    `${notes}`,
+    `------------------------------------------`,
+    `Submitted via ycmushrooms.com careers portal`
+  ].join('\\n');
+
+  lastApplicationText = manifest;
+
+  const subject = encodeURIComponent(`Job Application: ${role} - ${firstName} ${lastName}`);
+  const body = encodeURIComponent(manifest);
+  const mailtoUrl = `mailto:orders@ycmushrooms.com?subject=${subject}&body=${body}`;
+
+  const btnSendEmail = document.getElementById('btnSendEmailApp');
+  btnSendEmail.href = mailtoUrl;
+
+  const summary = document.getElementById('successSummaryText');
+  summary.textContent = `Thank you, ${firstName}! Your application for ${role} is ready to transmit directly to Bob and the dispatch team.`;
+
+  const card = document.getElementById('applySuccessCard');
+  card.classList.add('active');
+  card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function copyApplicationManifest() {
+  if (!lastApplicationText) return;
+  navigator.clipboard.writeText(lastApplicationText).then(() => {
+    const btn = document.getElementById('btnCopyApp');
+    const original = btn.textContent;
+    btn.textContent = '✓ Copied to Clipboard';
+    btn.style.borderColor = 'var(--gold)';
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.style.borderColor = '';
+    }, 2000);
+  });
 }
 </script>
 

@@ -2,90 +2,530 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>YCM · Crimini 10lb Case Label — Print Mock</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yamhill County Mushrooms — Commercial Case Label Spec (4"×6")</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-@page { size: 4in 6in; margin: 0; }
+:root{
+  --ycm-purple: #4B2673;       /* Authentic royal purple sampled from production boxes */
+  --ycm-purple-dark: #341650;  /* Shadow purple */
+  --cardboard: #c7a574;        /* Unprinted kraft box tan */
+  --cardboard-dark: #a5814e;
+  --cream: #fbf8f0;            /* Clean parchment stock */
+  --ink: #1f1a28;
+  --muted: #6b6458;
+  --green: #4e7330;
+  --green-bg: #edf5e6;
+  --line: rgba(75,38,115,0.18);
+}
+
+@page {
+  size: 4in 6in;
+  margin: 0;
+}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:#888;padding:2rem;font-family:'Inter',sans-serif}
-.label{
-  width:4in;height:6in;
-  background:#f7f3e8;color:#1f2d20;
-  border:2px solid #2f5233;
+body{
+  background:#26212d;
+  color:#f8f4ea;
+  font-family:'Inter',sans-serif;
+  padding:2rem 1rem;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Control Bar */
+.control-bar{
+  width:100%;
+  max-width:4.8in;
+  background:#1a1520;
+  border:1px solid rgba(199,165,116,0.3);
+  border-radius:8px;
+  padding:1rem 1.25rem;
+  margin-bottom:1.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:0.75rem;
+}
+.control-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:0.5rem;
+}
+.control-header h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.35rem;
+  color:var(--cardboard);
+  font-weight:700;
+}
+.control-header a{
+  color:#dbc099;
+  font-size:0.8rem;
+  text-decoration:none;
+}
+.control-header a:hover{text-decoration:underline}
+.control-inputs{
+  display:grid;
+  grid-template-columns:1.8fr 1fr;
+  gap:0.75rem;
+  align-items:center;
+}
+@media(max-width:540px){.control-inputs{grid-template-columns:1fr}}
+.control-inputs label{
+  display:block;
+  font-size:0.7rem;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:#aaa;
+  margin-bottom:0.25rem;
+  font-weight:600;
+}
+.control-inputs select{
+  width:100%;
+  padding:0.45rem 0.6rem;
+  background:#2c2436;
+  color:#fff;
+  border:1px solid rgba(199,165,116,0.4);
+  border-radius:4px;
+  font-size:0.84rem;
+  font-family:inherit;
+}
+.btn-print{
+  background:var(--cardboard);
+  color:var(--ycm-purple-dark);
+  border:none;
+  padding:0.55rem 1rem;
+  border-radius:4px;
+  font-weight:700;
+  font-size:0.85rem;
+  cursor:pointer;
+  transition:all .15s ease;
+  height:fit-content;
+  align-self:end;
+}
+.btn-print:hover{
+  background:#fff;
+  transform:translateY(-1px);
+}
+
+/* 4x6 Physical Label Canvas */
+.label-container{
+  width:4in;
+  height:6in;
+  background:var(--cream);
+  color:var(--ink);
+  border:2.5px solid var(--ycm-purple);
   padding:0.22in;
-  margin:1rem auto;
   position:relative;
-  box-shadow:0 8px 28px rgba(0,0,0,0.35);
-  display:flex;flex-direction:column;
+  box-shadow:0 12px 36px rgba(0,0,0,0.5);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
-.label .top{border-bottom:1.5px solid #2f5233;padding-bottom:0.1in;margin-bottom:0.14in;text-align:center}
-.label .brand{font-family:'Cormorant Garamond',serif;font-weight:700;color:#2f5233;font-size:0.32in;line-height:1;letter-spacing:-0.5px}
-.label .sub{font-size:0.07in;letter-spacing:0.04in;color:#5b4a3c;text-transform:uppercase;margin-top:0.05in;font-weight:600}
-.label .mid{flex:1;display:flex;flex-direction:column;justify-content:center}
-.label .product{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:0.48in;color:#1f2d20;line-height:1;margin-bottom:0.08in;text-align:center}
-.label .variant{font-size:0.11in;letter-spacing:0.02in;text-transform:uppercase;color:#5b4a3c;text-align:center;margin-bottom:0.18in;font-weight:600}
-.label .weight{background:#2f5233;color:#f7f3e8;text-align:center;padding:0.12in 0;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:0.3in;letter-spacing:0.02in;margin-bottom:0.14in}
-.label .certs{display:flex;justify-content:space-around;align-items:center;margin-bottom:0.14in}
-.label .cert{text-align:center;flex:1}
-.label .cert .badge{
-  width:0.56in;height:0.56in;border-radius:50%;
-  background:#2f5233;color:#f7f3e8;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-weight:700;font-size:0.14in;line-height:1;
-  margin:0 auto 0.04in;
-  border:2px solid #d4a574;
+
+/* Header */
+.label-top{
+  border-bottom:2px solid var(--ycm-purple);
+  padding-bottom:0.08in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:0.1in;
 }
-.label .cert .cert-label{font-size:0.06in;letter-spacing:0.02in;text-transform:uppercase;color:#5b4a3c;font-weight:600}
-.label .bot{border-top:1.5px solid #2f5233;padding-top:0.1in;font-family:'JetBrains Mono',monospace;font-size:0.08in;line-height:1.35;color:#2a2a2a}
-.label .bot .row{display:flex;justify-content:space-between;margin-bottom:0.02in}
-.label .bot .addr{text-align:center;font-size:0.065in;margin-top:0.06in;color:#5b4a3c;letter-spacing:0.015in}
-.barcode{width:100%;height:0.28in;background:
-  repeating-linear-gradient(90deg,#1f2d20 0,#1f2d20 1.2px,transparent 1.2px,transparent 3px),
-  repeating-linear-gradient(90deg,#1f2d20 0,#1f2d20 2px,transparent 2px,transparent 4.5px);
+.brand-left{
+  display:flex;
+  align-items:center;
+  gap:0.08in;
+}
+.label-emblem{
+  width:0.52in;
+  height:0.52in;
+}
+.label-emblem img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.brand-titles .brand-name{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  color:var(--ycm-purple);
+  font-size:0.24in;
+  line-height:0.95;
+  letter-spacing:-0.01in;
+}
+.brand-titles .brand-sub{
+  font-size:0.065in;
+  letter-spacing:0.025in;
+  color:var(--cardboard-dark);
+  text-transform:uppercase;
+  font-weight:700;
+  margin-top:0.02in;
+}
+.brand-origin{
+  text-align:right;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.065in;
+  color:var(--muted);
+  line-height:1.2;
+}
+
+/* Center Product Details */
+.label-mid{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+  padding:0.06in 0;
+}
+.label-product{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  font-size:0.46in;
+  color:var(--ycm-purple-dark);
+  line-height:0.98;
+  margin-bottom:0.04in;
+}
+.label-variant{
+  font-size:0.11in;
+  letter-spacing:0.03in;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:700;
+  margin-bottom:0.1in;
+}
+.label-weight-strip{
+  background:var(--ycm-purple);
+  color:#ffffff;
+  padding:0.1in 0;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  font-size:0.28in;
+  letter-spacing:0.03in;
+  border-radius:3px;
+  margin-bottom:0.1in;
+  box-shadow:inset 0 0 0 1px var(--cardboard);
+}
+
+/* Certifications Row */
+.label-certs{
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  gap:0.1in;
+  min-height:0.65in;
+  padding:0.04in 0;
+}
+.cert-seal-block{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  flex:1;
+}
+.cert-badge-usda{
+  width:0.56in;
+  height:0.56in;
+  border-radius:50%;
+  background:var(--green);
+  color:#fff;
+  border:2px solid var(--cardboard);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:0.09in;
+  line-height:1;
+}
+.cert-badge-tilth{
+  width:0.48in;
+  height:0.48in;
+  border-radius:50%;
+  background:var(--ycm-purple);
+  color:#fff;
+  border:2px solid var(--cardboard);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:0.08in;
+  line-height:1.05;
+}
+.cert-legend{
+  font-size:0.062in;
+  letter-spacing:0.015in;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:700;
+  margin-top:0.02in;
+}
+.conv-notice{
+  background:var(--cream-2);
+  border:1px dashed var(--line);
+  padding:0.06in;
+  font-size:0.075in;
+  color:var(--muted);
+  border-radius:3px;
+  width:100%;
+}
+
+.certifier-statement{
+  font-size:0.065in;
+  font-weight:600;
+  color:var(--muted);
+  text-align:center;
+  letter-spacing:0.01in;
+  margin-top:0.02in;
+  text-transform:uppercase;
+}
+
+/* Footer / Lot & Barcode */
+.label-bot{
+  border-top:2px solid var(--ycm-purple);
+  padding-top:0.08in;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.075in;
+  line-height:1.35;
+  color:#222;
+}
+.bot-row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:0.02in;
+}
+.bot-row strong{color:var(--ycm-purple-dark)}
+.barcode-box{
+  width:100%;
+  height:0.3in;
+  background:
+    repeating-linear-gradient(90deg,#1f1a28 0,#1f1a28 1.4px,transparent 1.4px,transparent 3.2px),
+    repeating-linear-gradient(90deg,#1f1a28 0,#1f1a28 2.2px,transparent 2.2px,transparent 5px);
   margin:0.06in 0 0.02in;
 }
-.barcode-label{text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.07in;letter-spacing:0.04in}
-h2.caption{max-width:4in;margin:1rem auto 2rem;color:#eee;font-family:'Inter',sans-serif;font-size:0.78rem;text-align:center;font-weight:500}
+.barcode-number{
+  text-align:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.075in;
+  letter-spacing:0.05in;
+  font-weight:700;
+}
+.label-facility{
+  text-align:center;
+  font-size:0.065in;
+  margin-top:0.05in;
+  color:var(--muted);
+  letter-spacing:0.012in;
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+}
+
+/* Print Rules */
+@media print {
+  body{
+    background:#ffffff !important;
+    padding:0 !important;
+    margin:0 !important;
+    display:block !important;
+  }
+  .control-bar, .caption-guide{
+    display:none !important;
+  }
+  .label-container{
+    box-shadow:none !important;
+    border:2px solid #000 !important;
+    margin:0 !important;
+    page-break-after:always;
+  }
+}
+
+.caption-guide{
+  max-width:4.8in;
+  margin-top:1.5rem;
+  color:#a59dae;
+  font-size:0.75rem;
+  line-height:1.45;
+  text-align:center;
+}
 </style>
 </head>
 <body>
 
-<h2 class="caption">SAMPLE — 4"×6" case label · crimini 10lb wholesale · dummy lot code / run ID</h2>
-<div class="label">
-  <div class="top">
-    <div class="brand">YAMHILL COUNTY<br>MUSHROOMS</div>
-    <div class="sub">Est. 1985 · Willamette Valley · Oregon</div>
+<div class="control-bar">
+  <div class="control-header">
+    <h1>YCM Case Label Generator (4"×6")</h1>
+    <a href="index.html">← Back to Main Website</a>
   </div>
-
-  <div class="mid">
-    <div class="product">Crimini</div>
-    <div class="variant">Whole · Fresh</div>
-    <div class="weight">10 LB · 4.54 KG</div>
-
-    <div class="certs">
-      <div class="cert">
-        <div class="badge">USDA<br>ORGANIC</div>
-        <div class="cert-label">NOP Certified</div>
-      </div>
-      <div class="cert">
-        <div class="badge" style="background:#d4a574;color:#1f2d20">OR<br>TILTH</div>
-        <div class="cert-label">OT-011161</div>
-      </div>
+  <div class="control-inputs">
+    <div>
+      <label for="skuPreset">Select Case Specification Preset:</label>
+      <select id="skuPreset" onchange="applyPreset(this.value)">
+        <option value="crimini_10">10 lb Organic Crimini (Whole Fresh · NOP/Tilth)</option>
+        <option value="portabella_5">5 lb Organic Portabella (Large Chef Caps · NOP/Tilth)</option>
+        <option value="crimini_sliced_5">5 lb Organic Sliced Crimini (#1 Thin Cut · NOP/Tilth)</option>
+        <option value="white_10_conv">10 lb Conventional White Button (Whole Foodservice)</option>
+      </select>
     </div>
-  </div>
-
-  <div class="bot">
-    <div class="row"><span>LOT:</span><span>YCM-20260416-C-42</span></div>
-    <div class="row"><span>PACKED:</span><span>2026-04-16</span></div>
-    <div class="row"><span>USE BY:</span><span>2026-04-30</span></div>
-    <div class="row"><span>STORE:</span><span>34-38°F · do not freeze</span></div>
-    <div class="barcode"></div>
-    <div class="barcode-label">8 59472 00010 4</div>
-    <div class="addr">7246 NW Lilac Hill Rd · Yamhill OR 97148 · (503) 662-4131 · ycmushrooms.com</div>
+    <button type="button" class="btn-print" onclick="window.print()">🖨️ Print Label Spec</button>
   </div>
 </div>
 
-<h2 class="caption">Sample shows: brand mark · product + variant · net weight · USDA Organic + Oregon Tilth cert badges · machine-generated lot code · pack/use-by dates · GS1 barcode · origin address</h2>
+<div class="label-container" id="caseLabel">
+  <!-- Top Header -->
+  <div class="label-top">
+    <div class="brand-left">
+      <div class="label-emblem">
+        <img src="images/logo/ycm_logo.svg" alt="YCM Heritage Mark">
+      </div>
+      <div class="brand-titles">
+        <div class="brand-name">YAMHILL COUNTY</div>
+        <div class="brand-name">MUSHROOMS</div>
+        <div class="brand-sub">Est. 1985 · Willamette Valley</div>
+      </div>
+    </div>
+    <div class="brand-origin">
+      YAMHILL, OR<br>
+      USA · PRODUCE<br>
+      LOT TRACEABLE
+    </div>
+  </div>
+
+  <!-- Center Product Spec -->
+  <div class="label-mid">
+    <div class="label-product" id="lblProduct">Crimini</div>
+    <div class="label-variant" id="lblVariant">Whole · Fresh · Hand-Graded</div>
+    <div class="label-weight-strip" id="lblWeight">10 LB · 4.54 KG</div>
+
+    <!-- Badges Row -->
+    <div class="label-certs" id="lblCerts">
+      <div class="cert-seal-block">
+        <div class="cert-badge-usda">USDA<br><span style="font-size:0.065in">ORGANIC</span></div>
+        <div class="cert-legend">USDA NOP</div>
+      </div>
+      <div class="cert-seal-block">
+        <div class="cert-badge-tilth">OREGON<br><span style="font-size:0.06in">TILTH</span></div>
+        <div class="cert-legend">OT-011161</div>
+      </div>
+    </div>
+    <div class="certifier-statement" id="lblCertStatement">Certified Organic by Oregon Tilth · USDA National Organic Program</div>
+  </div>
+
+  <!-- Bottom Lot Traceability & Barcode -->
+  <div class="label-bot">
+    <div class="bot-row">
+      <span><strong>LOT ID:</strong> <span id="lblLot">YCM-20261004-C42</span></span>
+      <span><strong>ROOM:</strong> <span id="lblRoom">Darkroom #4</span></span>
+    </div>
+    <div class="bot-row">
+      <span><strong>PACKED:</strong> <span id="lblPacked">2026-10-04 07:15</span></span>
+      <span><strong>USE BY:</strong> <span id="lblUseBy">2026-10-18</span></span>
+    </div>
+    <div class="bot-row">
+      <span><strong>STORAGE:</strong> 34°F – 38°F (1°C – 3°C) · DO NOT FREEZE</span>
+      <span><strong>FLUSH:</strong> 1st</span>
+    </div>
+
+    <div class="barcode-box"></div>
+    <div class="barcode-number" id="lblBarcode">8 59472 00010 4</div>
+
+    <div class="label-facility">
+      Yamhill County Mushrooms, Inc. · 7246 NW Lilac Hill Rd, Yamhill, OR 97148 · (503) 662-4131 · ycmushrooms.com
+    </div>
+  </div>
+</div>
+
+<div class="caption-guide">
+  Master print specification conforming to Oregon Tilth labeling guidelines (§4.2) and USDA NOP requirements. Tilth badge sized proportionally to USDA Organic seal. Conforms to 4"×6" direct thermal and laser case label dispensers.
+</div>
+
+<script>
+const PRESETS = {
+  crimini_10: {
+    product: "Crimini",
+    variant: "Whole · Fresh · Hand-Graded",
+    weight: "10 LB · 4.54 KG",
+    organic: true,
+    lot: "YCM-20261004-C42",
+    barcode: "8 59472 00010 4",
+    room: "Darkroom #4"
+  },
+  portabella_5: {
+    product: "Portabella",
+    variant: "Large Chef Caps · Fresh · Hand-Nested",
+    weight: "5 LB · 2.27 KG",
+    organic: true,
+    lot: "YCM-20261004-P18",
+    barcode: "8 59472 00005 0",
+    room: "Darkroom #2"
+  },
+  crimini_sliced_5: {
+    product: "Crimini Sliced",
+    variant: "#1 Kitchen Thin Sliced · Fresh",
+    weight: "5 LB · 2.27 KG",
+    organic: true,
+    lot: "YCM-20261004-CS08",
+    barcode: "8 59472 00055 5",
+    room: "Pack Room A"
+  },
+  white_10_conv: {
+    product: "White Button",
+    variant: "Medium Foodservice Whole · Fresh",
+    weight: "10 LB · 4.54 KG",
+    organic: false,
+    lot: "YCM-20261004-W91",
+    barcode: "8 59472 00001 2",
+    room: "Darkroom #6"
+  }
+};
+
+function applyPreset(key) {
+  const p = PRESETS[key];
+  if (!p) return;
+
+  document.getElementById('lblProduct').textContent = p.product;
+  document.getElementById('lblVariant').textContent = p.variant;
+  document.getElementById('lblWeight').textContent = p.weight;
+  document.getElementById('lblLot').textContent = p.lot;
+  document.getElementById('lblBarcode').textContent = p.barcode;
+  document.getElementById('lblRoom').textContent = p.room;
+
+  const certsContainer = document.getElementById('lblCerts');
+  const certStatement = document.getElementById('lblCertStatement');
+
+  if (p.organic) {
+    certsContainer.innerHTML = `
+      <div class="cert-seal-block">
+        <div class="cert-badge-usda">USDA<br><span style="font-size:0.065in">ORGANIC</span></div>
+        <div class="cert-legend">USDA NOP</div>
+      </div>
+      <div class="cert-seal-block">
+        <div class="cert-badge-tilth">OREGON<br><span style="font-size:0.06in">TILTH</span></div>
+        <div class="cert-legend">OT-011161</div>
+      </div>
+    `;
+    certStatement.style.display = 'block';
+    certStatement.textContent = 'Certified Organic by Oregon Tilth · USDA National Organic Program';
+  } else {
+    certsContainer.innerHTML = `
+      <div class="conv-notice">
+        <strong>CONVENTIONAL FOODSERVICE GRADE</strong><br>
+        Standard Commercial Culture · Grown &amp; Hand-Picked on Lilac Hill Rd
+      </div>
+    `;
+    certStatement.style.display = 'none';
+  }
+}
+</script>
 
 </body>
 </html>
