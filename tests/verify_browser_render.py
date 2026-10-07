@@ -38,9 +38,22 @@ def test_ycm_browser_render():
         assert "Maitake" in pairings_text, "Maitake pairing must be present in chef pairings"
         assert "Executive Chef Receiving & Walk-In Storage Standards" in pairings_text, "Storage standards card missing"
         
-        # Verify Order Manifest / Inquiry section
+        # Verify Order Manifest / Inquiry section & Pallet Calculator
         order_desk = page.locator("#inquiry")
         assert order_desk.count() > 0, "Inquiry section (#inquiry) must exist"
+        
+        # Test adding SKU and calculating net weight / pallet cube
+        add_btn = page.locator(".btn-add-sku").first
+        add_btn.click()
+        add_btn.click()
+        cases_text = page.locator("#totalCasesCount").inner_text()
+        assert int(cases_text) >= 2, f"Expected at least 2 cases, got {cases_text}"
+        weight_text = page.locator("#totalNetWeight").inner_text()
+        assert "lbs" in weight_text and weight_text != "0 lbs", f"Weight should be calculated, got {weight_text}"
+        assert page.locator("#btnExportManifest").is_visible(), "Export PO CSV button must be visible"
+        manifest_shot = OUTPUT_DIR / "ycm_manifest_pallet_calc_verified.png"
+        page.locator(".selected-items-panel").screenshot(path=str(manifest_shot))
+        print(f"YCM Manifest & Pallet calculation screenshot saved: {manifest_shot}")
         
         # Take full desktop screenshot
         desktop_shot = OUTPUT_DIR / "ycm_desktop_render_verified.png"

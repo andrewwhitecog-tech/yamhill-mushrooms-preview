@@ -996,9 +996,12 @@ footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1.2px;text-transfo
             <strong id="totalNetWeight" style="font-size:1.15rem;color:var(--green)">0 lbs</strong>
           </div>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.6rem;font-size:0.82rem;color:var(--muted);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.6rem;font-size:0.82rem;color:var(--muted);flex-wrap:wrap;gap:0.5rem;">
           <span>40×48 GMA Pallet Equivalent: <strong id="palletEst" style="color:var(--ink)">0.0 Pallets</strong></span>
-          <button type="button" class="btn btn-ghost" onclick="clearBasket()" style="padding:0.25rem 0.65rem;font-size:0.75rem;color:var(--muted);border-color:var(--line)">Clear List</button>
+          <div style="display:flex;gap:0.4rem;">
+            <button type="button" class="btn btn-ghost" id="btnExportManifest" onclick="exportManifestCSV()" style="padding:0.25rem 0.65rem;font-size:0.75rem;color:var(--ycm-purple);border-color:var(--line);cursor:pointer;">Export PO (CSV)</button>
+            <button type="button" class="btn btn-ghost" onclick="clearBasket()" style="padding:0.25rem 0.65rem;font-size:0.75rem;color:var(--muted);border-color:var(--line);cursor:pointer;">Clear List</button>
+          </div>
         </div>
 
         <div style="margin-top:1.2rem;background:var(--cream-2);padding:1rem;border-radius:6px;font-size:0.84rem;color:var(--muted)">
@@ -1264,6 +1267,64 @@ function updateBasketQty(skuName, delta) {
 function clearBasket() {
   inquiryBasket = {};
   updateBasketUI();
+}
+
+function exportManifestCSV() {
+  const skus = Object.keys(inquiryBasket);
+  if (skus.length === 0) {
+    alert("Please add at least one product SKU to your order manifest before exporting.");
+    return;
+  }
+
+  let totalCases = 0;
+  let totalNetWeightLbs = 0;
+
+  const header = ["SKU", "Pack / Cut", "Quantity (Cases)", "Unit Weight (lbs)", "Total Net Weight (lbs)", "Organic Status"];
+  const rows = [header];
+
+  skus.forEach(sku => {
+    const qty = inquiryBasket[sku];
+    totalCases += qty;
+
+    let unitWeight = 5;
+    if (sku.includes('10 lb')) unitWeight = 10;
+    else if (sku.includes('5 lb')) unitWeight = 5;
+    else if (sku.includes('12x8oz') || sku.includes('8 oz')) unitWeight = 6;
+    else if (sku.includes('4x40oz')) unitWeight = 10;
+
+    const lineNetWeight = unitWeight * qty;
+    totalNetWeightLbs += lineNetWeight;
+
+    const isOrganic = (sku.toLowerCase().includes('organic') || sku.toLowerCase().includes('crimini') || sku.toLowerCase().includes('portabella'))
+      ? "Oregon Tilth Certified Organic (OT-011161)"
+      : "Conventional";
+
+    rows.push([
+      `"${sku.replace(/"/g, '""')}"`,
+      `"${sku.includes('Sliced') ? 'Precision Sliced' : 'Whole Fresh'}"`,
+      qty,
+      unitWeight,
+      lineNetWeight,
+      `"${isOrganic}"`
+    ]);
+  });
+
+  const pallets = (totalCases / 48).toFixed(1);
+  rows.push([]);
+  rows.push(["TOTALS", "", totalCases, "", totalNetWeightLbs, `"${pallets} GMA Pallets (40x48)"`]);
+  rows.push(["Cold Chain Guarantee", "34°F - 38°F continuous", "", "", "", "Yamhill, OR Farm Dispatch"]);
+
+  const csvString = rows.map(r => r.join(",")).join("\r\n");
+  const blob = new Blob([csvString], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const downloadLink = document.createElement("a");
+  const dateStr = new Date().toISOString().slice(0, 10);
+  downloadLink.href = url;
+  downloadLink.setAttribute("download", `Yamhill_County_Mushrooms_Manifest_${dateStr}.csv`);
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+  URL.revokeObjectURL(url);
 }
 
 function updateBasketUI() {
