@@ -935,9 +935,9 @@ footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1.2px;text-transfo
         </div>
 
         <div class="partner-row">
-          <div class="partner-logo"><img src="images/partners/pacific_coast_fresh.png" alt="Pacific Coast Fresh logo"></div>
+          <div class="partner-logo"><img src="images/partners/pacific_coast_fresh.png" alt="Pacific Coast Fruit Products"></div>
           <div class="partner-info">
-            <strong>Pacific Coast Fruit Products</strong>
+            <strong>Pacific Coast Fresh</strong>
             <div class="loc-note">Premier regional produce distributor supplying Pacific Northwest restaurants &amp; institutions</div>
           </div>
         </div>
@@ -986,9 +986,19 @@ footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1.2px;text-transfo
           <li class="basket-empty" id="basketEmptyMessage">No SKUs added yet. Click "+ Add" on any item in the catalog above to build your manifest.</li>
         </ul>
 
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1rem;padding-top:0.75rem;border-top:1.5px solid var(--line)">
-          <span style="font-weight:700;font-size:0.9rem">Total Cases: <span id="totalCasesCount">0</span></span>
-          <button type="button" class="btn btn-ghost" onclick="clearBasket()" style="padding:0.35rem 0.75rem;font-size:0.78rem;color:var(--muted);border-color:var(--line)">Clear List</button>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:1rem;padding-top:0.75rem;border-top:1.5px solid var(--line);font-size:0.88rem;">
+          <div>
+            <span style="color:var(--muted);font-size:0.75rem;text-transform:uppercase;display:block;">Total Cases</span>
+            <strong id="totalCasesCount" style="font-size:1.15rem;color:var(--ycm-purple)">0</strong>
+          </div>
+          <div>
+            <span style="color:var(--muted);font-size:0.75rem;text-transform:uppercase;display:block;">Estimated Net Weight</span>
+            <strong id="totalNetWeight" style="font-size:1.15rem;color:var(--green)">0 lbs</strong>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.6rem;font-size:0.82rem;color:var(--muted);">
+          <span>40×48 GMA Pallet Equivalent: <strong id="palletEst" style="color:var(--ink)">0.0 Pallets</strong></span>
+          <button type="button" class="btn btn-ghost" onclick="clearBasket()" style="padding:0.25rem 0.65rem;font-size:0.75rem;color:var(--muted);border-color:var(--line)">Clear List</button>
         </div>
 
         <div style="margin-top:1.2rem;background:var(--cream-2);padding:1rem;border-radius:6px;font-size:0.84rem;color:var(--muted)">
@@ -1260,14 +1270,19 @@ function updateBasketUI() {
   const basketList = document.getElementById('basketList');
   const basketEmptyMessage = document.getElementById('basketEmptyMessage');
   const totalCasesCount = document.getElementById('totalCasesCount');
+  const totalNetWeight = document.getElementById('totalNetWeight');
+  const palletEst = document.getElementById('palletEst');
   const headerBasketBadge = document.getElementById('headerBasketBadge');
 
   const skus = Object.keys(inquiryBasket);
   let totalCases = 0;
+  let netWeightLbs = 0;
 
   if (skus.length === 0) {
     basketList.innerHTML = '<li class="basket-empty" id="basketEmptyMessage">No SKUs added yet. Click "+ Add" on any item in the catalog above to build your manifest.</li>';
     totalCasesCount.textContent = '0';
+    if (totalNetWeight) totalNetWeight.textContent = '0 lbs';
+    if (palletEst) palletEst.textContent = '0.0 Pallets';
     headerBasketBadge.textContent = '0';
     return;
   }
@@ -1276,6 +1291,15 @@ function updateBasketUI() {
   skus.forEach(sku => {
     const count = inquiryBasket[sku];
     totalCases += count;
+
+    let unitWeight = 5;
+    if (sku.includes('10 lb')) unitWeight = 10;
+    else if (sku.includes('5 lb')) unitWeight = 5;
+    else if (sku.includes('12x8oz') || sku.includes('8 oz')) unitWeight = 6;
+    else if (sku.includes('4x40oz')) unitWeight = 10;
+
+    netWeightLbs += (unitWeight * count);
+
     html += `
       <li class="basket-item">
         <span style="font-weight:600">${sku}</span>
@@ -1291,6 +1315,11 @@ function updateBasketUI() {
 
   basketList.innerHTML = html;
   totalCasesCount.textContent = totalCases;
+  if (totalNetWeight) totalNetWeight.textContent = `${netWeightLbs.toLocaleString()} lbs`;
+  if (palletEst) {
+    const pallets = (totalCases / 48).toFixed(1);
+    palletEst.textContent = `${pallets} Pallets`;
+  }
   headerBasketBadge.textContent = totalCases;
 }
 
