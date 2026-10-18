@@ -11,7 +11,7 @@ from playwright.sync_api import sync_playwright
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 INDEX_HTML = BASE_DIR / "index.html"
-OUTPUT_DIR = BASE_DIR / "output"
+OUTPUT_DIR = Path(os.environ.get("YCM_QA_OUTPUT_DIR", BASE_DIR / "output"))
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 def test_ycm_browser_render():
@@ -31,6 +31,19 @@ def test_ycm_browser_render():
         # Verify page title
         assert "Yamhill County Mushrooms" in page.title(), f"Unexpected title: {page.title()}"
         
+        # Keep the standalone concept boundary visible before the branded site.
+        concept_notice = page.locator("#concept-notice")
+        assert concept_notice.is_visible(), "Standalone sample needs a visible concept notice"
+        assert "not the official Yamhill County Mushrooms website" in concept_notice.inner_text()
+        assert concept_notice.bounding_box()["y"] + concept_notice.bounding_box()["height"] <= page.locator("header.topbar").bounding_box()["y"], "Concept notice must sit in page flow, not over the artwork"
+
+        # The existing handler opens mailto; the page must not promise delivery.
+        inquiry_form = page.locator("#wholesaleForm")
+        assert inquiry_form.locator("button[type=submit]").inner_text() == "Open Wholesale Inquiry Email Draft"
+        assert "Review it and send it there" in inquiry_form.inner_text()
+        assert "This website does not send your inquiry" in inquiry_form.inner_text()
+        assert "Sent directly" not in inquiry_form.inner_text()
+
         # Verify Chef Pairings section exists and has Maitake
         pairings = page.locator("#pairings")
         assert pairings.count() > 0, "Chef pairings section (#pairings) must exist"
@@ -65,6 +78,56 @@ def test_ycm_browser_render():
         pairings.screenshot(path=str(pairing_shot))
         print(f"YCM Chef pairings screenshot saved: {pairing_shot}")
         
+        # Careers must remain an independent, inactive concept, not a hiring portal.
+        careers_url = (BASE_DIR / "careers.html").as_uri()
+        page.goto(careers_url, wait_until="networkidle")
+        careers_notice = page.locator("#concept-notice")
+        assert careers_notice.is_visible()
+        assert "not the official Yamhill County Mushrooms website" in careers_notice.inner_text()
+        assert "No current job openings" in careers_notice.inner_text()
+        assert careers_notice.bounding_box()["y"] + careers_notice.bounding_box()["height"] <= page.locator(".ribbon").bounding_box()["y"]
+        assert "Concept" in page.title()
+        careers_body = page.locator("body").inner_text()
+        assert "always hiring" not in careers_body.lower()
+        assert "Current Openings" not in careers_body
+        assert "Send Application to Hiring Line" not in careers_body
+        assert "does not send applications" in page.locator("#apply").inner_text()
+        career_form = page.locator("#careerApplyForm")
+        assert career_form.locator("fieldset[disabled]").count() == 1
+        assert career_form.locator("input:enabled, select:enabled, textarea:enabled, button:enabled").count() == 0
+        assert page.locator("#btnSubmitApp").inner_text() == "Email Draft Preview (Disabled)"
+        assert page.locator("#btnSubmitApp").is_disabled()
+        # Exercise the real no-data guard without entering personal details or sending.
+        assert page.evaluate("""() => {
+          const event = new Event('submit', {bubbles: true, cancelable: true});
+          document.getElementById('careerApplyForm').dispatchEvent(event);
+          return event.defaultPrevented && lastApplicationText === ''
+            && !document.getElementById('applySuccessCard').classList.contains('active')
+            && document.getElementById('btnSendEmailApp').getAttribute('href') === '#';
+        }""")
+        assert page.url == careers_url
+        page.screenshot(path=str(OUTPUT_DIR / "careers_desktop_top_review.png"))
+        page.locator("#apply").evaluate("section => window.scrollTo(0, window.scrollY + section.getBoundingClientRect().top - document.querySelector('header.topbar').getBoundingClientRect().height)")
+        page.screenshot(path=str(OUTPUT_DIR / "careers_desktop_form_intro_review.png"))
+        page.locator("#btnSubmitApp").scroll_into_view_if_needed()
+        page.screenshot(path=str(OUTPUT_DIR / "careers_desktop_form_review.png"))
+
+        # Each other directly reachable HTML entry also needs its own concept notice.
+        for sample_name in ("harvest_log_sheet.html", "label_crimini_10lb.html"):
+            page.goto((BASE_DIR / sample_name).as_uri(), wait_until="networkidle")
+            assert page.locator("#concept-notice").is_visible(), sample_name
+            assert "not an official Yamhill County Mushrooms document" in page.locator("#concept-notice").inner_text()
+            page.screenshot(path=str(OUTPUT_DIR / (sample_name + ".desktop_review.png")))
+            page.emulate_media(media="print")
+            assert page.locator("#concept-notice").is_visible(), "Print must preserve the concept notice"
+            if sample_name == "label_crimini_10lb.html":
+                assert page.locator("#caseLabel #label-concept-notice").is_visible()
+                assert "Not for product labeling" in page.locator("#caseLabel").inner_text()
+            else:
+                assert "Independent Concept Sample" in page.locator(".sheet-footer").inner_text()
+            page.screenshot(path=str(OUTPUT_DIR / (sample_name + ".print_style_review.png")))
+            page.emulate_media(media="screen")
+
         context_desktop.close()
         
         # 2. Mobile Test (iPhone 14 / 390x844)
@@ -76,9 +139,22 @@ def test_ycm_browser_render():
         page_mobile = context_mobile.new_page()
         page_mobile.goto(target_url, wait_until="networkidle")
         
+        assert page_mobile.locator("#concept-notice").is_visible(), "Concept notice must be visible on mobile"
+        assert page_mobile.evaluate("document.documentElement.scrollWidth <= window.innerWidth"), "Mobile page must not overflow horizontally"
+        page_mobile.screenshot(path=str(OUTPUT_DIR / "ycm_mobile_top_review.png"))
+
         mobile_shot = OUTPUT_DIR / "ycm_mobile_render_verified.png"
         page_mobile.screenshot(path=str(mobile_shot), full_page=True)
         print(f"YCM Mobile screenshot saved: {mobile_shot}")
+        page_mobile.goto((BASE_DIR / "careers.html").as_uri(), wait_until="networkidle")
+        assert page_mobile.locator("#concept-notice").is_visible()
+        assert page_mobile.locator("#btnSubmitApp").is_disabled()
+        assert page_mobile.evaluate("document.documentElement.scrollWidth <= window.innerWidth"), "Careers mobile page must not overflow"
+        page_mobile.screenshot(path=str(OUTPUT_DIR / "careers_mobile_top_review.png"))
+        page_mobile.locator("#apply").evaluate("section => window.scrollTo(0, window.scrollY + section.getBoundingClientRect().top - document.querySelector('header.topbar').getBoundingClientRect().height)")
+        page_mobile.screenshot(path=str(OUTPUT_DIR / "careers_mobile_form_intro_review.png"))
+        page_mobile.locator("#btnSubmitApp").scroll_into_view_if_needed()
+        page_mobile.screenshot(path=str(OUTPUT_DIR / "careers_mobile_form_review.png"))
         context_mobile.close()
         
         browser.close()
