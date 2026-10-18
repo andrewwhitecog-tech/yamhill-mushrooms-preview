@@ -81,6 +81,7 @@ img{max-width:100%;height:auto;display:block}
 .ribbon{background:var(--cardboard);color:var(--ycm-purple-dark);padding:0.6rem 1.5rem;text-align:center;font-size:0.82rem;font-weight:700;letter-spacing:0.5px}
 .ribbon a{color:var(--ycm-purple-dark);text-decoration:underline;font-weight:800}
 
+.concept-notice{max-width:1200px;margin:0 auto;padding:1rem 1.5rem;color:var(--ink);font-size:0.9rem;line-height:1.5}
 header.topbar{position:sticky;top:0;z-index:90;background:rgba(248,244,234,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:0.65rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .brand{display:flex;align-items:center;gap:0.9rem;text-decoration:none}
 .brand:hover{text-decoration:none}
@@ -334,6 +335,8 @@ footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1.2px;text-transfo
 </style>
 </head>
 <body>
+
+<p class="concept-notice" id="concept-notice" role="note"><strong>Website concept by NorthStar Prime — not the official Yamhill County Mushrooms website.</strong> This sample does not place orders or confirm delivery schedules or job openings. Confirm current details with the farm.</p>
 
 <div class="ribbon">
   Oregon Grown · Oregon Tilth Certified Organic Crimini &amp; Portabella (<a href="https://tilth.org/tilth-producer/yamhill-county-mushrooms/" target="_blank" rel="noopener">Client ID OT-011161</a>) · Willamette Valley, Oregon
@@ -974,7 +977,7 @@ footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1.2px;text-transfo
   <div class="inner">
     <div class="section-kicker">Commercial Order Desk</div>
     <h2>Wholesale Inquiry &amp; Route Request</h2>
-    <p class="section-lede">Build a sample manifest from our 44 SKUs or submit a custom standing delivery request directly to our Yamhill dispatch desk.</p>
+    <p class="section-lede">Build a sample manifest from our 44 SKUs or prepare a custom delivery inquiry in your email app.</p>
 
     <div class="inquiry-grid">
       <!-- Live Manifest Panel -->
@@ -1057,8 +1060,8 @@ footer .ft-small{font-size:0.72rem;opacity:0.6;letter-spacing:1.2px;text-transfo
         <label>Cut Specs, Quantities &amp; Receiving Instructions</label>
         <textarea id="buyerNotes" rows="4" placeholder="Specify any cut requirements (e.g., #1 thin sliced vs #2 thick sliced), receiving dock hours, key drop, or billing questions..."></textarea>
 
-        <button type="submit">Submit Wholesale Inquiry to Dispatch</button>
-        <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-top:0.7rem">Direct farm inquiry · Sent directly to orders@ycmushrooms.com</p>
+        <button type="submit">Open Wholesale Inquiry Email Draft</button>
+        <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-top:0.7rem">Opens your email app with a draft to orders@ycmushrooms.com. Review it and send it there. This website does not send your inquiry.</p>
       </form>
     </div>
   </div>

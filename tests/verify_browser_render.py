@@ -31,6 +31,19 @@ def test_ycm_browser_render():
         # Verify page title
         assert "Yamhill County Mushrooms" in page.title(), f"Unexpected title: {page.title()}"
         
+        # Keep the standalone concept boundary visible before the branded site.
+        concept_notice = page.locator("#concept-notice")
+        assert concept_notice.is_visible(), "Standalone sample needs a visible concept notice"
+        assert "not the official Yamhill County Mushrooms website" in concept_notice.inner_text()
+        assert concept_notice.bounding_box()["y"] + concept_notice.bounding_box()["height"] <= page.locator("header.topbar").bounding_box()["y"], "Concept notice must sit in page flow, not over the artwork"
+
+        # The existing handler opens mailto; the page must not promise delivery.
+        inquiry_form = page.locator("#wholesaleForm")
+        assert inquiry_form.locator("button[type=submit]").inner_text() == "Open Wholesale Inquiry Email Draft"
+        assert "Review it and send it there" in inquiry_form.inner_text()
+        assert "This website does not send your inquiry" in inquiry_form.inner_text()
+        assert "Sent directly" not in inquiry_form.inner_text()
+
         # Verify Chef Pairings section exists and has Maitake
         pairings = page.locator("#pairings")
         assert pairings.count() > 0, "Chef pairings section (#pairings) must exist"
@@ -76,6 +89,10 @@ def test_ycm_browser_render():
         page_mobile = context_mobile.new_page()
         page_mobile.goto(target_url, wait_until="networkidle")
         
+        assert page_mobile.locator("#concept-notice").is_visible(), "Concept notice must be visible on mobile"
+        assert page_mobile.evaluate("document.documentElement.scrollWidth <= window.innerWidth"), "Mobile page must not overflow horizontally"
+        page_mobile.screenshot(path=str(OUTPUT_DIR / "ycm_mobile_top_review.png"))
+
         mobile_shot = OUTPUT_DIR / "ycm_mobile_render_verified.png"
         page_mobile.screenshot(path=str(mobile_shot), full_page=True)
         print(f"YCM Mobile screenshot saved: {mobile_shot}")
